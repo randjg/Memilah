@@ -14,6 +14,7 @@
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
+		83C8E4342AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */; };
 		C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */; };
 		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
@@ -30,6 +31,7 @@
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashbinDetailsView.swift; sourceTree = "<group>"; };
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */,
 				83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */,
 				83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */,
+				83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C8E4342AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf in Resources */,
 				83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */,
 				83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */,
 				83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */,

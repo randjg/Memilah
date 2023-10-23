@@ -10,33 +10,33 @@ import SwiftUI
 struct PillShapeFillLevel: View {
     var fillPercentage: Double //dimasukin sesuai sensor fill level
     var category: String // paper/plastics/others
+    var color: Color
     
     var body: some View {
         
-        GeometryReader { geometry in
+        VStack{
+            Text(category) //category trash
+                .font(.custom("PlusJakartaSans-Regular", size: 16))
+                .fontWeight(.medium)
             
-            HStack{
+            Text("\(Int(fillPercentage))%")
+                .font(.custom("PlusJakartaSans-Regular", size: 31))
+                .fontWeight(.bold)
+            
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 70, height: 13)
+                    .foregroundColor(Color.gray) //background color
                 
-                Text(category) //category trash
-                    
-                
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(height: 13)
-                        .foregroundColor(Color.gray) // Set the background color
-                    
-                    RoundedRectangle(cornerRadius: 20)
-                        .frame(width: CGFloat(fillPercentage) / 100.0 * geometry.size.width, height: 13)
-                        .foregroundColor(Color.green) // Set the fill color
-                }
-                
-                Text("\(Int(fillPercentage))%")
-
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: fillPercentage/100 * 70, height: 13)
+                    .foregroundColor(color) //fill color
             }
+
         }
     }
 }
 
 #Preview {
-    PillShapeFillLevel(fillPercentage: 70, category: "Paper")
+    PillShapeFillLevel(fillPercentage: 50, category: "Paper", color: Color.green)
 }

@@ -12,25 +12,26 @@ struct FillLevelComponent: View {
         
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color.blue) //ganti warna nya
+                .fill(Color(red: 0.93, green: 0.95, blue: 0.96)) //ganti warna nya
                 .frame(width: 375, height: 175) //dibikin responsive
-                
             
             VStack{
                 Text("Fill Level")
                     .font(.custom("PlusJakartaSans-Regular", size: 24))
                     .bold()
-                    .foregroundColor(.white)
-                    .padding(.top, 20)
+                    .foregroundColor(.black)
+                    .padding(.vertical, 10)
                 
-                PillShapeFillLevel(fillPercentage: 50, category: "Paper")
-                PillShapeFillLevel(fillPercentage: 60, category: "Plastic")
-                PillShapeFillLevel(fillPercentage: 90, category: "Others")
-                
-                Spacer()
-            }.frame(width: 375, height: 175) //dibikin responsive
+                HStack{
+                    PillShapeFillLevel(fillPercentage: 50, category: "Paper", color: Color.red)
+                    PillShapeFillLevel(fillPercentage: 60, category: "Plastic", color: Color.yellow)
+                    PillShapeFillLevel(fillPercentage: 90, category: "Others", color: Color.green)
+                }
+                .padding(.bottom, 20)
 
-            
+                Spacer()
+                
+            }.frame(width: 375, height: 175) //dibikin responsive
         }
     }
 }
