@@ -14,7 +14,7 @@ struct PillShapeStatus: View {
     
     var body: some View {
             Text(text)
-            .bold()
+            .font(.custom("PlusJakartaSans-SemiBold", size: 13))
             .padding(.vertical, 6)
             .padding(.horizontal, 16)
             .foregroundColor(.white)
@@ -24,5 +24,5 @@ struct PillShapeStatus: View {
 }
 
 #Preview {
-    PillShapeStatus(color: Color.green, text: "Connected")
+    PillShapeStatus(color: Color(red: 0.09, green: 0.7, blue: 0.39), text: "Connected")
 }
