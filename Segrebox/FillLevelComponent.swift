@@ -34,6 +34,7 @@ struct FillLevelComponent: View {
             }.frame(width: 375, height: 175) //dibikin responsive
         }
         //test
+        //test
     }
 }
 
