@@ -14,6 +14,10 @@
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
+		83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
+		83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */; };
+		83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4392AE8025100AE532E /* LoginView.swift */; };
+		83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E43B2AE8025700AE532E /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		83C8E4352AE8023100AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
+		83C8E4392AE8025100AE532E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		83C8E43B2AE8025700AE532E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 				83BB3D602AE3E77F00300A56 /* ContentView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
+				83C8E4352AE8023100AE532E /* TextFieldComponent.swift */,
+				83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */,
+				83C8E4392AE8025100AE532E /* LoginView.swift */,
+				83C8E43B2AE8025700AE532E /* RegisterView.swift */,
 			);
 			path = Segrebox;
 			sourceTree = "<group>";
@@ -159,7 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* ContentView.swift in Sources */,
+				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
+				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
+				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
 				83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
