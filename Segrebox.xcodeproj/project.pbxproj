@@ -14,6 +14,12 @@
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
+		F624F59C2AEAAAA700E5E59C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F624F59B2AEAAAA700E5E59C /* ImagePicker.swift */; };
+		F624F59F2AEAAFB800E5E59C /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F624F59E2AEAAFB800E5E59C /* SecondaryButtonComponent.swift */; };
+		F624F5A32AEAB7E800E5E59C /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F624F5A22AEAB7E800E5E59C /* ImageSaver.swift */; };
+		F698D8582AE9759F00410952 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = F698D8572AE9759F00410952 /* ModalView */; };
+		F698D8682AEA138600410952 /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D8672AEA138600410952 /* TextFieldComponent.swift */; };
+		F698D8A02AEA9FE400410952 /* AddTrashBinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D89F2AEA9FE400410952 /* AddTrashBinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,11 @@
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		F624F59B2AEAAAA700E5E59C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F624F59E2AEAAFB800E5E59C /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
+		F624F5A22AEAB7E800E5E59C /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		F698D8672AEA138600410952 /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		F698D89F2AEA9FE400410952 /* AddTrashBinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrashBinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F698D8582AE9759F00410952 /* ModalView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,10 +70,13 @@
 		83BB3D5D2AE3E77F00300A56 /* Segrebox */ = {
 			isa = PBXGroup;
 			children = (
+				F624F59D2AEAAF9A00E5E59C /* Buttons */,
+				F698D8662AEA125800410952 /* Components */,
 				83BB3D852AE5498D00300A56 /* Font */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
 				83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */,
 				83BB3D602AE3E77F00300A56 /* ContentView.swift */,
+				F698D89F2AEA9FE400410952 /* AddTrashBinView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
 			);
@@ -86,6 +101,24 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		F624F59D2AEAAF9A00E5E59C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F624F59E2AEAAFB800E5E59C /* SecondaryButtonComponent.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		F698D8662AEA125800410952 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F698D8672AEA138600410952 /* TextFieldComponent.swift */,
+				F624F59B2AEAAAA700E5E59C /* ImagePicker.swift */,
+				F624F5A22AEAB7E800E5E59C /* ImageSaver.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +135,9 @@
 			dependencies = (
 			);
 			name = Segrebox;
+			packageProductDependencies = (
+				F698D8572AE9759F00410952 /* ModalView */,
+			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Segrebox.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 83BB3D522AE3E77F00300A56;
+			packageReferences = (
+				F698D8562AE9759F00410952 /* XCRemoteSwiftPackageReference "modal-view" */,
+			);
 			productRefGroup = 83BB3D5C2AE3E77F00300A56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -159,8 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F624F59F2AEAAFB800E5E59C /* SecondaryButtonComponent.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* ContentView.swift in Sources */,
 				83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */,
+				F624F5A32AEAB7E800E5E59C /* ImageSaver.swift in Sources */,
+				F624F59C2AEAAAA700E5E59C /* ImagePicker.swift in Sources */,
+				F698D8682AEA138600410952 /* TextFieldComponent.swift in Sources */,
+				F698D8A02AEA9FE400410952 /* AddTrashBinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F698D8562AE9759F00410952 /* XCRemoteSwiftPackageReference "modal-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diniska/modal-view";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F698D8572AE9759F00410952 /* ModalView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F698D8562AE9759F00410952 /* XCRemoteSwiftPackageReference "modal-view" */;
+			productName = ModalView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83BB3D532AE3E77F00300A56 /* Project object */;
 }
