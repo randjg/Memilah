@@ -19,7 +19,7 @@ struct TextFieldComponent: View {
         TextField(placeholder, text: $text)
             .frame(width: width, height: height)
             .padding(.leading, 10)
-            .font(.custom("PlusJakartaSans-Regular", size: 21))
+            .font(.custom("PlusJakartaSans-Regular", size: 18))
             .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
             .keyboardType(keyboardType)
             .textContentType(.none)

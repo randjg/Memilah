@@ -45,7 +45,7 @@ struct LoginView: View {
                             SecureField("Enter your password", text: $password)
                                 .frame(width: 615, height: 50)
                                 .padding(.leading, 10)
-                                .font(.custom("PlusJakartaSans-Regular", size: 21))
+                                .font(.custom("PlusJakartaSans-Regular", size: 18))
                                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
                                 .textContentType(.none)
                                 .autocapitalization(.none)
