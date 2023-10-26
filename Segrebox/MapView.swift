@@ -30,41 +30,30 @@ struct MapView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate{
+        
+        let map = MKMapView()
      
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             if annotation.isKind(of: MKUserLocation.self) { return nil }
             
             else {
-//                let pinAnnotation = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pinImage")
-//                pinAnnotation.canShowCallout = true
-//                pinAnnotation.image = UIImage(named: "trashbin")
-//                pinAnnotation.calloutOffset = CGPointMake(0, 32)
-                
+
                 var pinAnnotation = map.dequeueReusableAnnotationView(withIdentifier: "custom")
+                
+                if pinAnnotation == nil {
+                    pinAnnotation = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+                    pinAnnotation?.canShowCallout = true
+                } else {
+                    pinAnnotation?.annotation = annotation
+                }
+                
+                pinAnnotation?.image = UIImage(named: "trashbin")
                 
                 
                 return pinAnnotation
             }
-//            guard !(annotation is MKUserLocation) else {
-//                return nil
-//            }
-//            
-//            var annotationView = MKMapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-//            
-//            if annotationView == nil {
-//                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-//                annotationView?.canShowCallout = true
-//            } else {
-//                annotationView?.annotation = annotation
-//            }
-//            
-//            annotationView?.image = UIImage(named: "trashbin")
         }
         
     }
 
-}
-
-#Preview {
-    MapView()
 }
