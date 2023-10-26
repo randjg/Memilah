@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isExpanded = false
+    
     var body: some View {
-        VStack {
-            Text("Hello, Custom Font!")
-                .font(.custom("PlusJakartaSans-Regular", size: 24))
+        NavigationView{
+            ZStack(alignment: .leading){
+                List{
+                    DisclosureGroup(isExpanded: $isExpanded){
+                        
+                        //MARK: Upload events from firebase here
+                        Label("Event name 1", systemImage: "calendar")
+                    }label: {
+                        Label("Event", systemImage: "ticket")
+                    }
+                    
+                    Label("Profile", systemImage: "person.fill")
+                    Label("Notification", systemImage: "bell.fill")
+                    Label("Settings", systemImage: "gearshape.fill")
+                    
+                }
+                .navigationTitle("Segrebox")
+                .listStyle(SidebarListStyle())
+                
+            }
+            DashboardView()
         }
-        
-        CardComponent()
     }
 }
 
