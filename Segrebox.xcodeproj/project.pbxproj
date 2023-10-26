@@ -15,19 +15,11 @@
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
-
-
-		83C8E4302AE6CD2600AE532E /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E42F2AE6CD2600AE532E /* CardComponent.swift */; };
-
-		F698D8492AE812E300410952 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D8482AE812E300410952 /* DashboardView.swift */; };
-		F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */; };
-
 		83C8E4342AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */; };
 		C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */; };
 		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,19 +33,11 @@
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
-
-		83C8E42F2AE6CD2600AE532E /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
-
-		F698D8482AE812E300410952 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
-
-
 		83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashbinDetailsView.swift; sourceTree = "<group>"; };
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +70,10 @@
 		83BB3D5D2AE3E77F00300A56 /* Segrebox */ = {
 			isa = PBXGroup;
 			children = (
-				F698D84A2AE8BA2500410952 /* Buttons */,
 				83BB3D852AE5498D00300A56 /* Font */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
 				83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */,
 				83BB3D602AE3E77F00300A56 /* ContentView.swift */,
-				F698D8482AE812E300410952 /* DashboardView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
 				C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */,
@@ -119,14 +101,6 @@
 				83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */,
 			);
 			path = Font;
-			sourceTree = "<group>";
-		};
-		F698D84A2AE8BA2500410952 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */,
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +177,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C8E4302AE6CD2600AE532E /* CardComponent.swift in Sources */,
-				F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */,
-				F698D8492AE812E300410952 /* DashboardView.swift in Sources */,
 				C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* ContentView.swift in Sources */,
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
