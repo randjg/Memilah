@@ -20,7 +20,7 @@ struct FillLevelComponent: View {
                     .font(.custom("PlusJakartaSans-Regular", size: 24))
                     .bold()
                     .foregroundColor(.black)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 15)
                 
                 HStack{
                     PillShapeFillLevel(fillPercentage: 50, category: "Paper", color: Color.red)
