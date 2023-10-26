@@ -14,8 +14,12 @@
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
+
+		83C8E4302AE6CD2600AE532E /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E42F2AE6CD2600AE532E /* CardComponent.swift */; };
+
 		F698D8492AE812E300410952 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D8482AE812E300410952 /* DashboardView.swift */; };
 		F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +32,11 @@
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		83C8E42F2AE6CD2600AE532E /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+
 		F698D8482AE812E300410952 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 				F698D8482AE812E300410952 /* DashboardView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
+				83C8E42F2AE6CD2600AE532E /* CardComponent.swift */,
 			);
 			path = Segrebox;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C8E4302AE6CD2600AE532E /* CardComponent.swift in Sources */,
 				F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */,
 				F698D8492AE812E300410952 /* DashboardView.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* ContentView.swift in Sources */,
