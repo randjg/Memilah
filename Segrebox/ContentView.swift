@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, Custom Font!")
-            .font(.custom("PlusJakartaSans-Regular", size: 24))
+        VStack {
+            Text("Hello, Custom Font!")
+                .font(.custom("PlusJakartaSans-Regular", size: 24))
+        }
+        
+        CardComponent()
     }
 }
 
