@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */; };
 		83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */; };
 		83BB3D612AE3E77F00300A56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* ContentView.swift */; };
 		83BB3D632AE3E78200300A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D622AE3E78200300A56 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
 		83BB3D602AE3E77F00300A56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 				83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */,
 				83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */,
 				83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */,
-				83C8E4332AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf */,
+				83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -159,7 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C8E4342AE6DD6200AE532E /* PlusJakartaSans-Italic.ttf in Resources */,
+				83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */,
 				83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */,
 				83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */,
 				83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */,
