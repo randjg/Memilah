@@ -10,11 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, Custom Font!")
-                .font(.custom("PlusJakartaSans-Regular", size: 24))
-        }
+//            Text("Hello, Custom Font!")
+//                .font(.custom("PlusJakartaSans-Regular", size: 24))
+            
         
-        CardComponent()
+
+            ScrollView() {
+                LazyVStack(spacing: 350) {
+                    ForEach(0..<7) { _ in
+                        CardComponent()
+//                            .padding(.bottom, 10)
+                    }
+                }
+                Spacer(minLength: 350)
+            }
+        }
     }
 }
 

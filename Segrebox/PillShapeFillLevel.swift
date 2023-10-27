@@ -34,7 +34,7 @@ struct PillShapeFillLevel: View {
             }
 
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 40)
     }
 }
 

@@ -13,7 +13,7 @@ struct FillLevelComponent: View {
         ZStack{
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color(red: 0.93, green: 0.95, blue: 0.96)) //ganti warna nya
-                .frame(width: 375, height: 175) //dibikin responsive
+                .frame(width: 488, height: 175) //dibikin responsive
             
             VStack{
                 Text("Fill Level")
@@ -31,10 +31,8 @@ struct FillLevelComponent: View {
 
                 Spacer()
                 
-            }.frame(width: 375, height: 175) //dibikin responsive
+            }.frame(width: 488, height: 175) //dibikin responsive
         }
-        //test
-        //test
     }
 }
 
