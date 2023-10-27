@@ -16,7 +16,7 @@ struct ContentView: View {
         
 
             ScrollView() {
-                LazyVStack(spacing: 350) {
+                VStack(spacing: 350) {
                     ForEach(0..<7) { _ in
                         CardComponent()
 //                            .padding(.bottom, 10)

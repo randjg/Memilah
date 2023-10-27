@@ -32,19 +32,21 @@ struct CardComponent: View {
                                 HStack {
                                     Text("Nama Tempat Trashbin")
                                             .font(.custom("PlusJakartaSans-Bold", size: 21))
-//                                            .padding(.trailing, 20)
+                                            .foregroundStyle(Color("AdaptiveFontColorCard"))
                                     PillShapeStatus(color: Color(red: 0.09, green: 0.7, blue: 0.39), text: "Connected")
                                         .frame(maxWidth: 140)
                                 }
                                 .padding(.bottom, 8)
                                     Text("UUID")
                                         .font(.custom("PlusJakartaSans-Regular", size: 13))
+                                        .foregroundStyle(Color("AdaptiveFontColorCard"))
                                         .padding(.bottom, 8)
                                     Text("Deskripsi trash bin")
                                         .lineLimit(3)
                                         .multilineTextAlignment(.leading)
                                         .lineSpacing(2)
                                         .font(.custom("PlusJakartaSans-Regular", size: 13))
+                                        .foregroundStyle(Color("AdaptiveFontColorCard"))
                                         .frame(width: 199, alignment: .leading)
                                 }
                             .padding(.bottom, 10)
@@ -61,9 +63,11 @@ struct CardComponent: View {
                             HStack {
                                 Text("Fill Level")
                                     .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                    .foregroundStyle(Color("AdaptiveFontColorCard"))
                                 Spacer()
                                 Text("Last updated 20.05")
                                     .font(.custom("PlusJakartaSans-Italic", size: 13))
+                                    .foregroundStyle(Color("AdaptiveFontColorCard"))
                             }
                             .padding(.top, 10)
                             .frame(maxWidth: 480)
