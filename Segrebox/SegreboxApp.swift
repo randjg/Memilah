@@ -11,7 +11,7 @@ import SwiftUI
 struct SegreboxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AddEventView()
         }
     }
 }
