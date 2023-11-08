@@ -1,14 +1,13 @@
 //
-//  ContentView.swift
+//  RootView.swift
 //  Segrebox
 //
-//  Created by Randy Julian on 21/10/23.
+//  Created by Eric Prasetya Sentosa on 08/11/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct RootView: View {
     @State private var isExpanded = false
     
     var body: some View {
@@ -38,5 +37,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    RootView()
 }
