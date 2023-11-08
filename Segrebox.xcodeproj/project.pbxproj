@@ -11,6 +11,8 @@
 		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
 		43D4D1802AFB707E00ED011B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D4D17F2AFB707E00ED011B /* Assets.xcassets */; };
 		43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1812AFB709000ED011B /* SegreboxApp.swift */; };
+		43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1832AFB720000ED011B /* DashboardView.swift */; };
+		43D4D1862AFBC7A400ED011B /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */; };
 		43D8CCE42AEF760B003938F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */; };
 		43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CCF22AEF771C003938F0 /* FirebaseAuth */; };
 		43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CCFE2AEF771C003938F0 /* FirebaseFirestore */; };
@@ -50,6 +52,8 @@
 		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		43D4D17F2AFB707E00ED011B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D4D1812AFB709000ED011B /* SegreboxApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
+		43D4D1832AFB720000ED011B /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
 		43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterHorizontalView.swift; sourceTree = "<group>"; };
 		43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				43BF25382AF8BBE200FA91FF /* Core */,
 				83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */,
 				C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */,
+				43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */,
+				43D4D1832AFB720000ED011B /* DashboardView.swift */,
 				C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */,
 				C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */,
 				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
@@ -381,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D4D1862AFBC7A400ED011B /* SecondaryButtonComponent.swift in Sources */,
 				F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */,
 				43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */,
 				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
@@ -400,6 +407,7 @@
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
 				43E28DA82AFA0DB60041CF5E /* Fonts.swift in Sources */,
 				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,
+				43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */,
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
 				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
