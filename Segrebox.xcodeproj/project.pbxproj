@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
-		83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */; };
-=======
 		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
 		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
 		43D8CCE42AEF760B003938F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */; };
@@ -32,23 +29,14 @@
 		83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */; };
 		83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
->>>>>>> development
 		83BB3D632AE3E78200300A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D622AE3E78200300A56 /* Assets.xcassets */; };
 		83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */; };
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
-<<<<<<< HEAD
 		F698D8492AE812E300410952 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D8482AE812E300410952 /* DashboardView.swift */; };
 		F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
-=======
-		83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
+    83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
 		83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */; };
 		83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4392AE8025100AE532E /* LoginView.swift */; };
 		83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E43B2AE8025700AE532E /* RegisterView.swift */; };
@@ -59,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -73,17 +62,14 @@
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
 		83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewEvent.swift; sourceTree = "<group>"; };
->>>>>>> development
 		83BB3D622AE3E78200300A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83BB3D712AE3ED5A00300A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F698D8482AE812E300410952 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
-=======
 		83C8E4352AE8023100AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
 		83C8E4392AE8025100AE532E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -92,7 +78,6 @@
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
->>>>>>> development
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,15 +316,11 @@
 				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
 				431924902AEAC37A0062312A /* CardComponent.swift */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
-<<<<<<< HEAD
 				83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */,
 				F698D8482AE812E300410952 /* DashboardView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
-				83BB3D642AE3E78200300A56 /* Preview Content */,
 				43E28DB32AFB5D020041CF5E /* RootView.swift */,
-=======
 				83BB3D642AE3E78200300A56 /* Preview Content */,
->>>>>>> development
 			);
 			path = Segrebox;
 			sourceTree = "<group>";
@@ -452,12 +433,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */,
 				F698D8492AE812E300410952 /* DashboardView.swift in Sources */,
-				83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */,
 				43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */,
-=======
 				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
@@ -478,7 +456,6 @@
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
 				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
->>>>>>> development
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
