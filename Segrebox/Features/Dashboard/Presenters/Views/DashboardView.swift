@@ -16,7 +16,7 @@ struct DashboardView: View {
                 //MARK: Title
                 Text("Dashboard")
                     .font(
-                        Font.custom("PlusJakartaSans-Bold", size: 31)
+                        Font.custom(Fonts.plusJakartaSansBold, size: 31)
                             .weight(.bold)
                     )
                     .padding(.bottom, 23)

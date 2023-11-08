@@ -32,7 +32,7 @@ struct RegisterView: View {
                             Spacer()
                         }
                         .frame(maxWidth: 615)
-                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                     }
                     .padding(.vertical, 15)
                     
@@ -44,7 +44,7 @@ struct RegisterView: View {
                         }
                         .frame(maxWidth: 615)
                         if isPasswordVisible {
-                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                         } else{
                             SecureField("Enter your password", text: $viewModel.password)
                                 .frame(width: 615, height: 50)
@@ -77,7 +77,7 @@ struct RegisterView: View {
                         }
                         .frame(maxWidth: 615)
                         if isPasswordConfirmVisible {
-                            TextFieldComponent(text: $passwordConfirm, placeholder: "Enter your password confirmation", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                            TextFieldComponent(text: $passwordConfirm, placeholder: "Enter your password confirmation", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                         } else {
                             SecureField("Enter your password confirmation", text: $passwordConfirm)
                                 .frame(width: 615, height: 50)

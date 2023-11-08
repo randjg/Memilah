@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
+		434FFE592AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */; };
+		434FFE5A2AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE552AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf */; };
+		434FFE5B2AFBE11B00D82548 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434FFE562AFBE11B00D82548 /* Fonts.swift */; };
+		434FFE5C2AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE572AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf */; };
+		434FFE5D2AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */; };
 		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
 		43D4D1802AFB707E00ED011B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D4D17F2AFB707E00ED011B /* Assets.xcassets */; };
 		43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1812AFB709000ED011B /* SegreboxApp.swift */; };
@@ -25,21 +30,22 @@
 		43E28D9F2AF9E31D0041CF5E /* CenterHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */; };
 		43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */; };
 		43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA52AF9F2C40041CF5E /* UserModel.swift */; };
-		43E28DA82AFA0DB60041CF5E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA72AFA0DB60041CF5E /* Fonts.swift */; };
 		43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA92AFA0EA60041CF5E /* Images.swift */; };
 		43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAB2AFA102B0041CF5E /* Alerts.swift */; };
 		43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAD2AFA15FF0041CF5E /* Colors.swift */; };
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
-		83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */; };
+		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
+		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
 		83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */; };
-		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
-		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
-		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
 		83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
 		83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */; };
 		83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4392AE8025100AE532E /* LoginView.swift */; };
 		83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E43B2AE8025700AE532E /* RegisterView.swift */; };
+		83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E43D2AE8215900AE532E /* AddEventView.swift */; };
+		83C8E4432AE8F6E800AE532E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4422AE8F6E800AE532E /* MapViewModel.swift */; };
+		83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4442AE8F77B00AE532E /* MapView.swift */; };
+		83C8E4482AE9713B00AE532E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4472AE9713B00AE532E /* Place.swift */; };
 		C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */; };
 		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
@@ -48,6 +54,11 @@
 
 /* Begin PBXFileReference section */
 		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		434FFE552AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
+		434FFE562AFBE11B00D82548 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		434FFE572AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
+		434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		43D4D17F2AFB707E00ED011B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D4D1812AFB709000ED011B /* SegreboxApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
@@ -57,23 +68,25 @@
 		43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterHorizontalView.swift; sourceTree = "<group>"; };
 		43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		43E28DA52AF9F2C40041CF5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		43E28DA72AFA0DB60041CF5E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		43E28DA92AFA0EA60041CF5E /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		43E28DAB2AFA102B0041CF5E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		43E28DAD2AFA15FF0041CF5E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
+		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
+		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewEvent.swift; sourceTree = "<group>"; };
 		83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83BB3D712AE3ED5A00300A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
-		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
-		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		83C8E4352AE8023100AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
 		83C8E4392AE8025100AE532E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		83C8E43B2AE8025700AE532E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		83C8E43D2AE8215900AE532E /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		83C8E43F2AE8272200AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		83C8E4422AE8F6E800AE532E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		83C8E4442AE8F77B00AE532E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		83C8E4472AE9713B00AE532E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashbinDetailsView.swift; sourceTree = "<group>"; };
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
@@ -112,6 +125,7 @@
 		434FFE4C2AFBD06800D82548 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83C8E4472AE9713B00AE532E /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +142,7 @@
 		434FFE4E2AFBD0D300D82548 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				434FFE5E2AFBE7D200D82548 /* Presenters */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -142,6 +157,7 @@
 		434FFE502AFBD17600D82548 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				83C8E4422AE8F6E800AE532E /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,6 +174,53 @@
 			isa = PBXGroup;
 			children = (
 				43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		434FFE532AFBE11B00D82548 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */,
+				434FFE552AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf */,
+				434FFE562AFBE11B00D82548 /* Fonts.swift */,
+				434FFE572AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf */,
+				434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		434FFE5E2AFBE7D200D82548 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				434FFE602AFBE85D00D82548 /* Components */,
+				434FFE5F2AFBE85300D82548 /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		434FFE5F2AFBE85300D82548 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E4442AE8F77B00AE532E /* MapView.swift */,
+				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		434FFE602AFBE85D00D82548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				831A23392AF1767400CDC54B /* MapComponent.swift */,
+				831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		434FFE612AFBE8B100D82548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E43F2AE8272200AE532E /* TextFieldComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -220,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				43E28D9C2AF9E29A0041CF5E /* Presenters */,
-				83BB3D852AE5498D00300A56 /* Fonts */,
+				434FFE532AFBE11B00D82548 /* Fonts */,
 				43E28DA92AFA0EA60041CF5E /* Images.swift */,
 				43E28DAB2AFA102B0041CF5E /* Alerts.swift */,
 				43E28DAD2AFA15FF0041CF5E /* Colors.swift */,
@@ -276,6 +339,7 @@
 		43E28D9C2AF9E29A0041CF5E /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				434FFE612AFBE8B100D82548 /* Components */,
 				43E28D9D2AF9E2F10041CF5E /* Views */,
 			);
 			path = Presenters;
@@ -338,18 +402,6 @@
 				83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		83BB3D852AE5498D00300A56 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */,
-				83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */,
-				83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */,
-				83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */,
-				43E28DA72AFA0DB60041CF5E /* Fonts.swift */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,13 +475,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */,
 				83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */,
-				83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */,
-				83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				43D4D1802AFB707E00ED011B /* Assets.xcassets in Resources */,
-				83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */,
 				43D8CCE42AEF760B003938F0 /* GoogleService-Info.plist in Resources */,
+				434FFE5C2AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf in Resources */,
+				434FFE5A2AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf in Resources */,
+				434FFE592AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf in Resources */,
+				434FFE5D2AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +501,7 @@
 				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
 				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
 				43E28D9F2AF9E31D0041CF5E /* CenterHorizontalView.swift in Sources */,
+				434FFE5B2AFBE11B00D82548 /* Fonts.swift in Sources */,
 				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
 				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
 				431924912AEAC37A0062312A /* CardComponent.swift in Sources */,
@@ -457,12 +510,17 @@
 				43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */,
 				4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */,
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
-				43E28DA82AFA0DB60041CF5E /* Fonts.swift in Sources */,
 				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,
 				43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */,
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
 				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
+				83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */,
+				831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */,
+				83C8E4432AE8F6E800AE532E /* MapViewModel.swift in Sources */,
+				83C8E4482AE9713B00AE532E /* Place.swift in Sources */,
+				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
+				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,12 +658,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Segrebox/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,12 +690,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Segrebox/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
