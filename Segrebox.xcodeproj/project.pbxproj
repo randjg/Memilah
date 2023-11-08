@@ -125,6 +125,7 @@
 		434FFE4C2AFBD06800D82548 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83C8E4472AE9713B00AE532E /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +142,7 @@
 		434FFE4E2AFBD0D300D82548 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				434FFE5E2AFBE7D200D82548 /* Presenters */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -155,6 +157,7 @@
 		434FFE502AFBD17600D82548 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				83C8E4422AE8F6E800AE532E /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -185,6 +188,41 @@
 				434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		434FFE5E2AFBE7D200D82548 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				434FFE602AFBE85D00D82548 /* Components */,
+				434FFE5F2AFBE85300D82548 /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		434FFE5F2AFBE85300D82548 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E4442AE8F77B00AE532E /* MapView.swift */,
+				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		434FFE602AFBE85D00D82548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				831A23392AF1767400CDC54B /* MapComponent.swift */,
+				831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		434FFE612AFBE8B100D82548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E43F2AE8272200AE532E /* TextFieldComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		43BF25322AF8B8F000FA91FF /* Features */ = {
@@ -301,6 +339,7 @@
 		43E28D9C2AF9E29A0041CF5E /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				434FFE612AFBE8B100D82548 /* Components */,
 				43E28D9D2AF9E2F10041CF5E /* Views */,
 			);
 			path = Presenters;
@@ -351,15 +390,8 @@
 				C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */,
 				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
 				431924902AEAC37A0062312A /* CardComponent.swift */,
-				83C8E4462AE9713200AE532E /* Model */,
-				83C8E4412AE8F6DD00AE532E /* ViewModel */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
-				83C8E4442AE8F77B00AE532E /* MapView.swift */,
-				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
-				83C8E43F2AE8272200AE532E /* TextFieldComponent.swift */,
-				831A23392AF1767400CDC54B /* MapComponent.swift */,
-				831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */,
 			);
 			path = Segrebox;
 			sourceTree = "<group>";
@@ -370,22 +402,6 @@
 				83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		83C8E4412AE8F6DD00AE532E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				83C8E4422AE8F6E800AE532E /* MapViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		83C8E4462AE9713200AE532E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				83C8E4472AE9713B00AE532E /* Place.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
