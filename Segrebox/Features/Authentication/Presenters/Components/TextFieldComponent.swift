@@ -2,7 +2,7 @@
 //  TextFieldComponent.swift
 //  Segrebox
 //
-//  Created by Randy Julian on 21/10/23.
+//  Created by Randy Julian on 24/10/23.
 //
 
 import SwiftUI
@@ -14,12 +14,13 @@ struct TextFieldComponent: View {
     var returnKeyType: UIReturnKeyType
     var width: CGFloat
     var height: CGFloat
+    var axis: Axis
 
     var body: some View {
-        TextField(placeholder, text: $text)
+        TextField(placeholder, text: $text, axis: axis)
             .frame(width: width, height: height)
             .padding(.leading, 10)
-            .font(.custom("PlusJakartaSans-Regular", size: 18))
+            .font(.custom("PlusJakartaSans-Regular", size: 21))
             .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
             .keyboardType(keyboardType)
             .textContentType(.none)

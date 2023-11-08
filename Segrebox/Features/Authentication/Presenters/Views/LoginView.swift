@@ -29,7 +29,7 @@ struct LoginView: View {
                             Spacer()
                         }
                         .frame(maxWidth: 625)
-                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                     }
                     .padding(.vertical, 29)
                     
@@ -41,7 +41,7 @@ struct LoginView: View {
                         }
                         .frame(maxWidth: 615)
                         if isPasswordVisible {
-                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                         }
                         else {
                             SecureField("Enter your password", text: $viewModel.password)
