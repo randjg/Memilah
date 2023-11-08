@@ -8,44 +8,46 @@
 import SwiftUI
 
 struct LoginView: View {
-    
-    @State private var email = ""
-    @State private var password = ""
+    @EnvironmentObject private var viewModel: AuthenticationViewModel
     @State private var isPasswordVisible = false
+    @State private var showingAlert = false
+    @State private var alert = Alerts.invalidCredentials
     
     var body: some View {
         NavigationStack{
-            GeometryReader { geometry in
+            CenterHorizontalView {
                 VStack{
-                    Text("SegreBox")
-                        .font(.custom("PlusJakartaSans-Bold", size: 31))
-                        .position(x: geometry.size.width / 2)
+                    Images.logoTextImageVertical
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 280)
+                    
                     VStack{
                         HStack{
                             Text("E-mail")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         .frame(maxWidth: 625)
-                        TextFieldComponent(text: $email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
                     }
-                    .padding(29)
+                    .padding(.vertical, 29)
                     
                     VStack{
                         HStack{
                             Text("Password")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         .frame(maxWidth: 615)
                         if isPasswordVisible {
-                            TextFieldComponent(text: $password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
                         }
                         else {
-                            SecureField("Enter your password", text: $password)
+                            SecureField("Enter your password", text: $viewModel.password)
                                 .frame(width: 615, height: 50)
                                 .padding(.leading, 10)
-                                .font(.custom("PlusJakartaSans-Regular", size: 18))
+                                .font(.custom(Fonts.plusJakartaSansRegular, size: 18))
                                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
                                 .textContentType(.none)
                                 .autocapitalization(.none)
@@ -75,22 +77,38 @@ struct LoginView: View {
                     .padding(.top, 6)
                     .padding(.bottom, 38)
                     
-                    MainButtonComponent(title: "Login"){
-                        LoginView()
+                    MainButtonComponent(title: "Login", disable: viewModel.validateFieldsAreEmpty()){
+                        // do login
+                        Task {
+                            do {
+                                try await viewModel.login()
+                                viewModel.authenticated = true
+                            } catch {
+                                print(error)
+                                showingAlert = true
+                                viewModel.authenticated = false
+                            }
+                        }
                     }
                     .padding(.bottom, 15)
                     
                     HStack {
                         Text("Don't have an account yet?")
-                            .font(.custom("PlusJakartaSans-Regular", size: 16))
-                        NavigationLink("Register now", destination: RegisterView())
-                            .foregroundColor(Color("AdaptiveFontColor"))
-                            .font(.custom("PlusJakartaSans-Bold", size: 16))
+                            .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
+                        NavigationLink("Register now", destination: RegisterView().environmentObject(viewModel))
+                            .foregroundColor(Colors.adaptiveFontColor)
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 16))
                     }
                 }
             }
+            .navigationDestination(isPresented: $viewModel.authenticated) {
+                
+            }
         }
         .navigationBarBackButtonHidden(true)
+        .alert(isPresented: $showingAlert) {
+            alert
+        }
     }
 }
 

@@ -18,7 +18,7 @@ struct FillLevelComponent: View {
             VStack{
                 Text("Fill Level")
                     .font(.custom("PlusJakartaSans-Regular", size: 24))
-                    .foregroundStyle(Color("AdaptiveFontColorCard"))
+                    .foregroundStyle(Colors.adaptiveFontColorCard)
                     .bold()
                     .foregroundColor(.black)
                     .padding(.vertical, 15)

@@ -17,12 +17,12 @@ struct PillShapeFillLevel: View {
         VStack{
             Text(category) //category trash
                 .font(.custom("PlusJakartaSans-Regular", size: 16))
-                .foregroundStyle(Color("AdaptiveFontColorCard"))
+                .foregroundStyle(Colors.adaptiveFontColorCard)
                 .fontWeight(.medium)
             
             Text("\(Int(fillPercentage))%")
                 .font(.custom("PlusJakartaSans-Regular", size: 31))
-                .foregroundStyle(Color("AdaptiveFontColorCard"))
+                .foregroundStyle(Colors.adaptiveFontColorCard)
                 .fontWeight(.bold)
             
             ZStack(alignment: .leading) {

@@ -9,22 +9,24 @@ import SwiftUI
 
 struct MainButtonComponent: View {
     var title: String
+    var disable: Bool
     var action: () -> Void
 
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                 .foregroundColor(.white)
                 .frame(width: 625, height: 50)
-                .background((Color(red: 0.25, green: 0.47, blue: 0.55)))
+                .background(disable ? Colors.primaryInActive : Colors.primaryActive)
                 .cornerRadius(8)
         }
+        .disabled(disable)
     }
 }
 
 #Preview {
-    MainButtonComponent(title: "Login"){
-        LoginView()
+    MainButtonComponent(title: "Login", disable: true) {
+        
     }
 }

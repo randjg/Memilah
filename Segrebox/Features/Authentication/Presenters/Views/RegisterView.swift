@@ -8,45 +8,48 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @EnvironmentObject var viewModel: AuthenticationViewModel
     @State private var passwordConfirm = ""
     @State private var isPasswordVisible = false
     @State private var isPasswordConfirmVisible = false
+    @State private var showingAlert = false
+    @State private var alert = Alerts.incorrectPassword
     
     var body: some View {
         NavigationStack{
-            GeometryReader { geometry in
+            CenterHorizontalView {
                 VStack{
-                    Text("SegreBox")
-                        .font(.custom("PlusJakartaSans-Bold", size: 31))
-                        .position(x: geometry.size.width / 2)
+                    Images.logoTextImageVertical
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 280)
+                    
                     
                     VStack{
                         HStack{
                             Text("E-mail")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         .frame(maxWidth: 615)
-                        TextFieldComponent(text: $email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
                     }
-                    .padding(29)
+                    .padding(.vertical, 15)
                     
                     VStack{
                         HStack{
                             Text("Password")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         .frame(maxWidth: 615)
                         if isPasswordVisible {
-                            TextFieldComponent(text: $password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
+                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50)
                         } else{
-                            SecureField("Enter your password", text: $password)
+                            SecureField("Enter your password", text: $viewModel.password)
                                 .frame(width: 615, height: 50)
                                 .padding(.leading, 10)
-                                .font(.custom("PlusJakartaSans-Regular", size: 18))
+                                .font(.custom(Fonts.plusJakartaSansRegular, size: 18))
                                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
                                 .textContentType(.none)
                                 .autocapitalization(.none)
@@ -64,11 +67,12 @@ struct RegisterView: View {
                             .padding(.top, -42)
                         }
                     }
+                    .padding(.bottom, 15)
                     
                     VStack{
                         HStack{
                             Text("Password Confirmation")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         .frame(maxWidth: 615)
@@ -78,7 +82,7 @@ struct RegisterView: View {
                             SecureField("Enter your password confirmation", text: $passwordConfirm)
                                 .frame(width: 615, height: 50)
                                 .padding(.leading, 10)
-                                .font(.custom("PlusJakartaSans-Regular", size: 18))
+                                .font(.custom(Fonts.plusJakartaSansRegular, size: 18))
                                 .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
                                 .textContentType(.none)
                                 .autocapitalization(.none)
@@ -96,28 +100,52 @@ struct RegisterView: View {
                             .padding(.top, -42)
                         }
                     }
-                    .padding(29)
+                    .padding(.bottom, 15)
                     
-                    MainButtonComponent(title: "Register"){
-                        
+                    MainButtonComponent(title: "Register", disable: viewModel.validateFieldsAreEmpty()){
+                        if viewModel.validatePassword(passwordConfirm) {
+                            Task {
+                                do {
+                                    try await viewModel.register()
+                                    showingAlert = false
+                                    viewModel.registered = true
+                                } catch {
+                                    print(error)
+                                    showingAlert = true
+                                    alert = Alerts.errorRegister
+                                    viewModel.registered = false
+                                }
+                            }
+                        } else {
+                            showingAlert = true
+                            alert = Alerts.incorrectPassword
+                        }
                     }
                     .padding(.bottom, 15)
                     
                     HStack {
                         Text("Already have an account?")
-                            .font(.custom("PlusJakartaSans-Regular", size: 16))
+                            .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
                         NavigationLink("Login now", destination: LoginView())
-                            .foregroundColor(Color("AdaptiveFontColor"))
-                            .font(.custom("PlusJakartaSans-Bold", size: 16))
+                            .foregroundColor(Colors.adaptiveFontColor)
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 16))
                     }
                 }
             }
+            .navigationDestination(isPresented: $viewModel.registered) {
+                LoginView()
+            }
         }
         .navigationBarBackButtonHidden(true)
+        .alert(isPresented: $showingAlert) {
+            alert
+        }
+        
     }
 }
 
 #Preview {
     RegisterView()
+        .environmentObject(AuthenticationViewModel())
 }
 

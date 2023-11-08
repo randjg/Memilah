@@ -22,13 +22,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct SegreboxApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-//    init() {
-//        FirebaseApp.configure()
-//        print("Configured Firebase!")
-//    }
+    @StateObject private var viewModel = AuthenticationViewModel()
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environmentObject(viewModel)
         }
     }
 }

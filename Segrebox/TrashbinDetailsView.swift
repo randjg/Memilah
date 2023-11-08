@@ -18,7 +18,7 @@ struct TrashbinDetailsView: View {
                 
                 Text("Stadion Akuatik GBK") // nama Lokasi
                     .font(.custom("PlusJakartaSans-Bold", size: 21))
-//                    .foregroundStyle(Color("AdaptiveFontColor"))
+//                    .foregroundStyle(Colors.adaptiveFontColor)
                     .padding(.bottom, 10)
                 
                 Text("111-222-333-444") //UUID
