@@ -25,12 +25,8 @@ struct SegreboxApp: App {
     @StateObject private var viewModel = AuthenticationViewModel()
     var body: some Scene {
         WindowGroup {
-<<<<<<< HEAD:Segrebox/SegreboxApp.swift
-            RootView()
-=======
             LoginView()
                 .environmentObject(viewModel)
->>>>>>> development:Segrebox/Application/SegreboxApp.swift
         }
     }
 }
