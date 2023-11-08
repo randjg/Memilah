@@ -102,7 +102,7 @@ struct LoginView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.authenticated) {
-                
+                RootView()
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -114,4 +114,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environmentObject(AuthenticationViewModel())
 }

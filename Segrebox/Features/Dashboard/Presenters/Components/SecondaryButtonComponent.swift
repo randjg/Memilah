@@ -17,13 +17,13 @@ struct PrimaryButtonStyle: ButtonStyle{
         }){
             configuration.label
                 .font(
-                    Font.custom("PlusJakartaSans-Bold", size: 20)
+                    Font.custom(Fonts.plusJakartaSansBold, size: 20)
                         .weight(.bold)
                 )
                 .padding(.horizontal, 49)
                 .padding(.vertical, 10)
                 .foregroundColor(.white)
-                .background(Color("blue"))
+                .background(Colors.primaryActive)
                 .cornerRadius(8.0)
                 .brightness(configuration.isPressed ? 0.05 : 0.0)
         }
@@ -40,13 +40,13 @@ struct SecondaryButtonStyle: ButtonStyle{
         }){
             configuration.label
                 .font(
-                    Font.custom("PlusJakartaSans-Bold", size: 20)
+                    Font.custom(Fonts.plusJakartaSansBold, size: 20)
                         .weight(.bold)
                 )
                 .padding(.horizontal, 49)
                 .padding(.vertical, 10)
-                .foregroundColor(Color("grey-darker"))
-                .background(Color("blue-light-active"))
+                .foregroundColor(Colors.greyDarker)
+                .background(Colors.blueLightActive)
                 .cornerRadius(8.0)
                 .brightness(configuration.isPressed ? 0.05 : 0.0)
         }
