@@ -7,13 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
 		83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */; };
+=======
+		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
+		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
+		43D8CCE42AEF760B003938F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */; };
+		43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CCF22AEF771C003938F0 /* FirebaseAuth */; };
+		43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CCFE2AEF771C003938F0 /* FirebaseFirestore */; };
+		43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD022AEF771C003938F0 /* FirebaseFirestoreSwift */; };
+		43D8CD192AEF771C003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD182AEF771C003938F0 /* FirebaseStorage */; };
+		43D8CD292AEF7A2D003938F0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD282AEF7A2D003938F0 /* FirebaseAuth */; };
+		43D8CD352AEF7A2D003938F0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */; };
+		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
+		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
+		43E28D9F2AF9E31D0041CF5E /* CenterHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */; };
+		43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */; };
+		43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA52AF9F2C40041CF5E /* UserModel.swift */; };
+		43E28DA82AFA0DB60041CF5E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA72AFA0DB60041CF5E /* Fonts.swift */; };
+		43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DA92AFA0EA60041CF5E /* Images.swift */; };
+		43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAB2AFA102B0041CF5E /* Alerts.swift */; };
+		43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAD2AFA15FF0041CF5E /* Colors.swift */; };
+		83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */; };
+		83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */; };
+		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
+>>>>>>> development
 		83BB3D632AE3E78200300A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D622AE3E78200300A56 /* Assets.xcassets */; };
 		83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */; };
 		83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */; };
 		83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */; };
 		83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */; };
+<<<<<<< HEAD
 		F698D8492AE812E300410952 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D8482AE812E300410952 /* DashboardView.swift */; };
 		F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */; };
 /* End PBXBuildFile section */
@@ -22,14 +47,52 @@
 		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
+=======
+		83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
+		83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */; };
+		83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4392AE8025100AE532E /* LoginView.swift */; };
+		83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E43B2AE8025700AE532E /* RegisterView.swift */; };
+		C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */; };
+		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
+		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
+		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterHorizontalView.swift; sourceTree = "<group>"; };
+		43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		43E28DA52AF9F2C40041CF5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		43E28DA72AFA0DB60041CF5E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		43E28DA92AFA0EA60041CF5E /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		43E28DAB2AFA102B0041CF5E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		43E28DAD2AFA15FF0041CF5E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
+		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
+		83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewEvent.swift; sourceTree = "<group>"; };
+>>>>>>> development
 		83BB3D622AE3E78200300A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83BB3D712AE3ED5A00300A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F698D8482AE812E300410952 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
+=======
+		83C8E4352AE8023100AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonComponent.swift; sourceTree = "<group>"; };
+		83C8E4392AE8025100AE532E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		83C8E43B2AE8025700AE532E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashbinDetailsView.swift; sourceTree = "<group>"; };
+		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
+		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
+		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
+>>>>>>> development
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +100,208 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */,
+				43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */,
+				43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */,
+				43D8CD352AEF7A2D003938F0 /* FirebaseFirestore in Frameworks */,
+				43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */,
+				43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */,
+				43D8CD292AEF7A2D003938F0 /* FirebaseAuth in Frameworks */,
+				43D8CD192AEF771C003938F0 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43BF25322AF8B8F000FA91FF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				43D8CD582AF11FC2003938F0 /* Authentication */,
+				43BF25332AF8BA7400FA91FF /* (Nama Fitur) */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		43BF25332AF8BA7400FA91FF /* (Nama Fitur) */ = {
+			isa = PBXGroup;
+			children = (
+				43BF253B2AF8BD8C00FA91FF /* Presenters */,
+				43BF253A2AF8BD4600FA91FF /* ViewModels */,
+				43BF25392AF8BBFF00FA91FF /* Models */,
+			);
+			path = "(Nama Fitur)";
+			sourceTree = "<group>";
+		};
+		43BF25352AF8BB8800FA91FF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		43BF25382AF8BBE200FA91FF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				43BF25432AF8BE1100FA91FF /* Themes */,
+				43BF25402AF8BDE100FA91FF /* Utilities */,
+				43BF253F2AF8BDC500FA91FF /* Resources */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		43BF25392AF8BBFF00FA91FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43BF253A2AF8BD4600FA91FF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		43BF253B2AF8BD8C00FA91FF /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				43BF253E2AF8BDAA00FA91FF /* Extension */,
+				43BF253D2AF8BDA300FA91FF /* Components */,
+				43BF253C2AF8BD9F00FA91FF /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		43BF253C2AF8BD9F00FA91FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43BF253D2AF8BDA300FA91FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		43BF253E2AF8BDAA00FA91FF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		43BF253F2AF8BDC500FA91FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43BF25402AF8BDE100FA91FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				43BF25412AF8BDEB00FA91FF /* Firebase */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		43BF25412AF8BDEB00FA91FF /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4377F9572AF646DC003C861E /* AuthenticationManager.swift */,
+				43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		43BF25432AF8BE1100FA91FF /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				43E28D9C2AF9E29A0041CF5E /* Presenters */,
+				83BB3D852AE5498D00300A56 /* Fonts */,
+				43E28DA92AFA0EA60041CF5E /* Images.swift */,
+				43E28DAB2AFA102B0041CF5E /* Alerts.swift */,
+				43E28DAD2AFA15FF0041CF5E /* Colors.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		43BF25472AF95EFA00FA91FF /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				43BF25482AF95F0400FA91FF /* Views */,
+				43BF254A2AF95F2700FA91FF /* Components */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		43BF25482AF95F0400FA91FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E4392AE8025100AE532E /* LoginView.swift */,
+				83C8E43B2AE8025700AE532E /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43BF25492AF95F0900FA91FF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				43E28DA02AF9F15D0041CF5E /* AuthenticationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		43BF254A2AF95F2700FA91FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83C8E4352AE8023100AE532E /* TextFieldComponent.swift */,
+				83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		43D8CD582AF11FC2003938F0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				43E28DA42AF9F2BB0041CF5E /* Models */,
+				43BF25472AF95EFA00FA91FF /* Presenters */,
+				43BF25492AF95F0900FA91FF /* ViewModels */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		43E28D9C2AF9E29A0041CF5E /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				43E28D9D2AF9E2F10041CF5E /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		43E28D9D2AF9E2F10041CF5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43E28DA42AF9F2BB0041CF5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43E28DA52AF9F2C40041CF5E /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		83BB3D522AE3E77F00300A56 = {
 			isa = PBXGroup;
 			children = (
@@ -62,14 +321,25 @@
 		83BB3D5D2AE3E77F00300A56 /* Segrebox */ = {
 			isa = PBXGroup;
 			children = (
-				F698D84A2AE8BA2500410952 /* Buttons */,
-				83BB3D852AE5498D00300A56 /* Font */,
+				43BF25352AF8BB8800FA91FF /* Application */,
+				43BF25322AF8B8F000FA91FF /* Features */,
+				43BF25382AF8BBE200FA91FF /* Core */,
+				83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */,
+				C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */,
+				C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */,
+				C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */,
+				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
+				431924902AEAC37A0062312A /* CardComponent.swift */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
+<<<<<<< HEAD
 				83BB3D5E2AE3E77F00300A56 /* SegreboxApp.swift */,
 				F698D8482AE812E300410952 /* DashboardView.swift */,
 				83BB3D622AE3E78200300A56 /* Assets.xcassets */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
 				43E28DB32AFB5D020041CF5E /* RootView.swift */,
+=======
+				83BB3D642AE3E78200300A56 /* Preview Content */,
+>>>>>>> development
 			);
 			path = Segrebox;
 			sourceTree = "<group>";
@@ -82,22 +352,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		83BB3D852AE5498D00300A56 /* Font */ = {
+		83BB3D852AE5498D00300A56 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				83BB3D7B2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf */,
 				83BB3D812AE5494600300A56 /* PlusJakartaSans-Bold.ttf */,
 				83BB3D832AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf */,
+				83B6F7B12AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf */,
+				43E28DA72AFA0DB60041CF5E /* Fonts.swift */,
 			);
-			path = Font;
-			sourceTree = "<group>";
-		};
-		F698D84A2AE8BA2500410952 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				F698D84D2AE8BB4200410952 /* SecondaryButtonComponent.swift */,
-			);
-			path = Buttons;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +380,16 @@
 			dependencies = (
 			);
 			name = Segrebox;
+			packageProductDependencies = (
+				43D8CCF22AEF771C003938F0 /* FirebaseAuth */,
+				43D8CCFE2AEF771C003938F0 /* FirebaseFirestore */,
+				43D8CD022AEF771C003938F0 /* FirebaseFirestoreSwift */,
+				43D8CD182AEF771C003938F0 /* FirebaseStorage */,
+				43D8CD282AEF7A2D003938F0 /* FirebaseAuth */,
+				43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */,
+				43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */,
+				43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */,
+			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Segrebox.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +418,9 @@
 				Base,
 			);
 			mainGroup = 83BB3D522AE3E77F00300A56;
+			packageReferences = (
+				43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83BB3D5C2AE3E77F00300A56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,11 +435,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B6F7B22AEAAECA001B5EB5 /* PlusJakartaSans-Italic.ttf in Resources */,
 				83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */,
 				83BB3D822AE5494600300A56 /* PlusJakartaSans-Bold.ttf in Resources */,
 				83BB3D842AE5494E00300A56 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				83BB3D7C2AE3F33100300A56 /* PlusJakartaSans-Regular.ttf in Resources */,
 				83BB3D632AE3E78200300A56 /* Assets.xcassets in Resources */,
+				43D8CCE42AEF760B003938F0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +452,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				F698D84E2AE8BB4200410952 /* SecondaryButtonComponent.swift in Sources */,
 				F698D8492AE812E300410952 /* DashboardView.swift in Sources */,
 				83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */,
 				43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */,
+=======
+				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
+				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
+				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
+				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
+				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
+				43E28D9F2AF9E31D0041CF5E /* CenterHorizontalView.swift in Sources */,
+				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
+				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
+				431924912AEAC37A0062312A /* CardComponent.swift in Sources */,
+				C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */,
+				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */,
+				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
+				43E28DA82AFA0DB60041CF5E /* Fonts.swift in Sources */,
+				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,
+				83BB3D5F2AE3E77F00300A56 /* SegreboxApp.swift in Sources */,
+				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
+				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
+				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
+>>>>>>> development
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Segrebox/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FYPQ879D;
+				DEVELOPMENT_TEAM = 3SC4Z3N76K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Segrebox/Info.plist;
@@ -319,6 +621,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Segrebox/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FYPQ879D;
+				DEVELOPMENT_TEAM = 3SC4Z3N76K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Segrebox/Info.plist;
@@ -349,6 +652,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +688,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.16.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43D8CCF22AEF771C003938F0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		43D8CCFE2AEF771C003938F0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		43D8CD022AEF771C003938F0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		43D8CD182AEF771C003938F0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		43D8CD282AEF7A2D003938F0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83BB3D532AE3E77F00300A56 /* Project object */;
 }
