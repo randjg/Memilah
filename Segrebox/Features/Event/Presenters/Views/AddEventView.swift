@@ -18,7 +18,7 @@ struct AddEventView: View {
                 VStack(alignment: .leading){
                     HStack{
                         Text("Event Name")
-                            .font(.custom("PlusJakartaSans-Bold", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             .padding(.bottom, 41)
                             
     //                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
@@ -30,7 +30,7 @@ struct AddEventView: View {
                     }
                     HStack{
                         Text("Event Description")
-                            .font(.custom("PlusJakartaSans-Bold", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             .padding(.bottom, 41)
                         
                         VStack {
@@ -44,7 +44,7 @@ struct AddEventView: View {
                             
                             HStack {
                                 Text("max. 150 characters")
-                                    .font(.custom("PlusJakartaSans-Regular", size: 14))
+                                    .font(.custom(Fonts.plusJakartaSansRegular, size: 14))
                                     .foregroundStyle(Color.gray)
                                 Spacer()
                             }
@@ -56,7 +56,7 @@ struct AddEventView: View {
                     HStack{
                         VStack {
                             Text("Event Location")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             .padding(.bottom, 41)
                         }
                         VStack {
@@ -68,7 +68,7 @@ struct AddEventView: View {
                     HStack {
                         VStack {
                             Text("Event Date")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         

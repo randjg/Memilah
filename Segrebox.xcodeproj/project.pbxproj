@@ -116,8 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				434FFE4D2AFBD06E00D82548 /* Presenters */,
-				434FFE502AFBD17600D82548 /* ViewModels */,
-				434FFE4C2AFBD06800D82548 /* Models */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -142,6 +140,8 @@
 		434FFE4E2AFBD0D300D82548 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				434FFE4C2AFBD06800D82548 /* Models */,
+				434FFE502AFBD17600D82548 /* ViewModels */,
 				434FFE5E2AFBE7D200D82548 /* Presenters */,
 			);
 			path = Event;

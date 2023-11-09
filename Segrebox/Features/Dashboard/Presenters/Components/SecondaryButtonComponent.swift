@@ -11,6 +11,7 @@ import Foundation
 struct PrimaryButtonStyle: ButtonStyle{
     var textPlaceholder: String
     
+    
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
             
