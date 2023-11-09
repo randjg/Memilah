@@ -36,10 +36,12 @@ struct MapComponent: View {
                             
                             TextField("Search", text: $mapData.searchTxt)
                                 .font(.custom("PlusJakartaSans-Regular", size: 15))
+                                
                         }
                         .padding(.vertical, 10)
                         .padding(.horizontal)
                         .background(Color.white.opacity(0.8).cornerRadius(10))
+                        .padding(.top, -70)
                         Spacer()
                         
                         if !mapData.places.isEmpty && mapData.searchTxt != ""{

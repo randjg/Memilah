@@ -25,8 +25,9 @@ struct SegreboxApp: App {
     @StateObject private var viewModel = AuthenticationViewModel()
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environmentObject(viewModel)
+//            LoginView()
+//                .environmentObject(viewModel)
+            AddEventView()
         }
     }
 }
