@@ -7,22 +7,26 @@
 
 import SwiftUI
 import CoreLocation
-
+import MapKit
 struct MapComponent: View {
     
     @StateObject var mapData = MapViewModel()
     
+    
     @State var locationManager = CLLocationManager()
     
     @State var isSearchFieldVisible: Bool
-    
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Center of the map
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05) // Zoom level
+    )
     var width: CGFloat
     var height: CGFloat
 //    var search: Bool
     
     var body: some View {
         ZStack{
-            MapView()
+            MapView(region: $region)
                 .environmentObject(mapData)
                 .frame(width: width, height: height)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -40,6 +44,7 @@ struct MapComponent: View {
                         .padding(.vertical, 10)
                         .padding(.horizontal)
                         .background(Color.white.opacity(0.8).cornerRadius(10))
+                        .padding(.top, -70)
                         Spacer()
                         
                         if !mapData.places.isEmpty && mapData.searchTxt != ""{
@@ -60,6 +65,7 @@ struct MapComponent: View {
                                 .padding(.top)
                             }
                             .background(Color.white)
+                            .frame(height: 200)
                         }
                     }
                 }

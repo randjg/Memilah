@@ -15,20 +15,15 @@ struct AddEventView: View {
     var body: some View {
         ScrollView {
             HStack {
-                VStack(alignment: .leading){
-                    HStack{
+                Grid(alignment: .leading, horizontalSpacing: 30, verticalSpacing: 41) {
+                    GridRow {
                         Text("Event Name")
-                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            .padding(.bottom, 41)
-                            
-    //                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                            .font(.custom("PlusJakartaSans-Bold", size: 21))
                         
                         TextFieldComponent(text: $eventname, placeholder: "Add an event name", keyboardType: .default, returnKeyType: .next, width: 827, height: 40, axis: .vertical)
-                            .padding(.bottom, 41)
-                            .padding(.leading, 60)
-    //                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                     }
-                    HStack{
+                    
+                    GridRow {
                         Text("Event Description")
                             .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             .padding(.bottom, 41)
@@ -53,29 +48,20 @@ struct AddEventView: View {
                         .padding(.bottom, 12)
                         .padding(.leading, 11)
                     }
-                    HStack{
-                        VStack {
-                            Text("Event Location")
-                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            .padding(.bottom, 41)
-                        }
-                        VStack {
-                            MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
-                                .padding(.leading, 35)
-                        }
-                        .padding(.bottom, 41)
+                    
+                    GridRow{
+                        Text("Event Location")
+                            .font(.custom("PlusJakartaSans-Bold", size: 21))
+                        MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
                     }
-                    HStack {
+                    
+                    GridRow {
                         VStack {
                             Text("Event Date")
                                 .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
-                        
-                        VStack{
-                            CalendarPickerComponent()
-                                .padding(.leading, 70)
-                        }
+                        CalendarPickerComponent()
                     }
                 }
             }

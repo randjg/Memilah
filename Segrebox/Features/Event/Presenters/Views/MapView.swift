@@ -12,6 +12,8 @@ struct MapView: UIViewRepresentable {
     
     @EnvironmentObject var mapData: MapViewModel
     
+    @Binding var region: MKCoordinateRegion
+    
     func makeCoordinator() -> Coordinator {
         return MapView.Coordinator()
     }
@@ -21,6 +23,8 @@ struct MapView: UIViewRepresentable {
         
         view.showsUserLocation = true
         view.delegate = context.coordinator
+        
+        view.setRegion(region, animated: true)
         
         return view
     }
@@ -47,7 +51,7 @@ struct MapView: UIViewRepresentable {
                     pinAnnotation?.annotation = annotation
                 }
                 
-                pinAnnotation?.image = UIImage(named: "trashbin")
+                pinAnnotation?.image = UIImage(named: "TrashBin")
                 
                 
                 return pinAnnotation
