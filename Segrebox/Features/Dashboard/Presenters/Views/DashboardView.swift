@@ -8,54 +8,70 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @State private var toAddEvent = false
+    @State private var toEditEvent = false
+    
+    private func addEventAction(){
+        toAddEvent = true
+        print("Add Event tapped")
+    }
+    
+    private func editEventAction(){
+        toEditEvent = true
+        print("Edit Event tapped")
+    }
+    
+    
     var body: some View {
         
-        GeometryReader{ geometry in
-            
-            VStack(alignment: .leading){
-                //MARK: Title
-                Text("Dashboard")
-                    .font(
-                        Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                            .weight(.bold)
-                    )
-                    .padding(.bottom, 23)
+        NavigationStack {
+            GeometryReader{ geometry in
                 
-                
-                HStack(spacing: 25){
+                VStack(alignment: .leading){
+                    //MARK: Title
+                    Text("Dashboard")
+                        .font(
+                            Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                .weight(.bold)
+                        )
+                        .padding(.bottom, 23)
                     
-                    //MARK: Add Event button
-                    Button("Add Event"){
+                    HStack(spacing: 25){
+                        //MARK: Add Event button
+                        Button("Add Event"){
+                           addEventAction()
+                        }
+                        .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
+                        .padding(.bottom, 657)
                         
-                    }
-                    .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me"))
-                    .padding(.bottom, 657)
-                    
-                    //MARK: Edit events
-                    Button("Edit Event"){
-                        
-                    }
-                    .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event"))
-                    .padding(.bottom, 657)
+                        //MARK: Edit events
+                        Button("Edit Event"){
+                            editEventAction()
+                        }
+                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+                        .padding(.bottom, 657)
 
-                    
+                        
+                    }
                 }
-            }
-            .padding(.top, 5)
-            .padding(.leading, 79)
+                .padding(.top, 5)
+                .padding(.leading, 79)
 
-            
-            //MARK: Background
-            Rectangle()
-                .foregroundColor(.clear)
-                .background(Color(red: 0.93, green: 0.95, blue: 0.96))
-                .cornerRadius(20.0)
-                .frame(width: 1194, height: 631)
-                .padding(.top, 185)
                 
-            
+                //MARK: Background
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                    .cornerRadius(20.0)
+                    .frame(width: 1194, height: 631)
+                    .padding(.top, 185)
+                    
+                
+            }
+            .navigationDestination(isPresented: $toAddEvent) {
+                AddEventView()
+            }
         }
-        
     }
 }
 

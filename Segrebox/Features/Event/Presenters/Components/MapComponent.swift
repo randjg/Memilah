@@ -36,8 +36,7 @@ struct MapComponent: View {
                                 .foregroundStyle(Color.gray)
                             
                             TextField("Search", text: $mapData.searchTxt)
-                                .font(.custom("PlusJakartaSans-Regular", size: 15))
-                                
+                                .font(.custom(Fonts.plusJakartaSansRegular, size: 15))
                         }
                         .padding(.vertical, 10)
                         .padding(.horizontal)

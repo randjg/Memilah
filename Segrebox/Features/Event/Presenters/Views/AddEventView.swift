@@ -25,7 +25,7 @@ struct AddEventView: View {
                     
                     GridRow {
                         Text("Event Description")
-                            .font(.custom("PlusJakartaSans-Bold", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             .padding(.bottom, 41)
                         
                         VStack {
@@ -39,11 +39,24 @@ struct AddEventView: View {
                             
                             HStack {
                                 Text("max. 150 characters")
-                                    .font(.custom("PlusJakartaSans-Regular", size: 14))
+                                    .font(.custom(Fonts.plusJakartaSansRegular, size: 14))
                                     .foregroundStyle(Color.gray)
                                 Spacer()
                             }
                             .frame(width: 827)
+                        }
+                        .padding(.bottom, 12)
+                        .padding(.leading, 11)
+                    }
+                    HStack{
+                        VStack {
+                            Text("Event Location")
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
+                            .padding(.bottom, 41)
+                        }
+                        VStack {
+                            MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
+                                .padding(.leading, 35)
                         }
                     }
                     .padding(.bottom, 10)
@@ -57,7 +70,7 @@ struct AddEventView: View {
                     GridRow {
                         VStack {
                             Text("Event Date")
-                                .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                             Spacer()
                         }
                         CalendarPickerComponent()
