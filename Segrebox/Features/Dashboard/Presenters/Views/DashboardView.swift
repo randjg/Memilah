@@ -10,6 +10,18 @@ import SwiftUI
 struct DashboardView: View {
     @State private var toAddEvent = false
     @State private var toEditEvent = false
+    
+    private func addEventAction(){
+        toAddEvent = true
+        print("Add Event tapped")
+    }
+    
+    private func editEventAction(){
+        toEditEvent = true
+        print("Edit Event tapped")
+    }
+    
+    
     var body: some View {
         
         NavigationStack {
@@ -24,22 +36,19 @@ struct DashboardView: View {
                         )
                         .padding(.bottom, 23)
                     
-                    
                     HStack(spacing: 25){
-                        
                         //MARK: Add Event button
                         Button("Add Event"){
-                            toAddEvent = true
-                            print("test")
+                           addEventAction()
                         }
-                        .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me"))
+                        .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
                         .padding(.bottom, 657)
                         
                         //MARK: Edit events
                         Button("Edit Event"){
-                            toEditEvent = true
+                            editEventAction()
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event"))
+                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
                         .padding(.bottom, 657)
 
                         

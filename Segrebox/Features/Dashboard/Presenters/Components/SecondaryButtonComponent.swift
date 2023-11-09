@@ -10,11 +10,11 @@ import Foundation
 
 struct PrimaryButtonStyle: ButtonStyle{
     var textPlaceholder: String
-    
+    var action: () -> Void
     
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
-            
+            action()
         }){
             configuration.label
                 .font(
@@ -34,10 +34,11 @@ struct PrimaryButtonStyle: ButtonStyle{
 
 struct SecondaryButtonStyle: ButtonStyle{
     var textPlaceholder: String
+    var action: () -> Void
     
     func makeBody(configuration: Configuration) -> some View {
         Button(action: {
-            
+            action()
         }){
             configuration.label
                 .font(
