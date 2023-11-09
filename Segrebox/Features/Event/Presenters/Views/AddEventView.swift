@@ -48,18 +48,6 @@ struct AddEventView: View {
                         .padding(.bottom, 12)
                         .padding(.leading, 11)
                     }
-                    HStack{
-                        VStack {
-                            Text("Event Location")
-                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            .padding(.bottom, 41)
-                        }
-                        VStack {
-                            MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
-                                .padding(.leading, 35)
-                        }
-                    }
-                    .padding(.bottom, 10)
                     
                     GridRow{
                         Text("Event Location")
