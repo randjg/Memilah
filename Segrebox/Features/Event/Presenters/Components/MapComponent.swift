@@ -12,6 +12,7 @@ struct MapComponent: View {
     
     @StateObject var mapData = MapViewModel()
     
+    
     @State var locationManager = CLLocationManager()
     
     @State var isSearchFieldVisible: Bool
@@ -62,6 +63,7 @@ struct MapComponent: View {
                                 .padding(.top)
                             }
                             .background(Color.white)
+                            .frame(height: 200)
                         }
                     }
                 }
