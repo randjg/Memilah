@@ -45,14 +45,12 @@ struct AddEventView: View {
                             }
                             .frame(width: 827)
                         }
-                        .padding(.bottom, 12)
-                        .padding(.leading, 11)
                     }
                     
                     GridRow{
                         Text("Event Location")
                             .font(.custom("PlusJakartaSans-Bold", size: 21))
-                        MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
+                        MapComponent(isSearchFieldVisible: true, width: 827, height: 250)
                     }
                     
                     GridRow {
