@@ -12,8 +12,6 @@ struct MapView: UIViewRepresentable {
     
     @EnvironmentObject var mapData: MapViewModel
     
-    @Binding var region: MKCoordinateRegion
-    
     func makeCoordinator() -> Coordinator {
         return MapView.Coordinator()
     }
@@ -23,9 +21,6 @@ struct MapView: UIViewRepresentable {
         
         view.showsUserLocation = true
         view.delegate = context.coordinator
-        
-        view.setRegion(region, animated: true)
-        
         return view
     }
     

@@ -18,14 +18,14 @@ struct TextFieldComponent: View {
 
     var body: some View {
         TextField(placeholder, text: $text, axis: axis)
-            .frame(width: width, height: height)
             .padding(.leading, 10)
             .font(.custom("PlusJakartaSans-Regular", size: 21))
-            .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
             .keyboardType(keyboardType)
             .textContentType(.none)
             .autocapitalization(.none)
             .disableAutocorrection(true)
+            .frame(width: width, height: height)
+            .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
             .returnKeyType(returnKeyType)
 
     }

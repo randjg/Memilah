@@ -9,18 +9,19 @@ import SwiftUI
 
 struct AddEventView: View {
     
-    @State private var eventname = ""
-    @State private var eventdesc = ""
+    @StateObject var eventViewModel = EventViewModel()
+    @StateObject var mapViewModel = MapViewModel()
+    
     
     var body: some View {
         ScrollView {
             HStack {
-                Grid(alignment: .leading, horizontalSpacing: 30, verticalSpacing: 41) {
+                Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
-                            .font(.custom("PlusJakartaSans-Bold", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                         
-                        TextFieldComponent(text: $eventname, placeholder: "Add an event name", keyboardType: .default, returnKeyType: .next, width: 827, height: 40, axis: .vertical)
+                        TextFieldComponent(text: $eventViewModel.name, placeholder: "Add an event name", keyboardType: .default, returnKeyType: .next, width: 827, height: 40, axis: .vertical)
                     }
                     
                     GridRow {
@@ -29,11 +30,10 @@ struct AddEventView: View {
                             .padding(.bottom, 41)
                         
                         VStack {
-                            TextFieldComponent(text: $eventdesc, placeholder: "Add an event description", keyboardType: .default, returnKeyType: .next, width: 827, height: 80,axis: .vertical)
-        //                        .multilineTextAlignment(.leading)
-                                .onChange(of: eventdesc) {
-                                    if eventdesc.count > 150 {
-                                        eventdesc = String(eventdesc.prefix(150))
+                            TextFieldComponent(text: $eventViewModel.description, placeholder: "Add an event description", keyboardType: .default, returnKeyType: .next, width: 827, height: 80,axis: .vertical)
+                                .onChange(of: eventViewModel.description) {
+                                    if eventViewModel.description.count > 150 {
+                                        eventViewModel.description = String(eventViewModel.description.prefix(150))
                                     }
                                 }
                             
@@ -43,25 +43,30 @@ struct AddEventView: View {
                                     .foregroundStyle(Color.gray)
                                 Spacer()
                             }
-                            .frame(width: 827)
+                            .frame(maxWidth: 827)
                         }
-                        .padding(.bottom, 12)
-                        .padding(.leading, 11)
                     }
                     
                     GridRow{
                         Text("Event Location")
-                            .font(.custom("PlusJakartaSans-Bold", size: 21))
-                        MapComponent(isSearchFieldVisible: true, width: 827, height: 133)
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
+                        MapComponent(isSearchFieldVisible: true, width: 827, height: 250)
+                            .environmentObject(mapViewModel)
                     }
                     
                     GridRow {
-                        VStack {
-                            Text("Event Date")
-                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            Spacer()
+                        Text("Event Date")
+                            .font(.custom(Fonts.plusJakartaSansBold, size: 21))
+                        CalendarPickerComponent(startDate: $eventViewModel.dateStart, endDate: $eventViewModel.dateEnd)
+                    }
+                    
+                    GridRow {
+                        Button {
+                            eventViewModel.addEvent(location: mapViewModel.searchTxt)
+                        } label: {
+                            Text("Save Event")
                         }
-                        CalendarPickerComponent()
+
                     }
                 }
             }
