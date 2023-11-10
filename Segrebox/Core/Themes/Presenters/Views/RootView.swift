@@ -32,7 +32,10 @@ struct RootView: View {
                 
             }
             DashboardView()
+//                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+//                .ignoresSafeArea()
         }
+        .ignoresSafeArea()
     }
 }
 

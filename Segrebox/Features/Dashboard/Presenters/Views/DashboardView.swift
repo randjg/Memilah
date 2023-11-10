@@ -29,45 +29,59 @@ struct DashboardView: View {
                 
                 VStack(alignment: .leading){
                     //MARK: Title
-                    Text("Dashboard")
-                        .font(
-                            Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                                .weight(.bold)
-                        )
-                        .padding(.bottom, 23)
                     
-                    HStack(spacing: 25){
-                        //MARK: Add Event button
-                        Button("Add Event"){
-                           addEventAction()
-                        }
-                        .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
-                        .padding(.bottom, 657)
+                    Group {
+                        Text("Dashboard")
+                            .font(
+                                Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                    .weight(.bold)
+                            )
+                            .padding(.bottom, 23)
                         
-                        //MARK: Edit events
-                        Button("Edit Event"){
-                            editEventAction()
+                        HStack(spacing: 25){
+                            //MARK: Add Event button
+                            Button("Add Event"){
+                                addEventAction()
+                            }
+                            .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
+                            
+                            //MARK: Edit events
+                            Button("Edit Event"){
+                                editEventAction()
+                            }
+                            .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
-                        .padding(.bottom, 657)
-
+                        .padding(.bottom, 26)
+                    }
+                    .padding(.leading, 79)
+                    
+                    ZStack{
+                        //MARK: Background
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .background(Colors.blueLightActive)
+                            .cornerRadius(20.0)
                         
+                        //MARK: Event Card Component
+                        
+                        Grid(){
+                            GridRow{
+                                EventCardComponent()
+                                EventCardComponent()
+                                EventCardComponent()
+                            }
+                            GridRow{
+                                EventCardComponent()
+                                EventCardComponent()
+                                EventCardComponent()
+                            }
+                        }
+                        .frame(height: 631)
                     }
                 }
-                .padding(.top, 5)
-                .padding(.leading, 79)
-
-                
-                //MARK: Background
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .background(Color(red: 0.93, green: 0.95, blue: 0.96))
-                    .cornerRadius(20.0)
-                    .frame(width: 1194, height: 631)
-                    .padding(.top, 185)
-                    
-                
+                .padding(.top, 55)
             }
+            .ignoresSafeArea()
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
             }

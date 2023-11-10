@@ -9,10 +9,17 @@ import SwiftUI
 
 struct Colors {
     static let primaryActive = Color("BlueNormal")
-    static let blueNormal = Color("BlueNormal")
-    static let blueLightActive = Color("BlueLightActive")
     static let primaryInActive = Color("GreyNormal")
-    static let greyDarker = Color("GreyDarker")
+
     static let adaptiveFontColor = Color("AdaptiveFontColor")
     static let adaptiveFontColorCard = Color("AdaptiveFontColorCard")
+    
+    //MARK: Blue
+    static let blueNormal = Color("BlueNormal")
+    static let blueLightActive = Color("BlueLightActive")
+    static let blueLight = Color("BlueLight")
+    
+    //MARK: Grey
+    static let greyDarker = Color("GreyDarker")
+    static let greyCardBorder = Color("GreyCardBorder")
 }

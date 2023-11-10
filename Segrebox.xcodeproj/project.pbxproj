@@ -50,6 +50,7 @@
 		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
+		F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
+		F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +142,6 @@
 		434FFE4E2AFBD0D300D82548 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				434FFE502AFBD17600D82548 /* ViewModels */,
 				434FFE4C2AFBD06800D82548 /* Models */,
 				434FFE502AFBD17600D82548 /* ViewModels */,
 				434FFE5E2AFBE7D200D82548 /* Presenters */,
@@ -175,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */,
+				F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -519,6 +521,7 @@
 				83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */,
 				831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */,
 				83C8E4432AE8F6E800AE532E /* MapViewModel.swift in Sources */,
+				F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */,
 				83C8E4482AE9713B00AE532E /* Place.swift in Sources */,
 				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
 				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
