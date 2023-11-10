@@ -23,6 +23,7 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     //searched place
     @Published var places : [Place] = []
     
+    
     //focus
     func focusLocation(){
         
@@ -69,6 +70,7 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
         
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+        searchTxt = pointAnnotation.title ?? searchTxt
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

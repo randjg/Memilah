@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct CalendarPickerComponent: View {
-    @State private var selectedDate = Date()
+    @Binding var startDate:Date
+    @Binding var endDate:Date
     
     var body: some View {
-        ZStack {
+        VStack {
+            DatePicker(selection: $startDate, displayedComponents: .date) {
+                Text("Start Date")
+            }
+            .onChange(of: startDate) { oldValue, newValue in
+                endDate = startDate
+            }
             
-            RoundedRectangle(cornerRadius: 13)
-                .frame(width: 320, height: 310)
-                .foregroundColor(Color.white)
-                .shadow(color: Color.black.opacity(0.2), radius: 30)
             
-            DatePicker(
-                "Pick a date",
-                selection: $selectedDate,
-                displayedComponents: .date
-            )
-            .frame(width: 305, height: 305)
-            .datePickerStyle(GraphicalDatePickerStyle())
+            DatePicker(selection: $endDate, in: startDate... , displayedComponents: .date) {
+                Text("End Date")
+            }
         }
+        .frame(width: 300)
+        
     }
 }
 
 #Preview {
-    CalendarPickerComponent()
+    CalendarPickerComponent(startDate: .constant(Date()), endDate: .constant(Date()))
 }
 

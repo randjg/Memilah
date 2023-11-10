@@ -10,8 +10,7 @@ import CoreLocation
 import MapKit
 struct MapComponent: View {
     
-    @StateObject var mapData = MapViewModel()
-    
+    @EnvironmentObject var mapData: MapViewModel
     
     @State var locationManager = CLLocationManager()
     
@@ -114,4 +113,5 @@ struct MapComponent: View {
 
 #Preview {
     MapComponent(isSearchFieldVisible: true, width: 900, height: 300)
+        .environmentObject(MapViewModel())
 }

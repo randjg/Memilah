@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
+		431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */; };
+		431BAC0E2AFD26020004BF0F /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0D2AFD26020004BF0F /* EventManager.swift */; };
 		434FFE592AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */; };
 		434FFE5A2AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE552AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf */; };
 		434FFE5B2AFBE11B00D82548 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434FFE562AFBE11B00D82548 /* Fonts.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		431BAC0D2AFD26020004BF0F /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		434FFE552AFBE11B00D82548 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		434FFE562AFBE11B00D82548 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -140,7 +144,6 @@
 		434FFE4E2AFBD0D300D82548 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				434FFE502AFBD17600D82548 /* ViewModels */,
 				434FFE4C2AFBD06800D82548 /* Models */,
 				434FFE502AFBD17600D82548 /* ViewModels */,
 				434FFE5E2AFBE7D200D82548 /* Presenters */,
@@ -159,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				83C8E4422AE8F6E800AE532E /* MapViewModel.swift */,
+				431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -275,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				4377F9572AF646DC003C861E /* AuthenticationManager.swift */,
+				431BAC0D2AFD26020004BF0F /* EventManager.swift */,
 				43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */,
 			);
 			path = Firebase;
@@ -506,6 +511,7 @@
 				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
 				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
 				431924912AEAC37A0062312A /* CardComponent.swift in Sources */,
+				431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */,
 				C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
 				43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */,
@@ -516,6 +522,7 @@
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
 				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
+				431BAC0E2AFD26020004BF0F /* EventManager.swift in Sources */,
 				83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */,
 				831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */,
 				83C8E4432AE8F6E800AE532E /* MapViewModel.swift in Sources */,
