@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @StateObject var viewModel = DashboardViewModel()
     @State private var toAddEvent = false
     @State private var toEditEvent = false
-    @State private var isSideBarOpen = false
-    
-    @State private var sideBarWidth: CGFloat = 0
-    @State private var dashboardWidth: CGFloat = 0
     
     private func addEventAction(){
         toAddEvent = true
@@ -25,21 +22,24 @@ struct DashboardView: View {
         print("Edit Event tapped")
     }
     
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 300))
+    ]
     
     var body: some View {
         
-//        NavigationStack {
+        NavigationStack {
             GeometryReader{ geometry in
-                
                 VStack(alignment: .leading){
                     //MARK: Title
+                    
                     Group {
-                            Text("Dashboard")
-                                .font(
-                                    Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                                        .weight(.bold)
-                                )
-                                .padding(.bottom, 15)
+                        Text("Dashboard")
+                            .font(
+                                Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                    .weight(.bold)
+                            )
+                            .padding(.bottom, 23)
                         
                         HStack(spacing: 25){
                             //MARK: Add Event button
@@ -54,11 +54,11 @@ struct DashboardView: View {
                             }
                             .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
                         }
-                        .padding(.bottom, 52)
+                        .padding(.bottom, 26)
                     }
                     .padding(.leading, 79)
                     
-                    ZStack{
+                    ZStack() {
                         //MARK: Background
                         Rectangle()
                             .foregroundColor(.clear)
@@ -66,43 +66,28 @@ struct DashboardView: View {
                             .cornerRadius(20.0)
                         
                         //MARK: Event Card Component
-                        ScrollView(.vertical){
-                            Grid(){
-                                GridRow{
+                        ScrollView {
+                            LazyVGrid(columns: adaptiveColumns, spacing: 30) {
+                                ForEach(viewModel.events, id: \.documentID) { event in
                                     EventCardComponent()
-                                    
                                     EventCardComponent()
-                                    
-                                    EventCardComponent()
-                                    
-                                }
-                                GridRow{
-                                    EventCardComponent()
-                                    
-                                    EventCardComponent()
-                                    
-                                    EventCardComponent()
-                                    
                                 }
                             }
-                            .frame(height: 631)
+                        
                         }
+                        .padding(.vertical, 30)
                     }
                 }
                 .padding(.top, 55)
-                .onAppear{
-                    //Width of sidebar
-                    sideBarWidth = geometry.size.width - 200
-                    
-                    dashboardWidth = geometry.size.width - sideBarWidth
+                .navigationDestination(isPresented: $toAddEvent) {
+                    AddEventView()
                 }
             }
             .ignoresSafeArea()
-            .navigationDestination(isPresented: $toAddEvent) {
-                AddEventView()
-            }
-//        }
-        
+        }
+        .task {
+            try? await viewModel.getEvents()
+        }
     }
 }
 
