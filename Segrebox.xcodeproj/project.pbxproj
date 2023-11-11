@@ -53,6 +53,7 @@
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
 		F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */; };
+		F6508EA62AFF7A32009C7A45 /* TestNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
 		F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
+		F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +361,7 @@
 			children = (
 				43E28D9E2AF9E31D0041CF5E /* CenterHorizontalView.swift */,
 				43E28DB32AFB5D020041CF5E /* RootView.swift */,
+				F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */,
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
+				F6508EA62AFF7A32009C7A45 /* TestNavigationView.swift in Sources */,
 				43E28DA62AF9F2C40041CF5E /* UserModel.swift in Sources */,
 				431BAC0E2AFD26020004BF0F /* EventManager.swift in Sources */,
 				83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */,

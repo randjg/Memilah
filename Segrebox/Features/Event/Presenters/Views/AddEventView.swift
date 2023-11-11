@@ -15,7 +15,7 @@ struct AddEventView: View {
     
     var body: some View {
         ScrollView {
-            HStack {
+//            HStack {
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
@@ -69,7 +69,7 @@ struct AddEventView: View {
 
                     }
                 }
-            }
+//            }
         }
     }
 }

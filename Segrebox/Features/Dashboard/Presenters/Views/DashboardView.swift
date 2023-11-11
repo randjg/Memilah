@@ -10,6 +10,10 @@ import SwiftUI
 struct DashboardView: View {
     @State private var toAddEvent = false
     @State private var toEditEvent = false
+    @State private var isSideBarOpen = false
+    
+    @State private var sideBarWidth: CGFloat = 0
+    @State private var dashboardWidth: CGFloat = 0
     
     private func addEventAction(){
         toAddEvent = true
@@ -24,19 +28,18 @@ struct DashboardView: View {
     
     var body: some View {
         
-        NavigationStack {
+//        NavigationStack {
             GeometryReader{ geometry in
                 
                 VStack(alignment: .leading){
                     //MARK: Title
-                    
                     Group {
-                        Text("Dashboard")
-                            .font(
-                                Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                                    .weight(.bold)
-                            )
-                            .padding(.bottom, 23)
+                            Text("Dashboard")
+                                .font(
+                                    Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                        .weight(.bold)
+                                )
+                                .padding(.bottom, 15)
                         
                         HStack(spacing: 25){
                             //MARK: Add Event button
@@ -51,7 +54,7 @@ struct DashboardView: View {
                             }
                             .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
                         }
-                        .padding(.bottom, 26)
+                        .padding(.bottom, 52)
                     }
                     .padding(.leading, 79)
                     
@@ -63,29 +66,43 @@ struct DashboardView: View {
                             .cornerRadius(20.0)
                         
                         //MARK: Event Card Component
-                        
-                        Grid(){
-                            GridRow{
-                                EventCardComponent()
-                                EventCardComponent()
-                                EventCardComponent()
+                        ScrollView(.vertical){
+                            Grid(){
+                                GridRow{
+                                    EventCardComponent()
+                                    
+                                    EventCardComponent()
+                                    
+                                    EventCardComponent()
+                                    
+                                }
+                                GridRow{
+                                    EventCardComponent()
+                                    
+                                    EventCardComponent()
+                                    
+                                    EventCardComponent()
+                                    
+                                }
                             }
-                            GridRow{
-                                EventCardComponent()
-                                EventCardComponent()
-                                EventCardComponent()
-                            }
+                            .frame(height: 631)
                         }
-                        .frame(height: 631)
                     }
                 }
                 .padding(.top, 55)
+                .onAppear{
+                    //Width of sidebar
+                    sideBarWidth = geometry.size.width - 200
+                    
+                    dashboardWidth = geometry.size.width - sideBarWidth
+                }
             }
             .ignoresSafeArea()
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
             }
-        }
+//        }
+        
     }
 }
 
