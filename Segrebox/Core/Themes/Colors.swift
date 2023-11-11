@@ -20,7 +20,11 @@ struct Colors {
     static let blueLight = Color("BlueLight")
     
     //MARK: Grey
+    static let greyNormal = Color("GreyNormal")
     static let greySidebar = Color("GreySideBar")
     static let greyDarker = Color("GreyDarker")
     static let greyCardBorder = Color("GreyCardBorder")
+    
+    //MARK: Green
+    static let greenOngoing = Color("GreenOnGoing")
 }

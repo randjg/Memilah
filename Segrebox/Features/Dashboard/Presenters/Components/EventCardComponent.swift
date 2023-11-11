@@ -29,7 +29,7 @@ struct EventCardComponent: View {
                         .font(.custom("PlusJakartaSans-Bold", size: 21))
                     
                     //MARK: Status
-                    Text("Status")
+                    StatusComponent(eventStatus: .onGoing)
                         .padding(.trailing, 13)
                 }
                 .padding(.top, 16)

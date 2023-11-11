@@ -54,6 +54,7 @@
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
 		F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */; };
 		F6508EA62AFF7A32009C7A45 /* TestNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */; };
+		F6508EAA2AFFA548009C7A45 /* StatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EA92AFFA548009C7A45 /* StatusComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
 		F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
 		F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavigationView.swift; sourceTree = "<group>"; };
+		F6508EA92AFFA548009C7A45 /* StatusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				43D4D1852AFBC7A400ED011B /* SecondaryButtonComponent.swift */,
 				F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */,
+				F6508EA92AFFA548009C7A45 /* StatusComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				43D4D1862AFBC7A400ED011B /* SecondaryButtonComponent.swift in Sources */,
 				43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */,
 				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
+				F6508EAA2AFFA548009C7A45 /* StatusComponent.swift in Sources */,
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
