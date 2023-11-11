@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @StateObject var viewModel = DashboardViewModel()
     @State private var toAddEvent = false
     @State private var toEditEvent = false
     
@@ -21,12 +22,14 @@ struct DashboardView: View {
         print("Edit Event tapped")
     }
     
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 300))
+    ]
     
     var body: some View {
         
         NavigationStack {
             GeometryReader{ geometry in
-                
                 VStack(alignment: .leading){
                     //MARK: Title
                     
@@ -55,7 +58,7 @@ struct DashboardView: View {
                     }
                     .padding(.leading, 79)
                     
-                    ZStack{
+                    ZStack() {
                         //MARK: Background
                         Rectangle()
                             .foregroundColor(.clear)
@@ -63,28 +66,27 @@ struct DashboardView: View {
                             .cornerRadius(20.0)
                         
                         //MARK: Event Card Component
+                        ScrollView {
+                            LazyVGrid(columns: adaptiveColumns, spacing: 30) {
+                                ForEach(viewModel.events, id: \.documentID) { event in
+                                    EventCardComponent()
+                                    EventCardComponent()
+                                }
+                            }
                         
-                        Grid(){
-                            GridRow{
-                                EventCardComponent()
-                                EventCardComponent()
-                                EventCardComponent()
-                            }
-                            GridRow{
-                                EventCardComponent()
-                                EventCardComponent()
-                                EventCardComponent()
-                            }
                         }
-                        .frame(height: 631)
+                        .padding(.vertical, 30)
                     }
                 }
                 .padding(.top, 55)
+                .navigationDestination(isPresented: $toAddEvent) {
+                    AddEventView()
+                }
             }
             .ignoresSafeArea()
-            .navigationDestination(isPresented: $toAddEvent) {
-                AddEventView()
-            }
+        }
+        .task {
+            try? await viewModel.getEvents()
         }
     }
 }

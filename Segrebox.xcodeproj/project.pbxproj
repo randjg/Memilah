@@ -18,6 +18,7 @@
 		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
 		43A99D222AFE969900365127 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99D212AFE969900365127 /* EventModel.swift */; };
 		43A99D242AFF818900365127 /* SaveChangesButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */; };
+		43A99D272AFF9E1000365127 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99D262AFF9E1000365127 /* DashboardViewModel.swift */; };
 		43D4D1802AFB707E00ED011B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D4D17F2AFB707E00ED011B /* Assets.xcassets */; };
 		43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1812AFB709000ED011B /* SegreboxApp.swift */; };
 		43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1832AFB720000ED011B /* DashboardView.swift */; };
@@ -69,6 +70,7 @@
 		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		43A99D212AFE969900365127 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesButtonComponent.swift; sourceTree = "<group>"; };
+		43A99D262AFF9E1000365127 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		43D4D17F2AFB707E00ED011B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D4D1812AFB709000ED011B /* SegreboxApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
 		43D4D1832AFB720000ED011B /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		434FFE4D2AFBD06E00D82548 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				43A99D252AFF9DFA00365127 /* ViewModels */,
 				434FFE522AFBD3A600D82548 /* Components */,
 				434FFE512AFBD39100D82548 /* Views */,
 			);
@@ -237,6 +240,14 @@
 				83C8E43F2AE8272200AE532E /* TextFieldComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		43A99D252AFF9DFA00365127 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				43A99D262AFF9E1000365127 /* DashboardViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		43BF25322AF8B8F000FA91FF /* Features */ = {
@@ -513,6 +524,7 @@
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				43A99D272AFF9E1000365127 /* DashboardViewModel.swift in Sources */,
 				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
 				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
 				43A99D242AFF818900365127 /* SaveChangesButtonComponent.swift in Sources */,

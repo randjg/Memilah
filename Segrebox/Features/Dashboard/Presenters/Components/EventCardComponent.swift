@@ -10,16 +10,15 @@ import SwiftUI
 struct EventCardComponent: View {
     
     var body: some View {
-        GeometryReader{ geometry in
-            
+        ZStack{
             Rectangle()
-              .foregroundColor(.white)
-              .frame(width: 345, height: 226)
-              .cornerRadius(10)
-              .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Colors.greyCardBorder, lineWidth: 1.5)
-              )
+                .foregroundColor(.white)
+                .frame(width: 345, height: 226)
+                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Colors.greyCardBorder, lineWidth: 1.5)
+                )
             
             VStack(alignment: .leading){
                 
@@ -36,18 +35,18 @@ struct EventCardComponent: View {
                 .padding(.bottom, 9)
                 
                 //MARK: Description
-
-                    Text("Pestapora merupakan event musik besar nasional yang digelar secara tahunan")
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(width: 299, alignment: .topLeading)
-                        .lineLimit(5)
-                        .padding(.bottom, 1)
+                
+                Text("Pestapora merupakan event musik besar nasional yang digelar secara tahunan")
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(width: 299, alignment: .topLeading)
+                    .lineLimit(5)
+                    .padding(.bottom, 1)
                 
                 
                 //MARK: Location
                 HStack(alignment: .center, spacing: 5){
                     Text("📍")
-
+                    
                     Text("Location")
                 }.padding(.bottom, 1)
                 
@@ -63,12 +62,11 @@ struct EventCardComponent: View {
                     Text("📆")
                     
                     Text("20 Sept 2023 - 22 Sept 2023")
-                       
+                    
                 } .padding(.bottom, 27)
                 
                 
             }.padding(.leading, 13)
-            
         }
     }
 }
