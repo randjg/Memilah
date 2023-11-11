@@ -15,13 +15,18 @@ struct AddEventView: View {
     
     var body: some View {
         ScrollView {
-            HStack {
+            VStack(alignment: .leading) {
+                if eventViewModel.nameIsExist {
+                    Text("⚠️ Event with the same name already exists. Please enter a new event")
+                        .foregroundStyle(.red)
+                        .bold()                    
+                }
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
                             .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                         
-                        TextFieldComponent(text: $eventViewModel.name, placeholder: "Add an event name", keyboardType: .default, returnKeyType: .next, width: 827, height: 40, axis: .vertical)
+                        TextFieldComponent(text: $eventViewModel.event.name, placeholder: "Add an event name", keyboardType: .default, returnKeyType: .next, width: 827, height: 40, axis: .vertical)
                     }
                     
                     GridRow {
@@ -30,10 +35,10 @@ struct AddEventView: View {
                             .padding(.bottom, 41)
                         
                         VStack {
-                            TextFieldComponent(text: $eventViewModel.description, placeholder: "Add an event description", keyboardType: .default, returnKeyType: .next, width: 827, height: 80,axis: .vertical)
-                                .onChange(of: eventViewModel.description) {
-                                    if eventViewModel.description.count > 150 {
-                                        eventViewModel.description = String(eventViewModel.description.prefix(150))
+                            TextFieldComponent(text: $eventViewModel.event.description, placeholder: "Add an event description", keyboardType: .default, returnKeyType: .next, width: 827, height: 80,axis: .vertical)
+                                .onChange(of: eventViewModel.event.description) {
+                                    if eventViewModel.event.description.count > 150 {
+                                        eventViewModel.event.description = String(eventViewModel.event.description.prefix(150))
                                     }
                                 }
                             
@@ -57,12 +62,12 @@ struct AddEventView: View {
                     GridRow {
                         Text("Event Date")
                             .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                        CalendarPickerComponent(startDate: $eventViewModel.dateStart, endDate: $eventViewModel.dateEnd)
+                        CalendarPickerComponent(startDate: $eventViewModel.event.dateStart, endDate: $eventViewModel.event.dateEnd)
                     }
                     
                     GridRow {
                         
-                        SaveChangesButtonComponent(title: "Add Event", disable: false){
+                        SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
                         }
                         

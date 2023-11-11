@@ -24,9 +24,9 @@ final class EventManager {
     func deleteEvent(documentID: String) {
         dbRef.document(documentID).delete { err in
             if let err = err {
-              print("Error removing document: \(err)")
+                print("Error removing document: \(err)")
             } else {
-              print("Document successfully removed!")
+                print("Document successfully removed!")
             }
         }
     }
@@ -57,13 +57,28 @@ final class EventManager {
         let event = dbRef.document(documentID)
         
         event.updateData([
-          "trashBins": trashBins
+            "trashBins": trashBins
         ]) { err in
-          if let err = err {
-            print("Error updating document: \(err)")
-          } else {
-            print("Document successfully updated")
-          }
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
         }
+    }
+    
+    func searchEvent(eventName: String) async throws -> EventModel? {
+        let snapshot = try await dbRef.whereField("name", isEqualTo: eventName).getDocuments()
+        let document = snapshot.documents.first
+        
+        guard let document = document else {
+            return nil
+        }
+        var event = try document.data(as: EventModel.self)
+        
+        event.documentID = document.documentID
+        
+        return event
+//        return nil
     }
 }
