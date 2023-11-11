@@ -61,16 +61,19 @@ struct AddEventView: View {
                     }
                     
                     GridRow {
-                        Button {
+                        
+                        SaveChangesButtonComponent(title: "Add Event", disable: false){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
-                        } label: {
-                            Text("Save Event")
                         }
-
+                        
                     }
                 }
             }
         }
+    }
+    
+    func checkFields() -> Bool {
+        return eventViewModel.validateEmptyFields() || mapViewModel.searchTxt.isEmpty
     }
 }
 

@@ -16,7 +16,20 @@ class EventViewModel: ObservableObject {
     @Published var trashBins: [String] = []
     
     func addEvent(location: String) {
-        EventManager.shared.addEvent(name: name, description: description, location: location, dateEnd: dateEnd, dateStart: dateStart, trashBins: trashBins)
+        let event = EventModel(name: name, description: description, location: location, dateEnd: dateEnd, dateStart: dateStart)
+        EventManager.shared.addEvent(event: event)
+        Task {
+            do {
+                let events = try await EventManager.shared.getEvents()
+                print(events)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func validateEmptyFields() -> Bool {
+        return name.isEmpty || description.isEmpty
     }
     
 }
