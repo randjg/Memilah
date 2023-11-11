@@ -16,6 +16,8 @@
 		434FFE5C2AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE572AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf */; };
 		434FFE5D2AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */; };
 		4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377F9572AF646DC003C861E /* AuthenticationManager.swift */; };
+		43A99D222AFE969900365127 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99D212AFE969900365127 /* EventModel.swift */; };
+		43A99D242AFF818900365127 /* SaveChangesButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */; };
 		43D4D1802AFB707E00ED011B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D4D17F2AFB707E00ED011B /* Assets.xcassets */; };
 		43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1812AFB709000ED011B /* SegreboxApp.swift */; };
 		43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D4D1832AFB720000ED011B /* DashboardView.swift */; };
@@ -65,6 +67,8 @@
 		434FFE572AFBE11B00D82548 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		434FFE582AFBE11B00D82548 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
 		4377F9572AF646DC003C861E /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		43A99D212AFE969900365127 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChangesButtonComponent.swift; sourceTree = "<group>"; };
 		43D4D17F2AFB707E00ED011B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D4D1812AFB709000ED011B /* SegreboxApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegreboxApp.swift; sourceTree = "<group>"; };
 		43D4D1832AFB720000ED011B /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				83C8E4472AE9713B00AE532E /* Place.swift */,
+				43A99D212AFE969900365127 /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 		434FFE602AFBE85D00D82548 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */,
 				831A23392AF1767400CDC54B /* MapComponent.swift */,
 				831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */,
 			);
@@ -509,6 +515,7 @@
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
 				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
 				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
+				43A99D242AFF818900365127 /* SaveChangesButtonComponent.swift in Sources */,
 				43E28D9F2AF9E31D0041CF5E /* CenterHorizontalView.swift in Sources */,
 				434FFE5B2AFBE11B00D82548 /* Fonts.swift in Sources */,
 				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
@@ -532,6 +539,7 @@
 				F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */,
 				83C8E4482AE9713B00AE532E /* Place.swift in Sources */,
 				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
+				43A99D222AFE969900365127 /* EventModel.swift in Sources */,
 				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
