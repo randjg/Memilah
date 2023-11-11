@@ -25,4 +25,12 @@ struct EventModel: Codable {
         self.dateStart = dateStart
         self.trashBins = trashBins
     }
+    
+    init() {
+        self.name = ""
+        self.description = ""
+        self.location = ""
+        self.dateEnd = Date()
+        self.dateStart = Date()
+    }
 }
