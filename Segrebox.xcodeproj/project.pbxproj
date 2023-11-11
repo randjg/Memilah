@@ -58,6 +58,7 @@
 		F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */; };
 		F6508EA62AFF7A32009C7A45 /* TestNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */; };
 		F6508EAA2AFFA548009C7A45 /* StatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EA92AFFA548009C7A45 /* StatusComponent.swift */; };
+		F6508EAD2AFFE1A8009C7A45 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508EAC2AFFE1A8009C7A45 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
 		F6508EA52AFF7A32009C7A45 /* TestNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavigationView.swift; sourceTree = "<group>"; };
 		F6508EA92AFFA548009C7A45 /* StatusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusComponent.swift; sourceTree = "<group>"; };
+		F6508EAC2AFFE1A8009C7A45 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 		43BF25382AF8BBE200FA91FF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F6508EAB2AFFE198009C7A45 /* Extension */,
 				43BF25432AF8BE1100FA91FF /* Themes */,
 				43BF25402AF8BDE100FA91FF /* Utilities */,
 				43BF253F2AF8BDC500FA91FF /* Resources */,
@@ -436,6 +439,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F6508EAB2AFFE198009C7A45 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F6508EAC2AFFE1A8009C7A45 /* DateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -529,6 +540,7 @@
 				83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */,
 				F6508EAA2AFFA548009C7A45 /* StatusComponent.swift in Sources */,
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
+				F6508EAD2AFFE1A8009C7A45 /* DateExtension.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
 				43A99D272AFF9E1000365127 /* DashboardViewModel.swift in Sources */,

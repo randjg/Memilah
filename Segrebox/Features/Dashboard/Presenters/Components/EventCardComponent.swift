@@ -9,11 +9,12 @@ import SwiftUI
 
 struct EventCardComponent: View {
     
+    var event: EventModel
+    
     var body: some View {
         ZStack{
             Rectangle()
                 .foregroundColor(.white)
-                .frame(width: 345, height: 226)
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -24,11 +25,12 @@ struct EventCardComponent: View {
                 
                 HStack{
                     //MARK: Event name
-                    Text("Konser Pestapora")
+                    Text(event.name)
                         .font(.custom("PlusJakartaSans-Bold", size: 21))
+                    Spacer()
                     
                     //MARK: Status
-                    StatusComponent(eventStatus: .onGoing)
+                    StatusComponent(eventDate: event.dateStart)
                         .padding(.trailing, 13)
                 }
                 .padding(.top, 16)
@@ -36,7 +38,7 @@ struct EventCardComponent: View {
                 
                 //MARK: Description
                 
-                Text("Pestapora merupakan event musik besar nasional yang digelar secara tahunan")
+                Text(event.description)
                     .fixedSize(horizontal: false, vertical: true)
                     .frame(width: 299, alignment: .topLeading)
                     .lineLimit(5)
@@ -47,7 +49,7 @@ struct EventCardComponent: View {
                 HStack(alignment: .center, spacing: 5){
                     Text("📍")
                     
-                    Text("Location")
+                    Text(event.location)
                 }.padding(.bottom, 1)
                 
                 //MARK: Bins
@@ -61,16 +63,30 @@ struct EventCardComponent: View {
                 HStack(alignment: .center, spacing: 5){
                     Text("📆")
                     
-                    Text("20 Sept 2023 - 22 Sept 2023")
+                    HStack{
+                        Text(event.dateStart.formatDate()) +
+                        Text(" - ") +
+                        Text(event.dateEnd.formatDate())
+                    }
                     
                 } .padding(.bottom, 27)
                 
                 
-            }.padding(.leading, 13)
+            }.padding(.horizontal, 13)
         }
+        .frame(width: 345, height: 226)
     }
 }
 
 #Preview {
-    EventCardComponent()
+    EventCardComponent(
+        event: EventModel(
+            documentID: "ythi0zFLYayMh9d3fwGL",
+            name: "t",
+            description: "t",
+            location: "t",
+            dateEnd: Date(),
+            dateStart: Date()
+        )
+    )
 }

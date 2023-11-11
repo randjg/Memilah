@@ -69,8 +69,7 @@ struct DashboardView: View {
                         ScrollView {
                             LazyVGrid(columns: adaptiveColumns, spacing: 30) {
                                 ForEach(viewModel.events, id: \.documentID) { event in
-                                    EventCardComponent()
-                                    EventCardComponent()
+                                    EventCardComponent(event: event)
                                 }
                             }
                         
