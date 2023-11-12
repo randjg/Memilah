@@ -28,4 +28,5 @@ struct Colors {
     //MARK: Green
     static let greenOngoing = Color("GreenOnGoing")
     static let blueSave = Color("BlueSave")
+    static let greyLightActive = Color("GreyLightActive")
 }

@@ -27,9 +27,8 @@ struct SegreboxApp: App {
         WindowGroup {
 //            LoginView()
 //                .environmentObject(viewModel)
-            AddEventView()
-//            RootView()
-//            TestNavigationView()
+//            AddEventView()
+            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
         }
     }
 }
