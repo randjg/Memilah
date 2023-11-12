@@ -33,6 +33,8 @@ struct DashboardView: View {
                 VStack(alignment: .leading){
                     //MARK: Title
                     
+                    Text("Test print")
+                    
                     Group {
                         Text("Dashboard")
                             .font(
