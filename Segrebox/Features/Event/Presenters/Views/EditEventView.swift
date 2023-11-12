@@ -1,20 +1,26 @@
 //
-//  AddEventView.swift
+//  EditEventView.swift
 //  Segrebox
 //
-//  Created by Randy Julian on 24/10/23.
+//  Created by Eric Prasetya Sentosa on 11/11/23.
 //
 
 import SwiftUI
 
-struct AddEventView: View {
+struct EditEventView: View {
     
     @StateObject var eventViewModel = EventViewModel()
     @StateObject var mapViewModel = MapViewModel()
-    
+    var eventToEdit: EventModel
     
     var body: some View {
         ScrollView {
+            VStack(alignment: .leading) {
+                if eventViewModel.nameIsExist {
+                    Text("⚠️ Event with the same name already exists. Please enter a new event")
+                        .foregroundStyle(.red)
+                        .bold()
+                }
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
@@ -61,13 +67,17 @@ struct AddEventView: View {
                     
                     GridRow {
                         
-                        SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
-                            eventViewModel.addEvent(location: mapViewModel.searchTxt)
+                        SaveChangesButtonComponent(title: "Edit Event", disable: checkFields()){
+                            eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
                         }
                         
                     }
                 }
-//            }
+            }
+        }
+        .onAppear {
+            eventViewModel.event = eventToEdit
+            mapViewModel.searchTxt = eventToEdit.location
         }
     }
     
@@ -77,5 +87,5 @@ struct AddEventView: View {
 }
 
 #Preview {
-    AddEventView()
+    EditEventView(eventToEdit: EventModel(documentID: "GEALvPSnGFMcKOAgKpbc" , name: "Coldplay", description: "Chris Martin Nyanyi", location: "Gelora Bung Karno Stadium", dateEnd: Date(), dateStart: Date()))
 }

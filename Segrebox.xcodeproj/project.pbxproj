@@ -39,6 +39,7 @@
 		43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAB2AFA102B0041CF5E /* Alerts.swift */; };
 		43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAD2AFA15FF0041CF5E /* Colors.swift */; };
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
+		43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368ED2AFFDA25003F2A95 /* EditEventView.swift */; };
 		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
 		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
@@ -86,6 +87,7 @@
 		43E28DAB2AFA102B0041CF5E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		43E28DAD2AFA15FF0041CF5E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		43E368ED2AFFDA25003F2A95 /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
 		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +229,7 @@
 			children = (
 				83C8E4442AE8F77B00AE532E /* MapView.swift */,
 				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
+				43E368ED2AFFDA25003F2A95 /* EditEventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
 				43A99D222AFE969900365127 /* EventModel.swift in Sources */,
 				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
+				43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

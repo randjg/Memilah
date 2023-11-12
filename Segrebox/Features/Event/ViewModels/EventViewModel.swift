@@ -9,27 +9,54 @@ import Foundation
 
 
 class EventViewModel: ObservableObject {
-    @Published var name: String = ""
-    @Published var description: String = ""
-    @Published var dateEnd: Date = Date()
-    @Published var dateStart: Date = Date()
-    @Published var trashBins: [String] = []
+    @Published var event: EventModel = EventModel()
+    @Published var nameIsExist = false
     
+    func validateEventName() async -> Bool {
+        do {
+            let event = try await EventManager.shared.searchEvent(eventName: event.name)
+            return event == nil
+        } catch {
+            print(error)
+            return false
+        }
+    }
+
     func addEvent(location: String) {
-        let event = EventModel(name: name, description: description, location: location, dateEnd: dateEnd, dateStart: dateStart)
-        EventManager.shared.addEvent(event: event)
         Task {
-            do {
-                let events = try await EventManager.shared.getEvents()
-                print(events)
-            } catch {
-                print(error)
+            let isValid = await validateEventName()
+
+            if isValid {
+                nameIsExist = false
+                event.location = location
+                EventManager.shared.addEvent(event: event)
+            } else {
+                nameIsExist = true
+            }
+        }
+    }
+
+    func updateEvent(eventToEditName: String, location: String) {
+        guard let documentID = event.documentID else {return}
+        event.location = location
+        if eventToEditName == event.name {
+            nameIsExist = false
+            EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
+        } else {
+            Task {
+                let isValid = await validateEventName()
+                
+                if isValid {
+                    nameIsExist = false
+                    EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
+                } else {
+                    nameIsExist = true
+                }
             }
         }
     }
     
     func validateEmptyFields() -> Bool {
-        return name.isEmpty || description.isEmpty
+        return event.name.isEmpty || event.description.isEmpty
     }
-    
 }
