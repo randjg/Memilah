@@ -55,6 +55,7 @@
 		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
+		F6795A752B0103A9001CE01B /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6795A742B0103A9001CE01B /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
+		F6795A742B0103A9001CE01B /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				83C8E4442AE8F77B00AE532E /* MapView.swift */,
 				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
 				43E368ED2AFFDA25003F2A95 /* EditEventView.swift */,
+				F6795A742B0103A9001CE01B /* EventDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				F6795A752B0103A9001CE01B /* EventDetailView.swift in Sources */,
 				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
 				83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */,
 				43A99D242AFF818900365127 /* SaveChangesButtonComponent.swift in Sources */,

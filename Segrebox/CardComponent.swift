@@ -17,7 +17,7 @@ struct CardComponent: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 2.0)
                     )
-                    .frame(width: 800, height: 321)
+                    .frame(width: 819, height: 321)
                 
                 HStack{
                     Image("image 4")
@@ -31,11 +31,13 @@ struct CardComponent: View {
                             VStack(alignment: .leading){
                                 HStack {
                                     Text("Nama Tempat Trashbin")
-                                            .font(.custom("PlusJakartaSans-Bold", size: 21))
-                                            .foregroundStyle(Colors.adaptiveFontColorCard)
+                                        .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                        .foregroundStyle(Colors.adaptiveFontColorCard)
+
                                     PillShapeStatus(color: Color(red: 0.09, green: 0.7, blue: 0.39), text: "Connected")
                                         .frame(maxWidth: 140)
                                 }
+                                .padding(.top, 20)
                                 .padding(.bottom, 8)
                                     Text("UUID")
                                         .font(.custom("PlusJakartaSans-Regular", size: 13))
@@ -56,7 +58,7 @@ struct CardComponent: View {
                         
                         Divider()
                             .frame(width: 500)
-                            .overlay(Color(red: 0.98, green: 0.84, blue: 0.77))
+                            .overlay(Color(Colors.orangeLight))
 
                         
                         VStack{
@@ -64,12 +66,14 @@ struct CardComponent: View {
                                 Text("Fill Level")
                                     .font(.custom("PlusJakartaSans-Bold", size: 21))
                                     .foregroundStyle(Colors.adaptiveFontColorCard)
+                                  
                                 Spacer()
                                 Text("Last updated 20.05")
                                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                                     .foregroundStyle(Colors.adaptiveFontColorCard)
                             }
-                            .padding(.top, 10)
+                            .padding(.top, 8)
+                            .padding(.bottom, -5)
                             .frame(maxWidth: 480)
                             
                             ZStack{
