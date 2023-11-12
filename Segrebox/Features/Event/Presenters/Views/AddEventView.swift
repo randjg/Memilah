@@ -15,12 +15,6 @@ struct AddEventView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
-                if eventViewModel.nameIsExist {
-                    Text("⚠️ Event with the same name already exists. Please enter a new event")
-                        .foregroundStyle(.red)
-                        .bold()                    
-                }
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
@@ -73,7 +67,7 @@ struct AddEventView: View {
                         
                     }
                 }
-            }
+//            }
         }
     }
     

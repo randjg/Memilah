@@ -9,31 +9,35 @@ import SwiftUI
 
 struct RootView: View {
     @State private var isExpanded = false
-    
+
     var body: some View {
         NavigationView{
-            ZStack(alignment: .leading){
-                List{
-                    DisclosureGroup(isExpanded: $isExpanded){
-                        
-                        //MARK: Upload events from firebase here
-                        Label("Event name 1", systemImage: "calendar")
-                    }label: {
-                        Label("Event", systemImage: "ticket")
-                    }
+            List{
+                DisclosureGroup(isExpanded: $isExpanded){
                     
-                    Label("Profile", systemImage: "person.fill")
-                    Label("Notification", systemImage: "bell.fill")
-                    Label("Settings", systemImage: "gearshape.fill")
-                    
+                    //MARK: Upload events from firebase here
+                    Label("Event name 1", systemImage: "calendar")
+                }label: {
+                    Label("Event", systemImage: "ticket")
                 }
-                .navigationTitle("Segrebox")
-                .listStyle(SidebarListStyle())
+                
+                Label("Profile", systemImage: "person.fill")
+                Label("Notification", systemImage: "bell.fill")
+                Label("Settings", systemImage: "gearshape.fill")
                 
             }
+            .onAppear{
+                isExpanded = false
+            }
+
+            .navigationTitle("Segrebox")
+            .listStyle(SidebarListStyle())
             DashboardView()
         }
+        .ignoresSafeArea()
+        
     }
+    
 }
 
 #Preview {

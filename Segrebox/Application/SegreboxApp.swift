@@ -28,6 +28,8 @@ struct SegreboxApp: App {
 //            LoginView()
 //                .environmentObject(viewModel)
             AddEventView()
+//            RootView()
+//            TestNavigationView()
         }
     }
 }
