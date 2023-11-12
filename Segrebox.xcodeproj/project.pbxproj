@@ -39,6 +39,13 @@
 		43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAD2AFA15FF0041CF5E /* Colors.swift */; };
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
 		43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368ED2AFFDA25003F2A95 /* EditEventView.swift */; };
+		43E368F92B00946C003F2A95 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368F72B00946B003F2A95 /* ImagePicker.swift */; };
+		43E368FA2B00946C003F2A95 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368F82B00946C003F2A95 /* ImageSaver.swift */; };
+		43E368FC2B009475003F2A95 /* AddTrashBinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368FB2B009475003F2A95 /* AddTrashBinView.swift */; };
+		43E368FE2B009C44003F2A95 /* TrashBinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368FD2B009C44003F2A95 /* TrashBinViewModel.swift */; };
+		43E369002B009C51003F2A95 /* TrashBinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368FF2B009C51003F2A95 /* TrashBinModel.swift */; };
+		43E369022B009E8F003F2A95 /* TrashBinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369012B009E8F003F2A95 /* TrashBinManager.swift */; };
+		43E369042B00DD89003F2A95 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369032B00DD89003F2A95 /* StorageManager.swift */; };
 		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
 		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
@@ -82,6 +89,13 @@
 		43E28DAD2AFA15FF0041CF5E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		43E368ED2AFFDA25003F2A95 /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
+		43E368F72B00946B003F2A95 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		43E368F82B00946C003F2A95 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		43E368FB2B009475003F2A95 /* AddTrashBinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTrashBinView.swift; sourceTree = "<group>"; };
+		43E368FD2B009C44003F2A95 /* TrashBinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinViewModel.swift; sourceTree = "<group>"; };
+		43E368FF2B009C51003F2A95 /* TrashBinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinModel.swift; sourceTree = "<group>"; };
+		43E369012B009E8F003F2A95 /* TrashBinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinManager.swift; sourceTree = "<group>"; };
+		43E369032B00DD89003F2A95 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +149,7 @@
 			children = (
 				83C8E4472AE9713B00AE532E /* Place.swift */,
 				43A99D212AFE969900365127 /* EventModel.swift */,
+				43E368FF2B009C51003F2A95 /* TrashBinModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +185,7 @@
 			children = (
 				83C8E4422AE8F6E800AE532E /* MapViewModel.swift */,
 				431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */,
+				43E368FD2B009C44003F2A95 /* TrashBinViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -215,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				83C8E4442AE8F77B00AE532E /* MapView.swift */,
+				43E368FB2B009475003F2A95 /* AddTrashBinView.swift */,
 				83C8E43D2AE8215900AE532E /* AddEventView.swift */,
 				43E368ED2AFFDA25003F2A95 /* EditEventView.swift */,
 			);
@@ -279,6 +296,7 @@
 		43BF25402AF8BDE100FA91FF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				43E368F62B00945C003F2A95 /* ImageUploader */,
 				43BF25412AF8BDEB00FA91FF /* Firebase */,
 			);
 			path = Utilities;
@@ -290,6 +308,8 @@
 				4377F9572AF646DC003C861E /* AuthenticationManager.swift */,
 				431BAC0D2AFD26020004BF0F /* EventManager.swift */,
 				43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */,
+				43E369012B009E8F003F2A95 /* TrashBinManager.swift */,
+				43E369032B00DD89003F2A95 /* StorageManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -375,6 +395,15 @@
 				43E28DA52AF9F2C40041CF5E /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		43E368F62B00945C003F2A95 /* ImageUploader */ = {
+			isa = PBXGroup;
+			children = (
+				43E368F72B00946B003F2A95 /* ImagePicker.swift */,
+				43E368F82B00946C003F2A95 /* ImageSaver.swift */,
+			);
+			path = ImageUploader;
 			sourceTree = "<group>";
 		};
 		83BB3D522AE3E77F00300A56 = {
@@ -520,13 +549,17 @@
 				434FFE5B2AFBE11B00D82548 /* Fonts.swift in Sources */,
 				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
 				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
+				43E369002B009C51003F2A95 /* TrashBinModel.swift in Sources */,
 				431924912AEAC37A0062312A /* CardComponent.swift in Sources */,
 				431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */,
 				C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */,
 				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				43E368F92B00946C003F2A95 /* ImagePicker.swift in Sources */,
 				43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */,
 				4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */,
+				43E369042B00DD89003F2A95 /* StorageManager.swift in Sources */,
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
+				43E368FC2B009475003F2A95 /* AddTrashBinView.swift in Sources */,
 				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,
 				43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */,
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
@@ -537,9 +570,12 @@
 				831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */,
 				83C8E4432AE8F6E800AE532E /* MapViewModel.swift in Sources */,
 				83C8E4482AE9713B00AE532E /* Place.swift in Sources */,
+				43E368FA2B00946C003F2A95 /* ImageSaver.swift in Sources */,
+				43E368FE2B009C44003F2A95 /* TrashBinViewModel.swift in Sources */,
 				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
 				43A99D222AFE969900365127 /* EventModel.swift in Sources */,
 				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
+				43E369022B009E8F003F2A95 /* TrashBinManager.swift in Sources */,
 				43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

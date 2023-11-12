@@ -16,4 +16,5 @@ struct Colors {
     static let adaptiveFontColor = Color("AdaptiveFontColor")
     static let adaptiveFontColorCard = Color("AdaptiveFontColorCard")
     static let blueSave = Color("BlueSave")
+    static let greyLightActive = Color("GreyLightActive")
 }
