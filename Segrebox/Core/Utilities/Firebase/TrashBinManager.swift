@@ -32,13 +32,27 @@ final class TrashBinManager {
         }
     }
     
-    func getTrashBins() async throws -> [TrashBinModel] {
+    func getAllTrashBins() async throws -> [TrashBinModel] {
         var trashBins: [TrashBinModel] = []
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             var trashBin = try document.data(as: TrashBinModel.self)
             trashBin.documentID = document.documentID
             trashBins.append(trashBin)
+        }
+        
+        return trashBins
+    }
+    
+    func getFreeTrashBins() async throws -> [TrashBinModel] {
+        var trashBins: [TrashBinModel] = []
+        let snapshot = try await dbRef.getDocuments()
+        for document in snapshot.documents {
+            var trashBin = try document.data(as: TrashBinModel.self)
+            if trashBin.event == nil || trashBin.event?.isEmpty == true {
+                trashBin.documentID = document.documentID
+                trashBins.append(trashBin)
+            }
         }
         
         return trashBins

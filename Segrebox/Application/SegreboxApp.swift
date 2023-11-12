@@ -28,7 +28,7 @@ struct SegreboxApp: App {
 //            LoginView()
 //                .environmentObject(viewModel)
 //            AddEventView()
-            AddTrashBinView()
+            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
         }
     }
 }

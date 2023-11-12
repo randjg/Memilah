@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct AddTrashBinView: View {
-    @StateObject private var viewModel = TrashBinViewModel()
-    
-    @State private var showingImagePicker = false
+    @StateObject var viewModel = TrashBinViewModel()
+    @Binding var event: EventModel
+    @State var showingImagePicker = false
+    @State var inputImage: UIImage?
     
     let context = CIContext()
     
@@ -32,9 +33,10 @@ struct AddTrashBinView: View {
                     Text("UUID")
                         .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                     Picker("UUID", selection: $viewModel.selectedTrashBin) {
-                        ForEach(viewModel.trashBins, id: \.documentID) { trashBin in
+                        ForEach(viewModel.trashBins, id: \.self) { trashBin in
                             Text(trashBin.documentID ?? "")
                         }
+                        
                     }
                     .padding(.leading, 150)
                 }
@@ -88,12 +90,11 @@ struct AddTrashBinView: View {
                     Text("Trash Bin Image")
                         .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                         .padding(.top, 10)
-                    //                            .padding(.bottom, 50)
                     
                     //Upload an image
                     VStack{
-                        if viewModel.inputImage != nil {
-                            Image(uiImage: viewModel.inputImage!)
+                        if inputImage != nil {
+                            Image(uiImage: inputImage!)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 200)
@@ -115,14 +116,16 @@ struct AddTrashBinView: View {
                     
                 }
                 .sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(image: $viewModel.inputImage)
+                    ImagePicker(image: $inputImage)
                 }
                 //MARK: Add Trash Bin Button
                 HStack {
                     Spacer()
                     Button("Add Trash Bin"){
-                        
-                    }.buttonStyle(SecondaryButtonStyle(textPlaceholder: "Add Trash Bin", action: {}))
+                        viewModel.addTrashBin(event: event)
+                    }.buttonStyle(SecondaryButtonStyle(textPlaceholder: "Add Trash Bin", action: {
+                        viewModel.addTrashBin(event: event)
+                    }))
                 }
                 .frame(width: 630)
                 .padding(.top, 87)
@@ -130,33 +133,12 @@ struct AddTrashBinView: View {
             }
         }
         .onAppear {
-            Task {
-                do {
-                    try await viewModel.getTrashBins()
-                } catch {
-                    print(error)
-                }
-            }
+            viewModel.getTrashBins()
         }
     }
-    
-    //    func save() {
-    //
-    //        let imageSaver = ImageSaver()
-    //
-    //        imageSaver.successHandler = {
-    //            print("Success!")
-    //        }
-    //
-    //        imageSaver.errorHandler = {
-    //            print("Oops! \($0.localizedDescription)")
-    //        }
-    //
-    //        imageSaver.writeToPhotoAlbum(image: processedImage ?? UIImage(named: "defaultImage")!)
-    //    }
     
 }
 
 #Preview {
-    AddTrashBinView()
+    AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
 }

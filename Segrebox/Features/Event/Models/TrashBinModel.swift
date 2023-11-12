@@ -8,6 +8,7 @@
 import Foundation
 
 struct TrashBinModel : Hashable, Codable {
+//    var id = UUID()
     var documentID: String?
     var name: String
     var detail: String
@@ -20,6 +21,10 @@ struct TrashBinModel : Hashable, Codable {
     var objectDetected: Bool?
     var event: String?
     var detectionResult: String?
+    
+//    var tag: String {
+//        return documentID ?? id.uuidString
+//    }
     
     enum CodingKeys: String, CodingKey {
        case documentID
