@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
+		431924912AEAC37A0062312A /* BinCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* BinCardComponent.swift */; };
 		431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */; };
 		431BAC0E2AFD26020004BF0F /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0D2AFD26020004BF0F /* EventManager.swift */; };
 		434FFE592AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */; };
@@ -49,7 +49,6 @@
 		43E369042B00DD89003F2A95 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369032B00DD89003F2A95 /* StorageManager.swift */; };
 		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
 		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
-		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
 		83BB3D662AE3E78200300A56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */; };
 		83C8E4362AE8023100AE532E /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4352AE8023100AE532E /* TextFieldComponent.swift */; };
 		83C8E4382AE8023A00AE532E /* MainButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4372AE8023A00AE532E /* MainButtonComponent.swift */; };
@@ -60,7 +59,7 @@
 		83C8E4452AE8F77B00AE532E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4442AE8F77B00AE532E /* MapView.swift */; };
 		83C8E4482AE9713B00AE532E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C8E4472AE9713B00AE532E /* Place.swift */; };
 		C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */; };
-		C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */; };
+		C80D1B962AE6316300A7C8EA /* BinStatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B952AE6316300A7C8EA /* BinStatusComponent.swift */; };
 		C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */; };
 		C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */; };
 		F6508E6E2AFD27E5009C7A45 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */; };
@@ -71,7 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		431924902AEAC37A0062312A /* BinCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinCardComponent.swift; sourceTree = "<group>"; };
 		431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		431BAC0D2AFD26020004BF0F /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		434FFE542AFBE11B00D82548 /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -106,7 +105,6 @@
 		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewEvent.swift; sourceTree = "<group>"; };
 		83BB3D652AE3E78200300A56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83BB3D712AE3ED5A00300A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83C8E4352AE8023100AE532E /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
@@ -119,7 +117,7 @@
 		83C8E4442AE8F77B00AE532E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		83C8E4472AE9713B00AE532E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C80D1B932AE62F9A00A7C8EA /* TrashbinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashbinDetailsView.swift; sourceTree = "<group>"; };
-		C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeStatus.swift; sourceTree = "<group>"; };
+		C80D1B952AE6316300A7C8EA /* BinStatusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinStatusComponent.swift; sourceTree = "<group>"; };
 		C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillLevelComponent.swift; sourceTree = "<group>"; };
 		C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillShapeFillLevel.swift; sourceTree = "<group>"; };
 		F6508E6D2AFD27E5009C7A45 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
@@ -261,10 +259,10 @@
 				43A99D232AFF818900365127 /* SaveChangesButtonComponent.swift */,
 				831A23392AF1767400CDC54B /* MapComponent.swift */,
 				831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */,
-				C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */,
+				C80D1B952AE6316300A7C8EA /* BinStatusComponent.swift */,
 				C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */,
 				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
-				431924902AEAC37A0062312A /* CardComponent.swift */,
+				431924902AEAC37A0062312A /* BinCardComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -459,7 +457,6 @@
 				43BF25352AF8BB8800FA91FF /* Application */,
 				43BF25322AF8B8F000FA91FF /* Features */,
 				43BF25382AF8BBE200FA91FF /* Core */,
-				83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
 			);
@@ -577,7 +574,6 @@
 				43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */,
 				F6508EAD2AFFE1A8009C7A45 /* DateExtension.swift in Sources */,
 				43E28DAC2AFA102B0041CF5E /* Alerts.swift in Sources */,
-				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
 				43A99D272AFF9E1000365127 /* DashboardViewModel.swift in Sources */,
 				F6795A752B0103A9001CE01B /* EventDetailView.swift in Sources */,
 				43E28DA12AF9F15D0041CF5E /* AuthenticationViewModel.swift in Sources */,
@@ -588,10 +584,9 @@
 				83C8E43C2AE8025700AE532E /* RegisterView.swift in Sources */,
 				83C8E43A2AE8025100AE532E /* LoginView.swift in Sources */,
 				43E369002B009C51003F2A95 /* TrashBinModel.swift in Sources */,
-				431924912AEAC37A0062312A /* CardComponent.swift in Sources */,
+				431924912AEAC37A0062312A /* BinCardComponent.swift in Sources */,
 				431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */,
-				C80D1B962AE6316300A7C8EA /* PillShapeStatus.swift in Sources */,
-				83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */,
+				C80D1B962AE6316300A7C8EA /* BinStatusComponent.swift in Sources */,
 				43E368F92B00946C003F2A95 /* ImagePicker.swift in Sources */,
 				43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */,
 				4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */,

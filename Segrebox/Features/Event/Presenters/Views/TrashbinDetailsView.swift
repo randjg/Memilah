@@ -26,11 +26,11 @@ struct TrashbinDetailsView: View {
                     .padding(.bottom, 5)
                 
                 if isConnected {
-                    PillShapeStatus(color: Color(red: 0.09, green: 0.7, blue: 0.39), text: "Connected")
+                    BinStatusComponent()
                         .padding(.bottom, 5)
                 }
                 else {
-                    PillShapeStatus(color: Color(red: 0.86, green: 0.49, blue: 0.19), text: "Needs Checking")
+                    BinStatusComponent()
                         .padding(.bottom, 5)
 
                 }
