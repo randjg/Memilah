@@ -18,13 +18,6 @@ final class DashboardViewModel: ObservableObject {
         compareDate()
     }
     
-//    func dateConverter(from dateString: String) -> Date? {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MMMM d, yyyy 'at' h:mm:ss a 'UTC'Z"
-//        dateFormatter.timeZone = TimeZone(identifier: "UTC+7")
-//        return dateFormatter.date(from: dateString)
-//    }
-    
     func compareDate() {
         let currentDate = Date()
 

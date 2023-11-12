@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct CardComponent: View {
+    
+    
     var body: some View {
-        GeometryReader { geometry in
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(Color.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 2.0)
-                    )
                     .frame(width: 819, height: 321)
                 
                 HStack{
@@ -97,11 +94,10 @@ struct CardComponent: View {
                             }
                         }
                     }
-//                    .padding(.leading, -10)
+
                 }
             }
-            .frame(width: geometry.size.width)
-        }
+
     }
 }
 
