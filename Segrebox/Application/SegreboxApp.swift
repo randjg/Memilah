@@ -27,7 +27,8 @@ struct SegreboxApp: App {
         WindowGroup {
 //            LoginView()
 //                .environmentObject(viewModel)
-            AddEventView()
+//            AddEventView()
+            AddTrashBinView()
         }
     }
 }
