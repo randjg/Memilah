@@ -40,6 +40,7 @@
 		43E28DAE2AFA15FF0041CF5E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DAD2AFA15FF0041CF5E /* Colors.swift */; };
 		43E28DB42AFB5D020041CF5E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E28DB32AFB5D020041CF5E /* RootView.swift */; };
 		43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368ED2AFFDA25003F2A95 /* EditEventView.swift */; };
+		43E369082B01248B003F2A95 /* NotificationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369072B01248B003F2A95 /* NotificationCardView.swift */; };
 		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
 		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
@@ -88,6 +89,7 @@
 		43E28DAD2AFA15FF0041CF5E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		43E28DB32AFB5D020041CF5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		43E368ED2AFFDA25003F2A95 /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
+		43E369072B01248B003F2A95 /* NotificationCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCardView.swift; sourceTree = "<group>"; };
 		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 		434FFE4B2AFBD02700D82548 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				43A99D252AFF9DFA00365127 /* ViewModels */,
 				434FFE4D2AFBD06E00D82548 /* Presenters */,
 			);
 			path = Dashboard;
@@ -152,7 +155,6 @@
 		434FFE4D2AFBD06E00D82548 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				43A99D252AFF9DFA00365127 /* ViewModels */,
 				434FFE522AFBD3A600D82548 /* Components */,
 				434FFE512AFBD39100D82548 /* Views */,
 			);
@@ -172,6 +174,9 @@
 		434FFE4F2AFBD0DF00D82548 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				43E3690A2B0124A0003F2A95 /* ViewModels */,
+				43E369092B01249A003F2A95 /* Models */,
+				43E369052B012458003F2A95 /* Presenters */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 		43BF253F2AF8BDC500FA91FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				431924902AEAC37A0062312A /* CardComponent.swift */,
 				43D4D17F2AFB707E00ED011B /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -400,6 +406,36 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		43E369052B012458003F2A95 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				43E369062B012480003F2A95 /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		43E369062B012480003F2A95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43E369072B01248B003F2A95 /* NotificationCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43E369092B01249A003F2A95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43E3690A2B0124A0003F2A95 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		83BB3D522AE3E77F00300A56 = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +463,6 @@
 				C80D1B952AE6316300A7C8EA /* PillShapeStatus.swift */,
 				C80D1B992AE66D3D00A7C8EA /* PillShapeFillLevel.swift */,
 				C80D1B972AE66B6000A7C8EA /* FillLevelComponent.swift */,
-				431924902AEAC37A0062312A /* CardComponent.swift */,
 				83BB3D712AE3ED5A00300A56 /* Info.plist */,
 				83BB3D642AE3E78200300A56 /* Preview Content */,
 			);
@@ -563,6 +598,7 @@
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
 				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,
 				43D4D1842AFB720000ED011B /* DashboardView.swift in Sources */,
+				43E369082B01248B003F2A95 /* NotificationCardView.swift in Sources */,
 				C80D1B982AE66B6000A7C8EA /* FillLevelComponent.swift in Sources */,
 				C80D1B942AE62F9A00A7C8EA /* TrashbinDetailsView.swift in Sources */,
 				F6508EA62AFF7A32009C7A45 /* TestNavigationView.swift in Sources */,
