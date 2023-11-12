@@ -45,6 +45,7 @@
 		43E368FE2B009C44003F2A95 /* TrashBinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368FD2B009C44003F2A95 /* TrashBinViewModel.swift */; };
 		43E369002B009C51003F2A95 /* TrashBinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E368FF2B009C51003F2A95 /* TrashBinModel.swift */; };
 		43E369022B009E8F003F2A95 /* TrashBinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369012B009E8F003F2A95 /* TrashBinManager.swift */; };
+		43E369042B00DD89003F2A95 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E369032B00DD89003F2A95 /* StorageManager.swift */; };
 		831A233A2AF1767400CDC54B /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A23392AF1767400CDC54B /* MapComponent.swift */; };
 		831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */; };
 		83BB3D612AE3E77F00300A56 /* TestViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB3D602AE3E77F00300A56 /* TestViewEvent.swift */; };
@@ -94,6 +95,7 @@
 		43E368FD2B009C44003F2A95 /* TrashBinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinViewModel.swift; sourceTree = "<group>"; };
 		43E368FF2B009C51003F2A95 /* TrashBinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinModel.swift; sourceTree = "<group>"; };
 		43E369012B009E8F003F2A95 /* TrashBinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashBinManager.swift; sourceTree = "<group>"; };
+		43E369032B00DD89003F2A95 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		831A23392AF1767400CDC54B /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		831A233D2AF17E9E00CDC54B /* CalendarPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPickerComponent.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Segrebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Segrebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 				431BAC0D2AFD26020004BF0F /* EventManager.swift */,
 				43D8CCE32AEF760B003938F0 /* GoogleService-Info.plist */,
 				43E369012B009E8F003F2A95 /* TrashBinManager.swift */,
+				43E369032B00DD89003F2A95 /* StorageManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				43E368F92B00946C003F2A95 /* ImagePicker.swift in Sources */,
 				43D4D1822AFB709000ED011B /* SegreboxApp.swift in Sources */,
 				4377F9582AF646DC003C861E /* AuthenticationManager.swift in Sources */,
+				43E369042B00DD89003F2A95 /* StorageManager.swift in Sources */,
 				C80D1B9A2AE66D3D00A7C8EA /* PillShapeFillLevel.swift in Sources */,
 				43E368FC2B009475003F2A95 /* AddTrashBinView.swift in Sources */,
 				43E28DAA2AFA0EA60041CF5E /* Images.swift in Sources */,

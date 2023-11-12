@@ -9,11 +9,13 @@ import SwiftUI
 
 struct AddTrashBinView: View {
     @StateObject var viewModel = TrashBinViewModel()
+    @State var trashBins = [TrashBinModel]()
+    @State var selectedTrashBin = TrashBinModel()
     @Binding var event: EventModel
     @State var showingImagePicker = false
     @State var inputImage: UIImage?
     
-    let context = CIContext()
+//    let context = CIContext()
     
     var body: some View {
         HStack {
@@ -32,8 +34,8 @@ struct AddTrashBinView: View {
                 HStack{
                     Text("UUID")
                         .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                    Picker("UUID", selection: $viewModel.selectedTrashBin) {
-                        ForEach(viewModel.trashBins, id: \.self) { trashBin in
+                    Picker("UUID", selection: $selectedTrashBin) {
+                        ForEach(trashBins, id: \.self) { trashBin in
                             Text(trashBin.documentID ?? "")
                         }
                         
@@ -122,9 +124,9 @@ struct AddTrashBinView: View {
                 HStack {
                     Spacer()
                     Button("Add Trash Bin"){
-                        viewModel.addTrashBin(event: event)
+                        viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
                     }.buttonStyle(SecondaryButtonStyle(textPlaceholder: "Add Trash Bin", action: {
-                        viewModel.addTrashBin(event: event)
+                        viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
                     }))
                 }
                 .frame(width: 630)
@@ -133,7 +135,15 @@ struct AddTrashBinView: View {
             }
         }
         .onAppear {
-            viewModel.getTrashBins()
+            Task {
+                do {
+                    trashBins = try await viewModel.getTrashBins()
+                    guard let selectedTrashBin = trashBins.first else {return}
+                    self.selectedTrashBin = selectedTrashBin
+                } catch {
+                    print(error)
+                }
+            }
         }
     }
     
