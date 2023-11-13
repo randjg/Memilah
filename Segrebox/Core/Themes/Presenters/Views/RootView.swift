@@ -11,7 +11,7 @@ struct RootView: View {
     @State private var isExpanded = false
     @StateObject var dashboardViewModel = DashboardViewModel()
     @State private var columnVisibility = NavigationSplitViewVisibility.all
-    
+    @State var isLoading = true
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
@@ -56,12 +56,13 @@ struct RootView: View {
             .navigationTitle("Segrebox")
             .listStyle(SidebarListStyle())
         } detail: {
-            DashboardView(columnVisibility: $columnVisibility)
-                .environmentObject(dashboardViewModel)
+            DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                    .environmentObject(dashboardViewModel)
         }
         .ignoresSafeArea()
         .task {
             try? await dashboardViewModel.getEvents()
+            isLoading = false
         }
         
     }
