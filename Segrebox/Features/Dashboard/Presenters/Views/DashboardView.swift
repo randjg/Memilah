@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @StateObject var viewModel = DashboardViewModel()
+    @EnvironmentObject var viewModel: DashboardViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
-    
+    @Binding var columnVisibility: NavigationSplitViewVisibility
     private func addEventAction(){
         toAddEvent = true
+        columnVisibility = NavigationSplitViewVisibility.detailOnly
         print("Add Event tapped")
     }
     
     private func editEventAction(){
         toEditEvent = true
+        columnVisibility = NavigationSplitViewVisibility.detailOnly
         print("Edit Event tapped")
     }
     
@@ -32,7 +34,6 @@ struct DashboardView: View {
             GeometryReader{ geometry in
                 VStack(alignment: .leading){
                     //MARK: Title
-                    
                     Group {
                         Text("Dashboard")
                             .font(
@@ -84,12 +85,10 @@ struct DashboardView: View {
             }
             .ignoresSafeArea()
         }
-        .task {
-            try? await viewModel.getEvents()
-        }
     }
 }
 
 #Preview {
-    DashboardView()
+    DashboardView(columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
+        .environmentObject(DashboardViewModel())
 }

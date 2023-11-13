@@ -9,21 +9,44 @@ import SwiftUI
 
 struct RootView: View {
     @State private var isExpanded = false
-
+    @StateObject var dashboardViewModel = DashboardViewModel()
+    @State private var columnVisibility = NavigationSplitViewVisibility.all
+    
     var body: some View {
-        NavigationView{
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
                 DisclosureGroup(isExpanded: $isExpanded){
                     
                     //MARK: Upload events from firebase here
-                    Label("Event name 1", systemImage: "calendar")
+                    
+                    ForEach(dashboardViewModel.events, id: \.documentID) { event in
+                        NavigationLink {
+                            
+                        } label: {
+                            Label(event.name, systemImage: "calendar")
+                        }
+                    }
                 }label: {
                     Label("Event", systemImage: "ticket")
                 }
                 
-                Label("Profile", systemImage: "person.fill")
-                Label("Notification", systemImage: "bell.fill")
-                Label("Settings", systemImage: "gearshape.fill")
+                NavigationLink {
+                    
+                } label: {
+                    Label("Profile", systemImage: "person.fill")
+                }
+                
+                NavigationLink {
+                    
+                } label: {
+                    Label("Notification", systemImage: "bell.fill")
+                }
+                
+                NavigationLink {
+                    
+                } label: {
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
                 
             }
             .onAppear{
@@ -32,9 +55,14 @@ struct RootView: View {
 
             .navigationTitle("Segrebox")
             .listStyle(SidebarListStyle())
-            DashboardView()
+        } detail: {
+            DashboardView(columnVisibility: $columnVisibility)
+                .environmentObject(dashboardViewModel)
         }
         .ignoresSafeArea()
+        .task {
+            try? await dashboardViewModel.getEvents()
+        }
         
     }
     

@@ -13,9 +13,10 @@ final class DashboardViewModel: ObservableObject {
     @Published var dateStart: Date = Date()
     @Published var eventStatus: eventStatus = .upcoming
     
-    func getEvents() async throws{
+    func getEvents() async throws {
         events = try await EventManager.shared.getEvents()
-        compareDate()
+//        return events
+//        compareDate()
     }
     
 //    func dateConverter(from dateString: String) -> Date? {

@@ -69,6 +69,7 @@ struct AddEventView: View {
                 }
 //            }
         }
+        .toolbar(removing: .sidebarToggle)
     }
     
     func checkFields() -> Bool {
