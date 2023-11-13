@@ -10,7 +10,7 @@ import UIKit
 
 
 class TrashBinViewModel: ObservableObject {
-//    @Published var trashBins: [TrashBinModel] = []
+    @Published var trashBins: [TrashBinModel] = []
 //    @Published var trashBins: [TrashBinModel] = []
 //    @Published var selectedTrashBin = TrashBinModel() // trash bin to be edited (chosen in picker)
     @Published var trashBin = TrashBinModel() // trash bin intext field

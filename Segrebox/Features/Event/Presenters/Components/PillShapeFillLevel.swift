@@ -24,6 +24,7 @@ struct PillShapeFillLevel: View {
                 .font(.custom("PlusJakartaSans-Regular", size: 31))
                 .foregroundStyle(Colors.adaptiveFontColorCard)
                 .fontWeight(.bold)
+                .padding(.bottom, 1)
             
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 20)
