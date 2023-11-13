@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct CardComponent: View {
+struct BinCardComponent: View {
+    
+    var trashbin: TrashBinModel
+    @Binding var binStatus: binStatus
+    
     var body: some View {
-        GeometryReader { geometry in
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(Color.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 2.0)
-                    )
-                    .frame(width: 800, height: 321)
+                    .frame(width: 819, height: 321)
                 
                 HStack{
-                    Image("image 4")
+                    Image(trashbin.imageUrl)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 224, height: 241)
@@ -30,18 +29,22 @@ struct CardComponent: View {
                         HStack {
                             VStack(alignment: .leading){
                                 HStack {
-                                    Text("Nama Tempat Trashbin")
-                                            .font(.custom("PlusJakartaSans-Bold", size: 21))
-                                            .foregroundStyle(Colors.adaptiveFontColorCard)
-                                    PillShapeStatus(color: Color(red: 0.09, green: 0.7, blue: 0.39), text: "Connected")
+                                    Text(trashbin.name)
+                                        .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                        .foregroundStyle(Colors.adaptiveFontColorCard)
+
+                                    BinStatusComponent(binStatus: binStatus)
                                         .frame(maxWidth: 140)
                                 }
+                                .padding(.top, 20)
                                 .padding(.bottom, 8)
-                                    Text("UUID")
-                                        .font(.custom("PlusJakartaSans-Regular", size: 13))
-                                        .foregroundStyle(Colors.adaptiveFontColorCard)
-                                        .padding(.bottom, 8)
-                                    Text("Deskripsi trash bin")
+                                
+                                    Text(trashbin.documentID ?? "No UUID")
+                                            .font(.custom("PlusJakartaSans-Regular", size: 13))
+                                            .foregroundStyle(Colors.adaptiveFontColorCard)
+                                            .padding(.bottom, 8)
+                                
+                                Text(trashbin.detail)
                                         .lineLimit(3)
                                         .multilineTextAlignment(.leading)
                                         .lineSpacing(2)
@@ -56,7 +59,7 @@ struct CardComponent: View {
                         
                         Divider()
                             .frame(width: 500)
-                            .overlay(Color(red: 0.98, green: 0.84, blue: 0.77))
+                            .overlay(Color(Colors.orangeLight))
 
                         
                         VStack{
@@ -64,25 +67,18 @@ struct CardComponent: View {
                                 Text("Fill Level")
                                     .font(.custom("PlusJakartaSans-Bold", size: 21))
                                     .foregroundStyle(Colors.adaptiveFontColorCard)
+                                  
                                 Spacer()
                                 Text("Last updated 20.05")
                                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                                     .foregroundStyle(Colors.adaptiveFontColorCard)
                             }
-                            .padding(.top, 10)
+                            .padding(.top, 8)
+                            .padding(.bottom, -5)
                             .frame(maxWidth: 480)
                             
                             ZStack{
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .fill(Color(red: 0.93, green: 0.95, blue: 0.96)) //ganti warna nya
-//                                    .frame(width: 375, height: 175) //dibikin responsive
-                                
                                 VStack{
-//                                    Text("Fill Level")
-//                                        .font(.custom("PlusJakartaSans-Regular", size: 24))
-//                                        .bold()
-//                                        .foregroundColor(.black)
-//                                        .padding(.vertical, 15)
                                     
                                     HStack{
                                         PillShapeFillLevel(fillPercentage: 50, category: "Paper", color: Color.red)
@@ -93,14 +89,27 @@ struct CardComponent: View {
                             }
                         }
                     }
-//                    .padding(.leading, -10)
+
                 }
             }
-            .frame(width: geometry.size.width)
-        }
+
     }
 }
 
 #Preview {
-    CardComponent()
+    BinCardComponent(
+        trashbin: TrashBinModel(
+            documentID: "xBcxEgxNYwsWAmeu9w7q",
+            name: "test",
+            detail: "test",
+            imageUrl: "trash-bins/F8BCEE43-E009-4CCE-BB23-9B89A14BF39A.jpeg", 
+            latitude: 0,
+            levelOthers: 1,
+            levelPlastic: 1,
+            levelPaper: 1,
+            objectDetected: false, 
+            event: "ythi0zFLYayMh9d3fwGL"
+        ),
+        binStatus: .constant(.connected)
+    )
 }

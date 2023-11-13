@@ -41,6 +41,21 @@ struct TrashBinModel : Hashable, Codable {
        case detectionResult = "detection-result"
    }
     
+    init(documentID: String? = nil, name: String, detail: String, imageUrl: String, latitude: Double? = nil, longitude: Double? = nil, levelOthers: Double? = nil, levelPlastic: Double? = nil, levelPaper: Double? = nil, objectDetected: Bool? = nil, event: String? = nil, detectionResult: String? = nil) {
+        self.documentID = documentID
+        self.name = name
+        self.detail = detail
+        self.imageUrl = imageUrl
+        self.latitude = latitude
+        self.longitude = longitude
+        self.levelOthers = levelOthers
+        self.levelPlastic = levelPlastic
+        self.levelPaper = levelPaper
+        self.objectDetected = objectDetected
+        self.event = event
+        self.detectionResult = detectionResult
+    }
+    
     
     init() {
         self.name = ""
