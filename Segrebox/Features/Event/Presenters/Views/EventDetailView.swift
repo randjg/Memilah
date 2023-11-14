@@ -12,9 +12,10 @@ struct EventDetailView: View {
     @State var isButtonPressed: Bool = true
     @State var isMapViewShown: Bool = false
     @State var isListViewShown: Bool = true
+    @State var showAddTrashBinModal = false
+    @Binding var event: EventModel
     
-    @Binding var binStatus: binStatus
-    
+//    @Binding var binStatus: binStatus
     
     var body: some View {
         
@@ -27,7 +28,7 @@ struct EventDetailView: View {
                         Image(systemName: "chevron.left")
                             .bold()
                         
-                        Text("Konser Pestapora")
+                        Text(event.name)
                             .font(
                                 Font.custom(Fonts.plusJakartaSansBold, size: 31)
                                     .weight(.bold)
@@ -35,7 +36,7 @@ struct EventDetailView: View {
                     }
                     .padding(.bottom, 3)
                     
-                    Text("20 September 2023 - 23 September 2023")
+                    Text(event.dateStart.formatDateLong() + " - " + event.dateEnd.formatDateLong())
                         .font(
                             Font.custom(Fonts.plusJakartaSansBold, size: 16)
                                 .weight(.bold)
@@ -47,7 +48,7 @@ struct EventDetailView: View {
                     HStack{
                         
                         Button(action:{
-                            //                        EmptyView()
+                            showAddTrashBinModal.toggle()
                         }){
                             Text("Add Trash Bin")
                                 .font(
@@ -119,23 +120,31 @@ struct EventDetailView: View {
                             VStack(spacing: 50){
                                 ForEach(viewModel.trashBins, id: \.documentID) { bin in
                                     //ISI TRASH BIN DISINI
-                                    BinCardComponent(trashbin: bin, binStatus: $binStatus)
+                                    BinCardComponent(trashbin: bin)
                                 }
                             }
                         }
                     }
                 }
-                
             }
-            
+            .sheet(isPresented: $showAddTrashBinModal, content: {
+                AddTrashBinView(event: $event)
+            })
         }
     }
-    
-    
-    
 }
 
 
 #Preview {
-    EventDetailView(binStatus: .constant(.connected))
+    EventDetailView(
+        event: .constant(EventModel(
+            documentID: "ythi0zFLYayMh9d3fwGL",
+            name: "t",
+            description: "t",
+            location: "t",
+            dateEnd: Date(),
+            dateStart: Date()
+        )) 
+//        binStatus: .constant(.connected)
+    )
 }

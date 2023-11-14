@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4308213A2B01DEEC0010B594 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430821392B01DEEC0010B594 /* RootViewModel.swift */; };
-		431924912AEAC37A0062312A /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* CardComponent.swift */; };
 		431924912AEAC37A0062312A /* BinCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431924902AEAC37A0062312A /* BinCardComponent.swift */; };
 		431BAC0C2AFD25EA0004BF0F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */; };
 		431BAC0E2AFD26020004BF0F /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAC0D2AFD26020004BF0F /* EventManager.swift */; };
@@ -72,8 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		430821392B01DEEC0010B594 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		431924902AEAC37A0062312A /* CardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		431924902AEAC37A0062312A /* BinCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinCardComponent.swift; sourceTree = "<group>"; };
 		431BAC0B2AFD25EA0004BF0F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		431BAC0D2AFD26020004BF0F /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
@@ -153,7 +149,6 @@
 		430821382B01DEE10010B594 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				430821392B01DEEC0010B594 /* RootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -622,7 +617,6 @@
 				43E368FE2B009C44003F2A95 /* TrashBinViewModel.swift in Sources */,
 				83C8E43E2AE8215900AE532E /* AddEventView.swift in Sources */,
 				43A99D222AFE969900365127 /* EventModel.swift in Sources */,
-				4308213A2B01DEEC0010B594 /* RootViewModel.swift in Sources */,
 				831A233E2AF17E9E00CDC54B /* CalendarPickerComponent.swift in Sources */,
 				43E369022B009E8F003F2A95 /* TrashBinManager.swift in Sources */,
 				43E368EE2AFFDA25003F2A95 /* EditEventView.swift in Sources */,

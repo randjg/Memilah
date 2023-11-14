@@ -10,7 +10,7 @@ import SwiftUI
 struct BinCardComponent: View {
     
     var trashbin: TrashBinModel
-    @Binding var binStatus: binStatus
+//    @Binding var binStatus: binStatus
     
     var body: some View {
             ZStack {
@@ -33,7 +33,7 @@ struct BinCardComponent: View {
                                         .font(.custom("PlusJakartaSans-Bold", size: 21))
                                         .foregroundStyle(Colors.adaptiveFontColorCard)
 
-                                    BinStatusComponent(binStatus: binStatus)
+                                    BinStatusComponent()
                                         .frame(maxWidth: 140)
                                 }
                                 .padding(.top, 20)
@@ -109,7 +109,7 @@ struct BinCardComponent: View {
             levelPaper: 1,
             objectDetected: false, 
             event: "ythi0zFLYayMh9d3fwGL"
-        ),
-        binStatus: .constant(.connected)
+        )
+//        binStatus: .constant(.connected)
     )
 }

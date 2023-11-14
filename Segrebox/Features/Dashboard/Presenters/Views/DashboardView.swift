@@ -13,6 +13,7 @@ struct DashboardView: View {
     @State private var toEditEvent = false
     @Binding var isLoading: Bool
     @Binding var columnVisibility: NavigationSplitViewVisibility
+    
     private func addEventAction(){
         toAddEvent = true
         columnVisibility = NavigationSplitViewVisibility.detailOnly
@@ -75,7 +76,8 @@ struct DashboardView: View {
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(viewModel.events, id: \.documentID) { event in
+                                    ForEach($viewModel.events, id: \.documentID) { event in
+                                        
                                         EventCardComponent(event: event)
                                     }
                                 }

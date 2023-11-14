@@ -27,7 +27,12 @@ struct RootView: View {
                         }
                     }
                 }label: {
-                    Label("Event", systemImage: "ticket")
+                    NavigationLink {
+                        DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                                .environmentObject(dashboardViewModel)
+                    } label: {
+                        Label("Event", systemImage: "ticket")
+                    }
                 }
                 
                 NavigationLink {
