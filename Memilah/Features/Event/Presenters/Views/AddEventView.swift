@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddEventView: View {
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var eventViewModel = EventViewModel()
     @StateObject var mapViewModel = MapViewModel()
     
@@ -21,7 +21,7 @@ struct AddEventView: View {
                 //Header Add Event
                 HStack{
                     Button(action:{
-                        
+                        self.presentationMode.wrappedValue.dismiss()
                     }){
                         HStack{
                             Image(systemName: "chevron.left")
@@ -36,6 +36,7 @@ struct AddEventView: View {
                         }
                         .padding(.bottom, 32)
                     }
+                    .foregroundColor(.black)
                     
                     Spacer()
                 }.padding(.leading, 63)
@@ -99,7 +100,9 @@ struct AddEventView: View {
                 
             }
             .toolbar(removing: .sidebarToggle)
-        }.navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: backButton)
     }
     
     func checkFields() -> Bool {
