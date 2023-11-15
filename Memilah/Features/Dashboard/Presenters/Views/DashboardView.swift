@@ -64,7 +64,7 @@ struct DashboardView: View {
                     //MARK: Background
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(Colors.blueLightActive)
+                        .background(Color(red: 0.93, green: 0.95, blue: 0.96))
                         .cornerRadius(20.0)
                     
                     //MARK: Event Card Component

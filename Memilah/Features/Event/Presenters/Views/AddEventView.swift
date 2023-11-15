@@ -14,7 +14,36 @@ struct AddEventView: View {
     
     
     var body: some View {
-        ScrollView {
+
+        NavigationStack{
+            
+            VStack(alignment: .leading){
+                //Header Add Event
+                HStack{
+                    Button(action:{
+                        
+                    }){
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .bold()
+                                .padding()
+                            
+                            Text("Add Event")
+                                .font(
+                                    Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                        .weight(.bold)
+                                )
+                        }
+                        .padding(.bottom, 32)
+                    }
+                    
+                    Spacer()
+                }.padding(.leading, 63)
+            }
+                
+            
+            
+            ScrollView {
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
@@ -67,9 +96,10 @@ struct AddEventView: View {
                         
                     }
                 }
-//            }
-        }
-        .toolbar(removing: .sidebarToggle)
+                
+            }
+            .toolbar(removing: .sidebarToggle)
+        }.navigationBarBackButtonHidden(true)
     }
     
     func checkFields() -> Bool {
