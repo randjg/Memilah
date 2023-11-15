@@ -127,6 +127,8 @@ struct EventDetailView: View {
                     }
                 }
             }
+            .padding(.top, 55)
+            .ignoresSafeArea()
             .sheet(isPresented: $showAddTrashBinModal, content: {
                 AddTrashBinView(event: $event)
             })
