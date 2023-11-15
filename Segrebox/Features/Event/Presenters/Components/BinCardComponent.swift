@@ -30,7 +30,7 @@ struct BinCardComponent: View {
                             VStack(alignment: .leading){
                                 HStack {
                                     Text(trashbin.name)
-                                        .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                        .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                                         .foregroundStyle(Colors.adaptiveFontColorCard)
 
                                     BinStatusComponent()
@@ -40,7 +40,7 @@ struct BinCardComponent: View {
                                 .padding(.bottom, 8)
                                 
                                     Text(trashbin.documentID ?? "No UUID")
-                                            .font(.custom("PlusJakartaSans-Regular", size: 13))
+                                            .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                                             .foregroundStyle(Colors.adaptiveFontColorCard)
                                             .padding(.bottom, 8)
                                 
@@ -48,7 +48,7 @@ struct BinCardComponent: View {
                                         .lineLimit(3)
                                         .multilineTextAlignment(.leading)
                                         .lineSpacing(2)
-                                        .font(.custom("PlusJakartaSans-Regular", size: 13))
+                                        .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                                         .foregroundStyle(Colors.adaptiveFontColorCard)
                                         .frame(width: 199, alignment: .leading)
                                 }
@@ -65,7 +65,7 @@ struct BinCardComponent: View {
                         VStack{
                             HStack {
                                 Text("Fill Level")
-                                    .font(.custom("PlusJakartaSans-Bold", size: 21))
+                                    .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                                     .foregroundStyle(Colors.adaptiveFontColorCard)
                                   
                                 Spacer()
@@ -108,7 +108,8 @@ struct BinCardComponent: View {
             levelPlastic: 1,
             levelPaper: 1,
             objectDetected: false, 
-            event: "ythi0zFLYayMh9d3fwGL"
+            event: "ythi0zFLYayMh9d3fwGL",
+            timeUpdated: Date()
         )
 //        binStatus: .constant(.connected)
     )

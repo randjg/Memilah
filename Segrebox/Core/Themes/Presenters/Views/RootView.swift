@@ -21,7 +21,7 @@ struct RootView: View {
                     
                     ForEach(dashboardViewModel.events, id: \.documentID) { event in
                         NavigationLink {
-                            
+                            EventDetailView(event: event)
                         } label: {
                             Label(event.name, systemImage: "calendar")
                         }
@@ -69,6 +69,7 @@ struct RootView: View {
             try? await dashboardViewModel.getEvents()
             isLoading = false
         }
+        .navigationBarBackButtonHidden(true)
         
     }
     

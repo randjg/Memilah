@@ -9,6 +9,8 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+
+
 final class TrashBinManager {
     static let shared = TrashBinManager()
     private let dbRef = Firestore.firestore().collection("trash-bins")

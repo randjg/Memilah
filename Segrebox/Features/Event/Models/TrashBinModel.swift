@@ -21,6 +21,7 @@ struct TrashBinModel : Hashable, Codable {
     var objectDetected: Bool?
     var event: String?
     var detectionResult: String?
+    var timeUpdated: Date
     
 //    var tag: String {
 //        return documentID ?? id.uuidString
@@ -39,9 +40,10 @@ struct TrashBinModel : Hashable, Codable {
        case objectDetected
        case event
        case detectionResult = "detection-result"
+       case timeUpdated
    }
     
-    init(documentID: String? = nil, name: String, detail: String, imageUrl: String, latitude: Double? = nil, longitude: Double? = nil, levelOthers: Double? = nil, levelPlastic: Double? = nil, levelPaper: Double? = nil, objectDetected: Bool? = nil, event: String? = nil, detectionResult: String? = nil) {
+    init(documentID: String? = nil, name: String, detail: String, imageUrl: String, latitude: Double? = nil, longitude: Double? = nil, levelOthers: Double? = nil, levelPlastic: Double? = nil, levelPaper: Double? = nil, objectDetected: Bool? = nil, event: String? = nil, detectionResult: String? = nil, timeUpdated: Date) {
         self.documentID = documentID
         self.name = name
         self.detail = detail
@@ -54,6 +56,7 @@ struct TrashBinModel : Hashable, Codable {
         self.objectDetected = objectDetected
         self.event = event
         self.detectionResult = detectionResult
+        self.timeUpdated = timeUpdated
     }
     
     
@@ -68,5 +71,6 @@ struct TrashBinModel : Hashable, Codable {
         self.levelPaper = 0.0
         self.objectDetected = false
         self.event = ""
+        self.timeUpdated = Date()
     }
 }

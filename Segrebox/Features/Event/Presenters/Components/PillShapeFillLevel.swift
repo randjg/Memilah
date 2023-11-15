@@ -16,12 +16,12 @@ struct PillShapeFillLevel: View {
         
         VStack{
             Text(category) //category trash
-                .font(.custom("PlusJakartaSans-Regular", size: 16))
+                .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
                 .foregroundStyle(Colors.adaptiveFontColorCard)
                 .fontWeight(.medium)
             
-            Text("\(Int(fillPercentage))%")
-                .font(.custom("PlusJakartaSans-Regular", size: 31))
+            Text("\(Int(fillPercentage * 100))%")
+                .font(.custom(Fonts.plusJakartaSansRegular, size: 31))
                 .foregroundStyle(Colors.adaptiveFontColorCard)
                 .fontWeight(.bold)
                 .padding(.bottom, 1)
@@ -32,7 +32,7 @@ struct PillShapeFillLevel: View {
                     .foregroundColor(Color.gray) //background color
                 
                 RoundedRectangle(cornerRadius: 20)
-                    .frame(width: fillPercentage/100 * 70, height: 13)
+                    .frame(width: 70 * fillPercentage , height: 13)
                     .foregroundColor(color) //fill color
             }
 
@@ -42,5 +42,5 @@ struct PillShapeFillLevel: View {
 }
 
 #Preview {
-    PillShapeFillLevel(fillPercentage: 50, category: "Paper", color: Color.green)
+    PillShapeFillLevel(fillPercentage: 0.5, category: "Paper", color: Color.green)
 }

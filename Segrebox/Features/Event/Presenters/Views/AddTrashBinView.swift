@@ -11,7 +11,7 @@ struct AddTrashBinView: View {
     @StateObject var viewModel = TrashBinViewModel()
     @State var trashBins = [TrashBinModel]()
     @State var selectedTrashBin = TrashBinModel()
-    @Binding var event: EventModel
+    var event: EventModel
     @State var showingImagePicker = false
     @State var inputImage: UIImage?
     
@@ -73,6 +73,7 @@ struct AddTrashBinView: View {
                                     viewModel.trashBin.detail = String(viewModel.trashBin.detail.prefix(150))
                                 }
                             }
+                        
                         
                         HStack {
                             Text("max. 150 characters")
@@ -150,5 +151,5 @@ struct AddTrashBinView: View {
 }
 
 #Preview {
-    AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
+    AddTrashBinView(event: EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date()))
 }

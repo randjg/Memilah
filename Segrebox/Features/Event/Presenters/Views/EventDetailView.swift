@@ -13,7 +13,7 @@ struct EventDetailView: View {
     @State var isMapViewShown: Bool = false
     @State var isListViewShown: Bool = true
     @State var showAddTrashBinModal = false
-    @Binding var event: EventModel
+    var event: EventModel
     
 //    @Binding var binStatus: binStatus
     
@@ -128,7 +128,7 @@ struct EventDetailView: View {
                 }
             }
             .sheet(isPresented: $showAddTrashBinModal, content: {
-                AddTrashBinView(event: $event)
+                AddTrashBinView(event: event)
             })
         }
     }
@@ -137,14 +137,14 @@ struct EventDetailView: View {
 
 #Preview {
     EventDetailView(
-        event: .constant(EventModel(
+        event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
             description: "t",
             location: "t",
             dateEnd: Date(),
             dateStart: Date()
-        )) 
+        )
 //        binStatus: .constant(.connected)
     )
 }

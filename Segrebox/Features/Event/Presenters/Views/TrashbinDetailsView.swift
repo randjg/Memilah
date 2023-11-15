@@ -11,18 +11,21 @@ struct TrashbinDetailsView: View {
     
     //ambil true and false nya di sensor
     @State private var isConnected = true
+    @Binding var trashBin: TrashBinModel
+    @StateObject var viewModel = TrashBinViewModel()
+    @State var trashBinImage: UIImage?
     
     var body: some View {
 //        NavigationView {
             VStack{
                 
-                Text("Stadion Akuatik GBK") // nama Lokasi
-                    .font(.custom("PlusJakartaSans-Bold", size: 21))
+                Text(trashBin.name) // nama Lokasi
+                    .font(.custom(Fonts.plusJakartaSansBold, size: 21))
 //                    .foregroundStyle(Colors.adaptiveFontColor)
                     .padding(.bottom, 10)
                 
-                Text("111-222-333-444") //UUID
-                    .font(.custom("PlusJakartaSans-Regular", size: 13))
+                Text(trashBin.documentID!) //UUID
+                    .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                     .padding(.bottom, 5)
                 
                 if isConnected {
@@ -36,26 +39,38 @@ struct TrashbinDetailsView: View {
                 }
                 
                 
-                Text("Last Updated: 20.05") //last updated dari firebase
+                Text(trashBin.timeUpdated.formatDateLong()) //last updated dari firebase
                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                     .padding(.bottom, 20)
                 
-                Image("image 4") //diganti image user input
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 235, height: 170)
-                    .cornerRadius(10)
+                if let trashBinImage = trashBinImage {
+                    Image(uiImage: trashBinImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 235, height: 170)
+                        .cornerRadius(10)
+                } else {
+                    ProgressView {
+                        Text("Image Unavailable")
+                    }
+                    .controlSize(.large)
+                }
                 
-                Text("Trash bin ini terletak di dekan pintu masuk aquatic GBK") // diganti deskripsi
-                    .font(.custom("PlusJakartaSans-Regular", size: 13))
+                Text(trashBin.detail) // diganti deskripsi
+                    .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                     .padding(.top, 20)
                     .padding(.bottom, 22)
                     .frame(maxWidth: 300)
                     .multilineTextAlignment(.center)
                     .lineSpacing(2)
                 
-                FillLevelComponent()
+                FillLevelComponent(trashBin: $trashBin)
                 
+            }
+            .onAppear {
+                viewModel.getImage(imagePath: trashBin.imageUrl) { image in
+                    trashBinImage = image
+                }
             }
         }
 //        .navigationBarTitle("Trash Bin Details", displayMode: .inline)
@@ -63,5 +78,7 @@ struct TrashbinDetailsView: View {
 }
 
 #Preview {
-    TrashbinDetailsView()
+    TrashbinDetailsView(trashBin: .constant(
+        TrashBinModel(documentID: "A0:B7:65:5A:DA:44", name: "Stadion Akuatik GBK", detail: "Trash bin ini terletak di dekan pintu masuk aquatic GBK", imageUrl: "trash-bins/E17639C0-0E31-407D-8CD7-C55CC5587E09.jpeg", latitude: 0.1, longitude: 0.1, levelOthers: 0.7, levelPlastic: 0.8, levelPaper: 0.5, objectDetected: false, event: nil, detectionResult: nil, timeUpdated: Date())
+    ))
 }

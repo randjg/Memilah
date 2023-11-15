@@ -19,7 +19,7 @@ struct TextFieldComponent: View {
     var body: some View {
         TextField(placeholder, text: $text, axis: axis)
             .padding(.leading, 10)
-            .font(.custom("PlusJakartaSans-Regular", size: 21))
+            .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
             .keyboardType(keyboardType)
             .textContentType(.none)
             .autocapitalization(.none)

@@ -32,4 +32,21 @@ final class StorageManager {
         }
         return (returnedPath, returnedName)
     }
+    
+    func getImage(imagePath: String, completion: @escaping (UIImage?) -> Void) {
+        let imageRef = storage.child(imagePath)
+        
+        imageRef.getData(maxSize: Int64(5) * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+                completion(nil) // Notify the completion handler with nil in case of an error
+            } else {
+                if let imageData = data {
+                    completion(UIImage(data: imageData)) // Notify the completion handler with the UIImage
+                } else {
+                    completion(nil) // Notify the completion handler with nil if data is nil
+                }
+            }
+        }
+    }
 }

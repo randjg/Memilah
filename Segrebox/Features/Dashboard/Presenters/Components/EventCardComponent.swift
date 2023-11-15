@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventCardComponent: View {
     
-    @Binding var event: EventModel
+    var event: EventModel
     
     var body: some View {
         ZStack{
@@ -21,7 +21,7 @@ struct EventCardComponent: View {
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
                 )
             NavigationLink {
-                EventDetailView(event: $event)
+                EventDetailView(event: event)
             } label: {
                 eventBody()
                     .foregroundStyle(.black)
@@ -36,7 +36,7 @@ struct EventCardComponent: View {
             HStack{
                 //MARK: Event name
                 Text(event.name)
-                    .font(.custom("PlusJakartaSans-Bold", size: 21))
+                    .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                 Spacer()
                 
                 //MARK: Status
@@ -88,13 +88,13 @@ struct EventCardComponent: View {
 
 #Preview {
     EventCardComponent(
-        event: .constant(EventModel(
+        event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
             description: "t",
             location: "t",
             dateEnd: Date(),
             dateStart: Date()
-        ))
+        )
     )
 }

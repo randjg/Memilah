@@ -52,6 +52,12 @@ class TrashBinViewModel: ObservableObject {
         self.imagePath = path
     }
     
+    func getImage(imagePath: String, completion: @escaping (UIImage?) -> Void) {
+        StorageManager.shared.getImage(imagePath: imagePath) { image in
+            completion(image)
+        }
+    }
+    
     func validateEmptyFields() -> Bool {
         return trashBin.name.isEmpty || trashBin.detail.isEmpty
     }
