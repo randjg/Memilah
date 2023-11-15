@@ -1,4 +1,4 @@
-# Segrebox
+# Memilah
 # _Your Smart Bin Companion Apps_
 
 Segrebox is a smart bin created by learners from Apple Developer Academy@BINUS. The smart bin can automate waste sorting into several categories. An app was created to inform the fill level of the bin.  
