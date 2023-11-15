@@ -11,6 +11,7 @@ struct DashboardView: View {
     @EnvironmentObject var viewModel: DashboardViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
+    @Binding var events: [EventModel]
     @Binding var isLoading: Bool
     @Binding var columnVisibility: NavigationSplitViewVisibility
     
@@ -42,7 +43,6 @@ struct DashboardView: View {
                                 .weight(.bold)
                         )
                         .padding(.bottom, 23)
-                    
                     HStack(spacing: 25){
                         //MARK: Add Event button
                         Button("Add Event"){
@@ -71,13 +71,12 @@ struct DashboardView: View {
                     if isLoading {
                         ProgressView()
                     } else {
-                        if viewModel.events.isEmpty {
+                        if events.isEmpty {
                             Text("No events available")
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(viewModel.events, id: \.documentID) { event in
-                                        
+                                    ForEach(events, id: \.documentID) { event in
                                         EventCardComponent(event: event)
                                     }
                                 }
@@ -97,6 +96,6 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView(isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
+    DashboardView(events: .constant([EventModel]()), isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
         .environmentObject(DashboardViewModel())
 }

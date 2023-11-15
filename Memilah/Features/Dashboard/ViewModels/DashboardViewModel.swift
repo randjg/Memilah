@@ -9,26 +9,14 @@ import Foundation
 import Firebase
 
 final class DashboardViewModel: ObservableObject {
-    @Published var events: [EventModel] = []
+//    @Published var events: [EventModel] = []
     @Published var dateStart: Date = Date()
     @Published var eventStatus: eventStatus = .upcoming
     
-    func getEvents() async throws {
-        events = try await EventManager.shared.getEvents()
-//        return events
-//        compareDate()
+    func getEvents() async throws -> [EventModel]{
+        let events = try await EventManager.shared.getEvents()
+        return events
     }
     
-    func compareDate() {
-        let currentDate = Date()
-
-        for event in events {
-            if currentDate >= event.dateStart && currentDate <= event.dateEnd {
-                    eventStatus = .onGoing
-                    return
-                }
-        }
-        eventStatus = .upcoming
-    }
 }
 

@@ -12,6 +12,7 @@ struct RootView: View {
     @StateObject var dashboardViewModel = DashboardViewModel()
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
+    @State var events = [EventModel]()
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
@@ -19,7 +20,7 @@ struct RootView: View {
                     
                     //MARK: Upload events from firebase here
                     
-                    ForEach(dashboardViewModel.events, id: \.documentID) { event in
+                    ForEach(events, id: \.documentID) { event in
                         NavigationLink {
                             EventDetailView(event: event)
                         } label: {
@@ -28,7 +29,7 @@ struct RootView: View {
                     }
                 }label: {
                     NavigationLink {
-                        DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                        DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
                                 .environmentObject(dashboardViewModel)
                     } label: {
                         Label("Event", systemImage: "ticket")
@@ -61,12 +62,12 @@ struct RootView: View {
             .navigationTitle("Memilah")
             .listStyle(SidebarListStyle())
         } detail: {
-            DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+            DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
                     .environmentObject(dashboardViewModel)
         }
         .ignoresSafeArea()
         .task {
-            try? await dashboardViewModel.getEvents()
+            events = try! await dashboardViewModel.getEvents()
             isLoading = false
         }
         .navigationBarBackButtonHidden(true)
