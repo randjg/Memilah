@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432BD46F2B050B830036FAF0 /* NotificationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432BD46E2B050B830036FAF0 /* NotificationCardView.swift */; };
 		43CC816C2B046B26004DAF74 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81172B046B26004DAF74 /* DateExtension.swift */; };
 		43CC816D2B046B26004DAF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81192B046B26004DAF74 /* Assets.xcassets */; };
 		43CC816E2B046B26004DAF74 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC811C2B046B26004DAF74 /* ImagePicker.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432BD46E2B050B830036FAF0 /* NotificationCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCardView.swift; sourceTree = "<group>"; };
 		43CC81172B046B26004DAF74 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		43CC81192B046B26004DAF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CC811C2B046B26004DAF74 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -145,6 +147,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432BD46B2B050B830036FAF0 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				432BD46C2B050B830036FAF0 /* Presenters */,
+			);
+			name = Notification;
+			path = Segrebox/Features/Notification;
+			sourceTree = SOURCE_ROOT;
+		};
+		432BD46C2B050B830036FAF0 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				432BD46D2B050B830036FAF0 /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		432BD46D2B050B830036FAF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				432BD46E2B050B830036FAF0 /* NotificationCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		43CC81142B046B26004DAF74 /* Memilah */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +295,7 @@
 		43CC81352B046B26004DAF74 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				432BD46B2B050B830036FAF0 /* Notification */,
 				43CC81362B046B26004DAF74 /* Dashboard */,
 				43CC81402B046B26004DAF74 /* Authentication */,
 				43CC814C2B046B26004DAF74 /* Event */,
@@ -568,6 +596,7 @@
 				43CC81892B046B26004DAF74 /* TextFieldComponent.swift in Sources */,
 				43CC81992B046B26004DAF74 /* TrashbinDetailsView.swift in Sources */,
 				43CC817A2B046B26004DAF74 /* Images.swift in Sources */,
+				432BD46F2B050B830036FAF0 /* NotificationCardView.swift in Sources */,
 				43CC819C2B046B26004DAF74 /* EditEventView.swift in Sources */,
 				43CC81932B046B26004DAF74 /* BinStatusComponent.swift in Sources */,
 				43CC81902B046B26004DAF74 /* TrashBinModel.swift in Sources */,
