@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotificationCardView: View {
+struct NotificationCardComponent: View {
     
     @State private var fillLevelCategory1: Float = 0.0
     @State private var fillLevelCategory2: Float = 0.0
@@ -77,5 +77,5 @@ struct NotificationCardView: View {
 }
 
 #Preview {
-    NotificationCardView()
+    NotificationCardComponent()
 }
