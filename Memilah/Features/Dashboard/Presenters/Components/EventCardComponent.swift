@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct EventCardComponent: View {
-    
     var event: EventModel
+    @Binding var toEditEvent: Bool
+//    @State private var isNavigationActive = false
     
     var body: some View {
         ZStack{
@@ -20,12 +21,49 @@ struct EventCardComponent: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
                 )
-            NavigationLink {
-                EventDetailView(event: event)
-            } label: {
-                eventBody()
-                    .foregroundStyle(.black)
+            
+            if toEditEvent == true{
+                //MARK: Edit and Delete Buttons
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        
+                        //Edit
+                        Button(action:{
+                            print("edit button clicked")
+                        }){
+                            Image(systemName: "pencil.line")
+                            .frame(width: 22, height: 18)
+                            .padding(5)
+                            .foregroundColor(Colors.greyDark)
+                        }
+                        
+                        //Delete
+                        Button(action:{
+                            print("delete button clicked")
+                        }){
+                            Image(systemName: "trash.fill")
+                            .frame(width: 22, height: 27)
+                            .padding(5)
+                            .foregroundColor(Colors.redNormal)
+                        }
+                        
+                    }
+                    .padding(.trailing, 3)
+                }
             }
+            //MARK: Card as a button
+            NavigationLink(destination: EventDetailView( event: event)){
+                Button(action:{
+                    EventDetailView(event: event)
+                    print("card clicked")
+                }){
+                    eventBody()
+                        .foregroundColor(.black)
+                }
+            }
+            
         }
         .frame(width: 345, height: 226)
     }
@@ -81,20 +119,20 @@ struct EventCardComponent: View {
                 
             } .padding(.bottom, 27)
             
-            
         }.padding(.horizontal, 13)
     }
 }
 
 #Preview {
     EventCardComponent(
-        event: EventModel(
+         event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
             description: "t",
             location: "t",
             dateEnd: Date(),
             dateStart: Date()
-        )
+        ),
+         toEditEvent: .constant(false)
     )
 }

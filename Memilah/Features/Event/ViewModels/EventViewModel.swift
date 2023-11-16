@@ -56,6 +56,10 @@ class EventViewModel: ObservableObject {
         }
     }
     
+    //func delete event
+    
+    //func save changes
+    
     func validateEmptyFields() -> Bool {
         return event.name.isEmpty || event.description.isEmpty
     }

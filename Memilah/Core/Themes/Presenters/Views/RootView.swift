@@ -13,8 +13,11 @@ struct RootView: View {
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
     @State var events = [EventModel]()
+    @State private var defaultView = true
+
     
     var body: some View {
+        
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
                 DisclosureGroup(isExpanded: $isExpanded){
@@ -59,7 +62,6 @@ struct RootView: View {
             .onAppear{
                 isExpanded = false
             }
-
             .navigationTitle("Memilah")
             .listStyle(SidebarListStyle())
         } detail: {
@@ -72,7 +74,6 @@ struct RootView: View {
             isLoading = false
         }
         .navigationBarBackButtonHidden(true)
-
         
     }
     

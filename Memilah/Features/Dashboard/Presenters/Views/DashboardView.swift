@@ -24,7 +24,7 @@ struct DashboardView: View {
     private func editEventAction(){
         toEditEvent = true
         columnVisibility = NavigationSplitViewVisibility.detailOnly
-        print("Edit Event tapped")
+        print("Edit Event tappedd")
     }
     
     private let adaptiveColumns = [
@@ -43,6 +43,7 @@ struct DashboardView: View {
                                 .weight(.bold)
                         )
                         .padding(.bottom, 23)
+                    
                     HStack(spacing: 25){
                         //MARK: Add Event button
                         Button("Add Event"){
@@ -55,6 +56,7 @@ struct DashboardView: View {
                             editEventAction()
                         }
                         .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+
                     }
                     .padding(.bottom, 26)
                 }
@@ -77,19 +79,34 @@ struct DashboardView: View {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
                                     ForEach(events, id: \.documentID) { event in
-                                        EventCardComponent(event: event)
+                                        EventCardComponent(event: event, toEditEvent: $toEditEvent)
                                     }
                                 }
                             }
                             .padding(.vertical, 30)
                         }
                     }
+                    
+                    //On Edit mode
+                    if toEditEvent{
+                        Button(action:{
+                            toEditEvent = false
+                        }){
+                            Text("Save Changes")
+                        }
+                    }
+                    
+                    
                 }
             }
             .padding(.top, 55)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
             }
+//            .navigationDestination(isPresented: $toEditEvent) {
+//                EditEventView(eventToEdit: events.first ?? EventModel())
+//            }
+            
             .ignoresSafeArea()
         }
     }

@@ -26,7 +26,8 @@ struct AddEventView: View {
                         HStack{
                             Image(systemName: "chevron.left")
                                 .bold()
-                                .padding()
+                                .padding(.trailing, 5)
+
                             
                             Text("Add Event")
                                 .font(
@@ -102,7 +103,7 @@ struct AddEventView: View {
             .toolbar(removing: .sidebarToggle)
         }
         .navigationBarBackButtonHidden(true)
-//        .navigationBarItems(leading: backButton)
+
     }
     
     func checkFields() -> Bool {
