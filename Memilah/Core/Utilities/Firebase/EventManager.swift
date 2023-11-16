@@ -22,7 +22,7 @@ final class EventManager {
     }
     
     func deleteEvent(documentID: String) {
-        dbRef.document(documentID).delete { err in
+        dbRef.document(documentID).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
@@ -79,6 +79,5 @@ final class EventManager {
         event.documentID = document.documentID
         
         return event
-//        return nil
     }
 }

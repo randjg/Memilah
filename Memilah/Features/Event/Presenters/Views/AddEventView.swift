@@ -9,9 +9,8 @@ import SwiftUI
 
 struct AddEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var eventViewModel = EventViewModel()
+    @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    
     
     var body: some View {
 
@@ -91,11 +90,10 @@ struct AddEventView: View {
                     }
                     
                     GridRow {
-                        
                         SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
+                            self.presentationMode.wrappedValue.dismiss()
                         }
-                        
                     }
                 }
                 
@@ -103,6 +101,17 @@ struct AddEventView: View {
             .toolbar(removing: .sidebarToggle)
         }
         .navigationBarBackButtonHidden(true)
+        .onDisappear() {
+//            Task {
+//                try! await eventViewModel.getEvents()
+//            }
+            eventViewModel.event.documentID = UUID().uuidString
+            eventViewModel.events.append(eventViewModel.event)
+            
+        }
+        .onAppear() {
+            eventViewModel.event = EventModel()
+        }
 
     }
     
@@ -113,4 +122,5 @@ struct AddEventView: View {
 
 #Preview {
     AddEventView()
+        .environmentObject(EventViewModel())
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct EventModel: Codable {
+//    var id = UUID()
     var documentID: String?
     var name: String
     var description: String

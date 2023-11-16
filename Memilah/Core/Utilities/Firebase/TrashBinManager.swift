@@ -42,7 +42,6 @@ final class TrashBinManager {
             trashBin.documentID = document.documentID
             trashBins.append(trashBin)
         }
-        
         return trashBins
     }
     

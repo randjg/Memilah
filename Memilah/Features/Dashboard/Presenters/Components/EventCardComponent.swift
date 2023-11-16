@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct EventCardComponent: View {
-    var event: EventModel
+    @EnvironmentObject var viewModel: EventViewModel
     @Binding var toEditEvent: Bool
-//    @State private var isNavigationActive = false
+    var event: EventModel
     
     var body: some View {
         ZStack{
+        
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
@@ -21,6 +22,21 @@ struct EventCardComponent: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
                 )
+            
+            //Card
+            if toEditEvent == true{
+                //if card is in edit view
+                NavigationLink(destination: EditEventView(eventToEdit: event)){
+                    eventBody()
+                        .foregroundColor(.black)
+                }
+            }else{
+                //if card is in default view
+                NavigationLink(destination: EventDetailView(event: event)){
+                    eventBody()
+                        .foregroundColor(.black)
+                }
+            }
             
             if toEditEvent == true{
                 //MARK: Edit and Delete Buttons
@@ -30,9 +46,7 @@ struct EventCardComponent: View {
                         Spacer()
                         
                         //Edit
-                        Button(action:{
-                            print("edit button clicked")
-                        }){
+                        NavigationLink(destination: EditEventView(eventToEdit: event)){
                             Image(systemName: "pencil.line")
                             .frame(width: 22, height: 18)
                             .padding(5)
@@ -41,7 +55,8 @@ struct EventCardComponent: View {
                         
                         //Delete
                         Button(action:{
-                            print("delete button clicked")
+                            print("suc")
+                            viewModel.deleteEvent(documentID: event.documentID!)
                         }){
                             Image(systemName: "trash.fill")
                             .frame(width: 22, height: 27)
@@ -54,15 +69,9 @@ struct EventCardComponent: View {
                 }
             }
             //MARK: Card as a button
-            NavigationLink(destination: EventDetailView( event: event)){
-                Button(action:{
-                    EventDetailView(event: event)
-                    print("card clicked")
-                }){
-                    eventBody()
-                        .foregroundColor(.black)
-                }
-            }
+//            NavigationLink(destination: EventDetailView( event: event)){
+                
+//            }
             
         }
         .frame(width: 345, height: 226)
@@ -125,6 +134,7 @@ struct EventCardComponent: View {
 
 #Preview {
     EventCardComponent(
+        toEditEvent: .constant(false),
          event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
@@ -132,7 +142,6 @@ struct EventCardComponent: View {
             location: "t",
             dateEnd: Date(),
             dateStart: Date()
-        ),
-         toEditEvent: .constant(false)
+        )
     )
 }

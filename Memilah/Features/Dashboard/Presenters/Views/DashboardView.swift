@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @EnvironmentObject var viewModel: DashboardViewModel
+    @EnvironmentObject var viewModel: EventViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
-    @Binding var events: [EventModel]
     @Binding var isLoading: Bool
     @Binding var columnVisibility: NavigationSplitViewVisibility
     
@@ -73,13 +72,15 @@ struct DashboardView: View {
                     if isLoading {
                         ProgressView()
                     } else {
-                        if events.isEmpty {
+                        if viewModel.events.isEmpty {
                             Text("No events available")
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(events, id: \.documentID) { event in
-                                        EventCardComponent(event: event, toEditEvent: $toEditEvent)
+                                    ForEach(viewModel.events, id: \.documentID) { event in
+                                        EventCardComponent(toEditEvent: $toEditEvent, event: event)
+                                            .environmentObject(viewModel)
+                                        
                                     }
                                 }
                             }
@@ -102,17 +103,14 @@ struct DashboardView: View {
             .padding(.top, 55)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
+                    .environmentObject(viewModel)
             }
-//            .navigationDestination(isPresented: $toEditEvent) {
-//                EditEventView(eventToEdit: events.first ?? EventModel())
-//            }
-            
             .ignoresSafeArea()
         }
     }
 }
 
 #Preview {
-    DashboardView(events: .constant([EventModel]()), isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
-        .environmentObject(DashboardViewModel())
+    DashboardView(isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
+        .environmentObject(EventViewModel())
 }
