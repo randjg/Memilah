@@ -10,11 +10,10 @@ import UIKit
 
 
 class TrashBinViewModel: ObservableObject {
-    @Published var trashBins: [TrashBinModel] = []
 //    @Published var trashBins: [TrashBinModel] = []
-//    @Published var selectedTrashBin = TrashBinModel() // trash bin to be edited (chosen in picker)
     @Published var trashBin = TrashBinModel() // trash bin intext field
     var imagePath = ""
+    
     func addTrashBin(event: EventModel, imageData: Data?, trashBinID: String?) {
         // update the event's trahsbins
         guard let eventID = event.documentID else { return }
@@ -59,11 +58,17 @@ class TrashBinViewModel: ObservableObject {
     }
     
     func validateEmptyFields() -> Bool {
+//        guard let name = trashBin.name else {return false}
+//        guard let detail = trashBin.detail else {return false}
         return trashBin.name.isEmpty || trashBin.detail.isEmpty
     }
     
     func getTrashBins() async throws -> [TrashBinModel] {
         return try await TrashBinManager.shared.getFreeTrashBins()
+    }
+    
+    func getEvenTrashBins(eventID: String) async throws -> [TrashBinModel] {
+        return try await TrashBinManager.shared.getEventTrashBins(eventID: eventID)
     }
     
 }

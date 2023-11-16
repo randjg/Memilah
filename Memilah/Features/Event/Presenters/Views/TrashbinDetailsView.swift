@@ -39,7 +39,7 @@ struct TrashbinDetailsView: View {
                 }
                 
                 
-                Text(trashBin.timeUpdated.formatDateLong()) //last updated dari firebase
+                Text(trashBin.timeUpdated!.formatDateLong()) //last updated dari firebase
                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                     .padding(.bottom, 20)
                 

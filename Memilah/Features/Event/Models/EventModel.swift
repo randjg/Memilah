@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct EventModel: Codable {
-    var documentID: String?
+    @DocumentID var documentID: String?
     var name: String
     var description: String
     var location: String

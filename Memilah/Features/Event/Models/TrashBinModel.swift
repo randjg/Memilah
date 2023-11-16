@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
+import FirebaseFirestore
 struct TrashBinModel : Hashable, Codable {
 //    var id = UUID()
-    var documentID: String?
+    @DocumentID var documentID: String?
     var name: String
     var detail: String
     var imageUrl: String
@@ -21,11 +21,7 @@ struct TrashBinModel : Hashable, Codable {
     var objectDetected: Bool?
     var event: String?
     var detectionResult: String?
-    var timeUpdated: Date
-    
-//    var tag: String {
-//        return documentID ?? id.uuidString
-//    }
+    var timeUpdated: Date?
     
     enum CodingKeys: String, CodingKey {
        case documentID
@@ -43,7 +39,7 @@ struct TrashBinModel : Hashable, Codable {
        case timeUpdated
    }
     
-    init(documentID: String? = nil, name: String, detail: String, imageUrl: String, latitude: Double? = nil, longitude: Double? = nil, levelOthers: Double? = nil, levelPlastic: Double? = nil, levelPaper: Double? = nil, objectDetected: Bool? = nil, event: String? = nil, detectionResult: String? = nil, timeUpdated: Date) {
+    init(documentID: String, name: String, detail: String, imageUrl: String, latitude: Double? = nil, longitude: Double? = nil, levelOthers: Double? = nil, levelPlastic: Double? = nil, levelPaper: Double? = nil, objectDetected: Bool? = nil, event: String? = nil, detectionResult: String? = nil, timeUpdated: Date? = nil) {
         self.documentID = documentID
         self.name = name
         self.detail = detail
@@ -59,8 +55,8 @@ struct TrashBinModel : Hashable, Codable {
         self.timeUpdated = timeUpdated
     }
     
-    
     init() {
+        self.documentID = ""
         self.name = ""
         self.detail = ""
         self.imageUrl = ""

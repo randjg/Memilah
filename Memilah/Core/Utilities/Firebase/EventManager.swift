@@ -36,7 +36,7 @@ final class EventManager {
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             var event = try document.data(as: EventModel.self)
-            event.documentID = document.documentID
+//            event.documentID = document.documentID
             events.append(event)
         }
         
@@ -76,7 +76,7 @@ final class EventManager {
         }
         var event = try document.data(as: EventModel.self)
         
-        event.documentID = document.documentID
+//        event.documentID = document.documentID
         
         return event
 //        return nil
