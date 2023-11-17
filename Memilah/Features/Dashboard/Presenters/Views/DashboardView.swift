@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @EnvironmentObject var viewModel: DashboardViewModel
+    @EnvironmentObject var viewModel: EventViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
-    @Binding var events: [EventModel]
     @Binding var isLoading: Bool
     @Binding var columnVisibility: NavigationSplitViewVisibility
     
@@ -24,7 +23,7 @@ struct DashboardView: View {
     private func editEventAction(){
         toEditEvent = true
         columnVisibility = NavigationSplitViewVisibility.detailOnly
-        print("Edit Event tapped")
+        print("Edit Event tappedd")
     }
     
     private let adaptiveColumns = [
@@ -43,6 +42,7 @@ struct DashboardView: View {
                                 .weight(.bold)
                         )
                         .padding(.bottom, 23)
+                    
                     HStack(spacing: 25){
                         //MARK: Add Event button
                         Button("Add Event"){
@@ -55,6 +55,7 @@ struct DashboardView: View {
                             editEventAction()
                         }
                         .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+
                     }
                     .padding(.bottom, 26)
                 }
@@ -71,24 +72,38 @@ struct DashboardView: View {
                     if isLoading {
                         ProgressView()
                     } else {
-                        if events.isEmpty {
+                        if viewModel.events.isEmpty {
                             Text("No events available")
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(events, id: \.documentID) { event in
-                                        EventCardComponent(event: event)
+                                    ForEach(viewModel.events, id: \.documentID) { event in
+                                        EventCardComponent(toEditEvent: $toEditEvent, event: event)
+                                            .environmentObject(viewModel)
+                                        
                                     }
                                 }
                             }
                             .padding(.vertical, 30)
                         }
                     }
+                    
+                    //On Edit mode
+                    if toEditEvent{
+                        Button(action:{
+                            toEditEvent = false
+                        }){
+                            Text("Save Changes")
+                        }
+                    }
+                    
+                    
                 }
             }
             .padding(.top, 55)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
+                    .environmentObject(viewModel)
             }
             .ignoresSafeArea()
         }
@@ -96,6 +111,6 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView(events: .constant([EventModel]()), isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
-        .environmentObject(DashboardViewModel())
+    DashboardView(isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
+        .environmentObject(EventViewModel())
 }

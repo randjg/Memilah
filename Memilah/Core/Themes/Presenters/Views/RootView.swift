@@ -9,19 +9,20 @@ import SwiftUI
 
 struct RootView: View {
     @State private var isExpanded = false
-    @StateObject var dashboardViewModel = DashboardViewModel()
+    @StateObject var viewModel = EventViewModel()
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
-    @State var events = [EventModel]()
+    @State private var defaultView = true
     
     var body: some View {
+        
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
                 DisclosureGroup(isExpanded: $isExpanded){
                     
                     //MARK: Upload events from firebase here
                     
-                    ForEach(events, id: \.documentID) { event in
+                    ForEach(viewModel.events, id: \.documentID) { event in
                         NavigationLink {
                             EventDetailView(event: event)
                         } label: {
@@ -30,8 +31,8 @@ struct RootView: View {
                     }
                 }label: {
                     NavigationLink {
-                        DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
-                                .environmentObject(dashboardViewModel)
+                        DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                                .environmentObject(viewModel)
                     } label: {
                         Label("Event", systemImage: "ticket")
                     }
@@ -59,20 +60,20 @@ struct RootView: View {
             .onAppear{
                 isExpanded = false
             }
-
             .navigationTitle("Memilah")
             .listStyle(SidebarListStyle())
         } detail: {
-            DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
-                    .environmentObject(dashboardViewModel)
+            DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                    .environmentObject(viewModel)
         }
         .ignoresSafeArea()
-        .task {
-            events = try! await dashboardViewModel.getEvents()
-            isLoading = false
+        .onAppear {
+            Task {
+                try! await viewModel.getEvents()
+                isLoading = false
+            }
         }
         .navigationBarBackButtonHidden(true)
-
         
     }
     

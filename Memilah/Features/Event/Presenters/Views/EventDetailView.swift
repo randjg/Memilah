@@ -9,6 +9,7 @@ import MapKit
 import SwiftUI
 
 struct EventDetailView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var viewModel = TrashBinViewModel()
     @State var isButtonPressed: Bool = true
     @State var isListViewShown: Bool = false
@@ -26,16 +27,24 @@ struct EventDetailView: View {
                 VStack(alignment: .leading){
                     //MARK: Title
                     HStack{
-                        Image(systemName: "chevron.left")
-                            .bold()
                         
-                        Text(event.name)
-                            .font(
-                                Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                                    .weight(.bold)
-                            )
+                        Button(action:{
+                            self.presentationMode.wrappedValue.dismiss()
+                        }){
+                            HStack{
+                                Image(systemName: "chevron.left")
+                                    .bold()
+                                    .padding(.trailing, 5)
+                                
+                                Text(event.name)
+                                    .font(
+                                        Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                            .weight(.bold)
+                                    )
+                            }.padding(.bottom, 3)
+                        }
+                        .foregroundColor(.black)
                     }
-                    .padding(.bottom, 3)
                     
                     Text(event.dateStart.formatDateLong() + " - " + event.dateEnd.formatDateLong())
                         .font(
@@ -154,6 +163,7 @@ struct EventDetailView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

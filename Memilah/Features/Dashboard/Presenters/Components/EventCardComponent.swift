@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct EventCardComponent: View {
-    
+    @EnvironmentObject var viewModel: EventViewModel
+    @Binding var toEditEvent: Bool
     var event: EventModel
     
     var body: some View {
         ZStack{
+        
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
@@ -20,12 +22,57 @@ struct EventCardComponent: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
                 )
-            NavigationLink {
-                EventDetailView(event: event)
-            } label: {
-                eventBody()
-                    .foregroundStyle(.black)
+            
+            //Card
+            if toEditEvent == true{
+                //if card is in edit view
+                NavigationLink(destination: EditEventView(eventToEdit: event)){
+                    eventBody()
+                        .foregroundColor(.black)
+                }
+            }else{
+                //if card is in default view
+                NavigationLink(destination: EventDetailView(event: event)){
+                    eventBody()
+                        .foregroundColor(.black)
+                }
             }
+            
+            if toEditEvent == true{
+                //MARK: Edit and Delete Buttons
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        
+                        //Edit
+                        NavigationLink(destination: EditEventView(eventToEdit: event)){
+                            Image(systemName: "pencil.line")
+                            .frame(width: 22, height: 18)
+                            .padding(5)
+                            .foregroundColor(Colors.greyDark)
+                        }
+                        
+                        //Delete
+                        Button(action:{
+                            print("suc")
+                            viewModel.deleteEvent(documentID: event.documentID!)
+                        }){
+                            Image(systemName: "trash.fill")
+                            .frame(width: 22, height: 27)
+                            .padding(5)
+                            .foregroundColor(Colors.redNormal)
+                        }
+                        
+                    }
+                    .padding(.trailing, 3)
+                }
+            }
+            //MARK: Card as a button
+//            NavigationLink(destination: EventDetailView( event: event)){
+                
+//            }
+            
         }
         .frame(width: 345, height: 226)
     }
@@ -81,14 +128,14 @@ struct EventCardComponent: View {
                 
             } .padding(.bottom, 27)
             
-            
         }.padding(.horizontal, 13)
     }
 }
 
 #Preview {
     EventCardComponent(
-        event: EventModel(
+        toEditEvent: .constant(false),
+         event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
             description: "t",
