@@ -105,8 +105,10 @@ struct AddEventView: View {
 //            Task {
 //                try! await eventViewModel.getEvents()
 //            }
-            eventViewModel.event.documentID = UUID().uuidString
-            eventViewModel.events.append(eventViewModel.event)
+            if checkFields() == false {
+                eventViewModel.event.documentID = UUID().uuidString
+                eventViewModel.events.append(eventViewModel.event)
+            }
             
         }
         .onAppear() {
