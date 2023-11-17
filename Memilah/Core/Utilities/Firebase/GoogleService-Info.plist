@@ -13,7 +13,7 @@
 	<key>PROJECT_ID</key>
 	<string>segrebox</string>
 	<key>STORAGE_BUCKET</key>
-	<string>Memilah.appspot.com</string>
+	<string>segrebox.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
