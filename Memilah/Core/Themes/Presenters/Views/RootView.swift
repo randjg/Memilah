@@ -39,19 +39,19 @@ struct RootView: View {
                 }
                 
                 NavigationLink {
-                    
+                    ProfileView()
                 } label: {
                     Label("Profile", systemImage: "person.fill")
                 }
                 
                 NavigationLink {
-                    
+                    NotificationView() // has not fully functional
                 } label: {
                     Label("Notification", systemImage: "bell.fill")
                 }
                 
                 NavigationLink {
-                    
+                    SettingsView()
                 } label: {
                     Label("Settings", systemImage: "gearshape.fill")
                 }

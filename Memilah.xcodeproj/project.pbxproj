@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		432BD4782B050D1D0036FAF0 /* NotificationCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432BD4772B050D1D0036FAF0 /* NotificationCardComponent.swift */; };
+		4371EFE72B0772D7002B1643 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFE62B0772D7002B1643 /* ProfileView.swift */; };
+		4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFE82B0772FC002B1643 /* SettingsView.swift */; };
 		43CC816C2B046B26004DAF74 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81172B046B26004DAF74 /* DateExtension.swift */; };
 		43CC816D2B046B26004DAF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81192B046B26004DAF74 /* Assets.xcassets */; };
 		43CC816E2B046B26004DAF74 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC811C2B046B26004DAF74 /* ImagePicker.swift */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		432BD4772B050D1D0036FAF0 /* NotificationCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCardComponent.swift; sourceTree = "<group>"; };
+		4371EFE62B0772D7002B1643 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4371EFE82B0772FC002B1643 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		43CC81172B046B26004DAF74 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		43CC81192B046B26004DAF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CC811C2B046B26004DAF74 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				43CC813F2B046B26004DAF74 /* DashboardView.swift */,
+				4371EFE62B0772D7002B1643 /* ProfileView.swift */,
+				4371EFE82B0772FC002B1643 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				432BD4782B050D1D0036FAF0 /* NotificationCardComponent.swift in Sources */,
 				43CC819C2B046B26004DAF74 /* EditEventView.swift in Sources */,
 				43CC81932B046B26004DAF74 /* BinStatusComponent.swift in Sources */,
+				4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */,
 				43CC81902B046B26004DAF74 /* TrashBinModel.swift in Sources */,
 				43CC81812B046B26004DAF74 /* DashboardViewModel.swift in Sources */,
 				43CC81912B046B26004DAF74 /* Place.swift in Sources */,
@@ -643,6 +650,7 @@
 				43CC819D2B046B26004DAF74 /* AddTrashBinView.swift in Sources */,
 				43CC81792B046B26004DAF74 /* Alerts.swift in Sources */,
 				43CC81852B046B26004DAF74 /* DashboardView.swift in Sources */,
+				4371EFE72B0772D7002B1643 /* ProfileView.swift in Sources */,
 				43CC81922B046B26004DAF74 /* MapComponent.swift in Sources */,
 				43CC81942B046B26004DAF74 /* BinCardComponent.swift in Sources */,
 				43CC81842B046B26004DAF74 /* EventCardComponent.swift in Sources */,
