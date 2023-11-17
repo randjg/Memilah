@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct EventModel: Codable {
-//    var id = UUID()
-    var documentID: String?
+    @DocumentID var documentID: String?
     var name: String
     var description: String
     var location: String
@@ -34,4 +34,15 @@ struct EventModel: Codable {
         self.dateEnd = Date()
         self.dateStart = Date()
     }
+}
+
+extension EventModel {
+    static let dummy = EventModel(
+        documentID: "GEALvPSnGFMcKOAgKpbc",
+        name: "Coldplay",
+        description: "Chris Martin Nyanyi",
+        location: "Gelora Bung Karno",
+        dateEnd: Date(),
+        dateStart: Date()
+    )
 }

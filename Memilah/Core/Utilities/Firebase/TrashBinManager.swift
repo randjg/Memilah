@@ -45,6 +45,19 @@ final class TrashBinManager {
         return trashBins
     }
     
+    func getEventTrashBins(eventID: String) async throws -> [TrashBinModel] {
+        var trashBins: [TrashBinModel] = []
+        let snapshot = try await dbRef.whereField("event", isEqualTo: eventID).getDocuments()
+        for document in snapshot.documents {
+            let trashBin = try document.data(as: TrashBinModel.self)
+//            trashBin.documentID = document.documentID
+//            trashBin.documentID = document.documentID
+            trashBins.append(trashBin)
+        }
+        
+        return trashBins
+    }
+    
     func getFreeTrashBins() async throws -> [TrashBinModel] {
         var trashBins: [TrashBinModel] = []
         let snapshot = try await dbRef.getDocuments()

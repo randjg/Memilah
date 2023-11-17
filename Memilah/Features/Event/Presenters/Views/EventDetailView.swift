@@ -5,15 +5,16 @@
 //  Created by Clarabella Lius on 12/11/23.
 //
 
+import MapKit
 import SwiftUI
 
 struct EventDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var viewModel = TrashBinViewModel()
     @State var isButtonPressed: Bool = true
-    @State var isMapViewShown: Bool = false
-    @State var isListViewShown: Bool = true
+    @State var isListViewShown: Bool = false
     @State var showAddTrashBinModal = false
+    @State var trashBins = [TrashBinModel]()
     var event: EventModel
     
 //    @Binding var binStatus: binStatus
@@ -82,10 +83,10 @@ struct EventDetailView: View {
                                     .foregroundColor(Colors.greyLight)
                                     .padding(.trailing, 21)
                                     .cornerRadius(5)
-                                    .opacity(isMapViewShown ? 100 : 0)
+                                    .opacity(!isListViewShown ? 100 : 0)
                                 
                                 Button(action: {
-                                    isMapViewShown = true
+//                                    isMapViewShown = true
                                     isListViewShown = false
                                     print("map icon clicked")
                                 }){
@@ -105,7 +106,7 @@ struct EventDetailView: View {
                                 
                                 Button(action: {
                                     isListViewShown = true
-                                    isMapViewShown = false
+//                                    isMapViewShown = false
                                     print("list icon clicked")
                                 }){
                                     Images.listIcon
@@ -124,15 +125,28 @@ struct EventDetailView: View {
                         .background(Color(red: 0.93, green: 0.95, blue: 0.96))
                         .cornerRadius(20.0)
                     
+                    Text("No trashbins")
+                    
                     if isListViewShown {
                         ScrollView {
                             VStack(spacing: 50){
-                                ForEach(viewModel.trashBins, id: \.documentID) { bin in
+                                ForEach(trashBins, id: \.documentID) { bin in
                                     //ISI TRASH BIN DISINI
-                                    BinCardComponent(trashbin: bin)
+                                    BinCardComponent(trashBin: bin)
+                                        .environmentObject(viewModel)
                                 }
                             }
                         }
+                    } else {
+//                        MapView()
+                        Map(){
+                            ForEach(trashBins, id: \.documentID) { bin in
+                                Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? 106.802117, longitude: bin.longitude ?? -6.217588))
+                            }
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding(.vertical, 45)
+                        .padding(.horizontal, 104)
                     }
                 }
             }
@@ -141,6 +155,13 @@ struct EventDetailView: View {
             .sheet(isPresented: $showAddTrashBinModal, content: {
                 AddTrashBinView(event: event)
             })
+            .task {
+                do {
+                    trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
+                } catch {
+                    print(error)
+                }
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -149,14 +170,6 @@ struct EventDetailView: View {
 
 #Preview {
     EventDetailView(
-        event: EventModel(
-            documentID: "ythi0zFLYayMh9d3fwGL",
-            name: "t",
-            description: "t",
-            location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
-        )
-//        binStatus: .constant(.connected)
+        event: .dummy
     )
 }
