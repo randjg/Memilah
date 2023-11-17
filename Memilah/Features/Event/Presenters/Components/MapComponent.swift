@@ -15,6 +15,8 @@ struct MapComponent: View {
     @State var locationManager = CLLocationManager()
     
     @State var isSearchFieldVisible: Bool
+    @State var showRecommendation = false
+    @State var recommendationTapped = false
     var width: CGFloat
     var height: CGFloat
     //    var search: Bool
@@ -58,7 +60,7 @@ struct MapComponent: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding()
                 }
-                if !mapData.places.isEmpty && mapData.searchTxt != ""{
+                if !mapData.places.isEmpty && mapData.searchTxt != "" && showRecommendation {
                     VStack{
                         ScrollView{
                             VStack(spacing: 0){
@@ -69,6 +71,8 @@ struct MapComponent: View {
                                         .padding(.leading)
                                         .onTapGesture{
                                             mapData.selectPlace(place: place)
+                                            mapData.places = []
+                                            recommendationTapped = true
                                         }
                                         .padding(.vertical, 5)
                                     Divider()
@@ -97,15 +101,33 @@ struct MapComponent: View {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }))
         })
-        .onChange(of: mapData.searchTxt, perform: { value in
+        .onChange(of: mapData.searchTxt, { oldValue, newValue in
             let delay = 0.3
             
             DispatchQueue.main.asyncAfter(deadline: .now() + delay){
-                if value == mapData.searchTxt{
+                if newValue == mapData.searchTxt{
                     self.mapData.searchQuery()
                 }
             }
         })
+        .onChange(of: mapData.searchTxt) { old,new in
+            if mapData.searchTxt != "" {
+                showRecommendation = true
+            }
+            if recommendationTapped == true {
+                showRecommendation = false
+                recommendationTapped = false
+            }
+        }
+//        .onChange(of: mapData.searchTxt, perform: { value in
+//            let delay = 0.3
+//            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + delay){
+//                if value == mapData.searchTxt{
+//                    self.mapData.searchQuery()
+//                }
+//            }
+//        })
     }
 }
 

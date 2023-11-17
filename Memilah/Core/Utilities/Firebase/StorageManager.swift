@@ -33,7 +33,7 @@ final class StorageManager {
         return (returnedPath, returnedName)
     }
     
-    func getImage(imagePath: String, completion: @escaping (UIImage?) -> Void) {
+    func getImage(imagePath: String, completion: @escaping (Data?) -> Void) {
         let imageRef = storage.child(imagePath)
         
         imageRef.getData(maxSize: Int64(5) * 1024 * 1024) { data, error in
@@ -41,12 +41,16 @@ final class StorageManager {
                 print(error)
                 completion(nil) // Notify the completion handler with nil in case of an error
             } else {
-                if let imageData = data {
-                    completion(UIImage(data: imageData)) // Notify the completion handler with the UIImage
-                } else {
-                    completion(nil) // Notify the completion handler with nil if data is nil
-                }
+//                if let imageData = data {
+                    completion(data) // Notify the completion handler with the UIImage
+//                } else {
+//                    completion(nil) // Notify the completion handler with nil if data is nil
+//                }
             }
         }
     }
+    
+//    func getImage(imagePath: String) async throws -> Data {
+//        return try await storage.child(imagePath).data(maxSize: Int64(5) * 1024 * 1024)
+//    }
 }
