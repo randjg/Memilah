@@ -25,9 +25,9 @@ struct FillLevelComponent: View {
                     .padding(.vertical, 15)
                 
                 HStack{
-                    PillShapeFillLevel(fillPercentage: trashBin.levelPaper ?? 0, category: "Paper", color: Color.red)
-                    PillShapeFillLevel(fillPercentage: trashBin.levelPlastic ?? 0, category: "Plastic", color: Color.yellow)
-                    PillShapeFillLevel(fillPercentage: trashBin.levelOthers ?? 0, category: "Others", color: Color.green)
+                    PillShapeFillLevel(fillPercentage: trashBin.levelPaper , category: "Paper", color: Color.red)
+                    PillShapeFillLevel(fillPercentage: trashBin.levelPlastic , category: "Plastic", color: Color.yellow)
+                    PillShapeFillLevel(fillPercentage: trashBin.levelOthers , category: "Others", color: Color.green)
                 }
                 .padding(.bottom, 20)
 
