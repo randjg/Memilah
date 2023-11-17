@@ -13,6 +13,7 @@ struct RootView: View {
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
     @State var events = [EventModel]()
+    
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
@@ -71,6 +72,7 @@ struct RootView: View {
             isLoading = false
         }
         .navigationBarBackButtonHidden(true)
+
         
     }
     
