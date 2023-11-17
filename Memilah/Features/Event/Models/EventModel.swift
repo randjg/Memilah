@@ -35,3 +35,14 @@ struct EventModel: Codable {
         self.dateStart = Date()
     }
 }
+
+extension EventModel {
+    static let dummy = EventModel(
+        documentID: "GEALvPSnGFMcKOAgKpbc",
+        name: "Coldplay",
+        description: "Chris Martin Nyanyi",
+        location: "Gelora Bung Karno",
+        dateEnd: Date(),
+        dateStart: Date()
+    )
+}

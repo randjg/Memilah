@@ -123,14 +123,17 @@ struct EventDetailView: View {
                             VStack(spacing: 50){
                                 ForEach(trashBins, id: \.documentID) { bin in
                                     //ISI TRASH BIN DISINI
-                                    BinCardComponent(trashbin: bin)
+                                    BinCardComponent(trashBin: bin)
+                                        .environmentObject(viewModel)
                                 }
                             }
                         }
                     } else {
 //                        MapView()
                         Map(){
-                            
+                            ForEach(trashBins, id: \.documentID) { bin in
+                                Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? 106.802117, longitude: bin.longitude ?? -6.217588))
+                            }
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding(.vertical, 45)
@@ -155,13 +158,6 @@ struct EventDetailView: View {
 
 #Preview {
     EventDetailView(
-        event: EventModel(
-            documentID: "GEALvPSnGFMcKOAgKpbc",
-            name: "t",
-            description: "t",
-            location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
-        )
+        event: .dummy
     )
 }
