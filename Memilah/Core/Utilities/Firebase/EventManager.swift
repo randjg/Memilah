@@ -21,8 +21,13 @@ final class EventManager {
         }
     }
     
-    func deleteEvent(documentID: String) {
-        dbRef.document(documentID).delete() { err in
+    func deleteEvent(event: EventModel) {
+        if let trashBins = event.trashBins {
+            for trashBin in trashBins {
+                TrashBinManager.shared.refreshTrashBin(documentID: trashBin)
+            }
+        }
+        dbRef.document(event.documentID!).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {

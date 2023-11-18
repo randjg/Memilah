@@ -20,13 +20,13 @@ class EventViewModel: ObservableObject {
     }
     
     
-    func deleteEvent(documentID: String){
+    func deleteEvent(event: EventModel){
         // delete event in local events
-        if let index = events.firstIndex(where: { $0.documentID == documentID }) {
+        if let index = events.firstIndex(where: { $0.documentID == event.documentID }) {
             events.remove(at: index)
         }
         // delete in firestore
-        EventManager.shared.deleteEvent(documentID: documentID)
+        EventManager.shared.deleteEvent(event: event)
     }
     
     func validateEventName() async -> Bool {

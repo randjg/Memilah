@@ -34,6 +34,16 @@ final class TrashBinManager {
         }
     }
     
+    func refreshTrashBin(documentID: String) {
+        var newTrashBin = TrashBinModel()
+        newTrashBin.documentID = documentID
+        do {
+            try dbRef.document(documentID).setData(from: newTrashBin)
+        } catch {
+            print(error)
+        }
+    }
+    
     func getAllTrashBins() async throws -> [TrashBinModel] {
         var trashBins: [TrashBinModel] = []
         let snapshot = try await dbRef.getDocuments()

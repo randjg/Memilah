@@ -102,13 +102,13 @@ struct AddEventView: View {
         }
         .navigationBarBackButtonHidden(true)
         .onDisappear() {
-//            Task {
-//                try! await eventViewModel.getEvents()
-//            }
-            if checkFields() == false {
-                eventViewModel.event.documentID = UUID().uuidString
-                eventViewModel.events.append(eventViewModel.event)
+            Task {
+                try! await eventViewModel.getEvents()
             }
+//            if checkFields() == false {
+//                eventViewModel.event.documentID = UUID().uuidString
+//                eventViewModel.events.append(eventViewModel.event)
+//            }
             
         }
         .onAppear() {

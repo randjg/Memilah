@@ -56,7 +56,7 @@ struct EventCardComponent: View {
                         //Delete
                         Button(action:{
                             print("suc")
-                            viewModel.deleteEvent(documentID: event.documentID!)
+                            viewModel.deleteEvent(event: event)
                         }){
                             Image(systemName: "trash.fill")
                             .frame(width: 22, height: 27)
