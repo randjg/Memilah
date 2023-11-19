@@ -41,7 +41,7 @@ struct BinCardComponent: View {
                             HStack {
                                 Text(trashBin.name)
                                     .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                                    .foregroundStyle(Colors.adaptiveFontColorCard)
+                                    .foregroundStyle(Colors.adaptiveFontColor)
                                 
                                 BinStatusComponent()
                                     .frame(maxWidth: 140)
@@ -51,7 +51,7 @@ struct BinCardComponent: View {
                             
                             Text(trashBin.documentID ?? "No UUID")
                                 .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
-                                .foregroundStyle(Colors.adaptiveFontColorCard)
+                                .foregroundStyle(Colors.adaptiveFontColor)
                                 .padding(.bottom, 8)
                             
                             Text(trashBin.detail)
@@ -59,7 +59,7 @@ struct BinCardComponent: View {
                                 .multilineTextAlignment(.leading)
                                 .lineSpacing(2)
                                 .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
-                                .foregroundStyle(Colors.adaptiveFontColorCard)
+                                .foregroundStyle(Colors.adaptiveFontColor)
                                 .frame(width: 199, alignment: .leading)
                         }
                         .padding(.bottom, 10)
@@ -77,12 +77,12 @@ struct BinCardComponent: View {
                         HStack {
                             Text("Fill Level")
                                 .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                                .foregroundStyle(Colors.adaptiveFontColorCard)
+                                .foregroundStyle(Colors.adaptiveFontColor)
                             
                             Spacer()
                             Text("Last updated " + (trashBin.getTimeUpdatedDate()?.formatDateHourMinute() ?? ""))
                                 .font(.custom("PlusJakartaSans-Italic", size: 13))
-                                .foregroundStyle(Colors.adaptiveFontColorCard)
+                                .foregroundStyle(Colors.adaptiveFontColor)
                         }
                         .padding(.top, 8)
                         .padding(.bottom, -5)

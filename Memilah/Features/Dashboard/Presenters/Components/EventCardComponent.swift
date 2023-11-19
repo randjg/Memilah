@@ -14,13 +14,14 @@ struct EventCardComponent: View {
     
     var body: some View {
         ZStack{
-        
+            //Background
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
+                        .fill(Colors.adaptiveFontColorCard)
                 )
             
             //Card
@@ -28,14 +29,17 @@ struct EventCardComponent: View {
                 //if card is in edit view
                 NavigationLink(destination: EditEventView(eventToEdit: event)){
                     eventBody()
-                        .foregroundColor(.black)
+                        .foregroundColor(Colors.adaptiveFontColor)
                 }
             }else{
                 //if card is in default view
-                NavigationLink(destination: EventDetailView(event: event)){
+                NavigationLink {
+                    EventDetailView(event: event)
+                } label: {
                     eventBody()
-                        .foregroundColor(.black)
+                        .foregroundColor(Colors.adaptiveFontColor)
                 }
+
             }
             
             if toEditEvent == true{
@@ -79,7 +83,6 @@ struct EventCardComponent: View {
     
     private func eventBody() -> some View {
         VStack(alignment: .leading){
-            
             HStack{
                 //MARK: Event name
                 Text(event.name)
@@ -112,8 +115,11 @@ struct EventCardComponent: View {
             //MARK: Bins
             HStack(alignment: .center, spacing: 5){
                 Text("🗑️")
-                
-                Text("10 bins")
+                if let trashBins = event.trashBins {
+                    Text(trashBins.count.description + " bins")
+                } else {
+                    Text("0 bins")
+                }
             }.padding(.bottom, 1)
             
             //MARK: Date range

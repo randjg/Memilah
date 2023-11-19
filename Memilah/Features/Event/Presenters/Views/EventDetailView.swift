@@ -21,7 +21,7 @@ struct EventDetailView: View {
     
     var body: some View {
         
-        NavigationStack{
+//        NavigationStack{
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading){
@@ -41,7 +41,8 @@ struct EventDetailView: View {
                                         Font.custom(Fonts.plusJakartaSansBold, size: 31)
                                             .weight(.bold)
                                     )
-                            }.padding(.bottom, 3)
+                            }
+                            .padding(.bottom, 3)
                         }
                         .foregroundColor(.black)
                     }
@@ -125,7 +126,9 @@ struct EventDetailView: View {
                         .background(Color(red: 0.93, green: 0.95, blue: 0.96))
                         .cornerRadius(20.0)
                     
-                    Text("No trashbins")
+                    if trashBins.isEmpty {
+                        Text("No trashbins")
+                    }
                     
                     if isListViewShown {
                         ScrollView {
@@ -136,12 +139,14 @@ struct EventDetailView: View {
                                         .environmentObject(viewModel)
                                 }
                             }
+                            .padding(.top, 45)
                         }
                     } else {
 //                        MapView()
                         Map(){
                             ForEach(trashBins, id: \.documentID) { bin in
-                                Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? 106.802117, longitude: bin.longitude ?? -6.217588))
+                                Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? -6.217588, longitude: bin.longitude ?? 106.802117))
+                                    
                             }
                         }
                         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -162,8 +167,10 @@ struct EventDetailView: View {
                     print(error)
                 }
             }
-        }
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
+            
+//        }
     }
 }
 

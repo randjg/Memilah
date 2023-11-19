@@ -18,6 +18,8 @@ struct Colors {
     static let blueNormal = Color("BlueNormal")
     static let blueLightActive = Color("BlueLightActive")
     static let blueLight = Color("BlueLight")
+    static let blue1 = Color("Blue1")
+    static let blue4 = Color("Blue4")
     
     //MARK: Grey
     static let greyNormal = Color("GreyNormal")

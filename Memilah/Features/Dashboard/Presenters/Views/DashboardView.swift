@@ -65,7 +65,7 @@ struct DashboardView: View {
                     //MARK: Background
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                        .background(Colors.blueLight)
                         .cornerRadius(20.0)
                     
                     //MARK: Event Card Component
@@ -83,6 +83,7 @@ struct DashboardView: View {
                                         
                                     }
                                 }
+                                .padding(.vertical, 1)
                             }
                             .padding(.vertical, 30)
                         }
