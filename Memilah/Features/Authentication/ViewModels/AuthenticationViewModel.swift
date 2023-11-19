@@ -32,6 +32,10 @@ final class AuthenticationViewModel: ObservableObject {
         user = try await AuthenticationManager.shared.signInUser(email: email, password: password)
     }
     
+    func logout() throws{
+        try AuthenticationManager.shared.signOut()
+    }
+    
     func validatePassword(_ confirmPassword: String) -> Bool {
         return password == confirmPassword
     }

@@ -61,7 +61,7 @@ struct DashboardView: View {
                 }
                 .padding(.leading, 79)
                 
-                ZStack() {
+                ZStack{
                     //MARK: Background
                     Rectangle()
                         .foregroundColor(.clear)

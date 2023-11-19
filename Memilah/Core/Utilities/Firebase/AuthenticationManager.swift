@@ -33,6 +33,13 @@ final class AuthenticationManager {
     }
     
     func signOut() throws {
-        try Auth.auth().signOut()
+//        try Auth.auth().signOut()
+        print("logged out")
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
     }
 }
