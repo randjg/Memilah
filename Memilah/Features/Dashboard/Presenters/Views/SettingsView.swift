@@ -13,7 +13,7 @@ struct SettingsView: View {
     @State var isEnglish = true
     @State var isBahasaIndonesia = false
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             VStack() {
                 HStack{
                     Text("Settings")
@@ -71,7 +71,7 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding(.horizontal, 79)
-        }
+//        }
     }
 }
 

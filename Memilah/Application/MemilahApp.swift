@@ -31,6 +31,7 @@ struct MemilahApp: App {
             if Auth.auth().currentUser == nil {
                 LoginView()
                     .environmentObject(viewModel)
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
             } else {
                 RootView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
@@ -38,6 +39,7 @@ struct MemilahApp: App {
                         print(oldValue)
                         print(newValue)
                     }
+                    .environmentObject(viewModel)
             }
         }
     }
