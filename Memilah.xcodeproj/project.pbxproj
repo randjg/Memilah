@@ -73,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		432BD4772B050D1D0036FAF0 /* NotificationCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCardComponent.swift; sourceTree = "<group>"; };
+		4371F0512B0B9B67002B1643 /* Memilah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memilah.entitlements; sourceTree = "<group>"; };
 		43CC81172B046B26004DAF74 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		43CC81192B046B26004DAF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CC811C2B046B26004DAF74 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		43CC81142B046B26004DAF74 /* Memilah */ = {
 			isa = PBXGroup;
 			children = (
+				4371F0512B0B9B67002B1643 /* Memilah.entitlements */,
 				43CC81152B046B26004DAF74 /* Core */,
 				43CC81352B046B26004DAF74 /* Features */,
 				43CC81672B046B26004DAF74 /* Preview Content */,
@@ -780,6 +782,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
@@ -817,6 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
