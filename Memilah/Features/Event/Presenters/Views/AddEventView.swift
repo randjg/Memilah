@@ -36,10 +36,11 @@ struct AddEventView: View {
                         }
                         .padding(.bottom, 32)
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(Colors.adaptiveFontColor)
                     
                     Spacer()
-                }.padding(.leading, 63)
+                }
+                .padding(.leading, 63)
             }
                 
             
@@ -96,10 +97,10 @@ struct AddEventView: View {
                         }
                     }
                 }
-                
+                .padding(.top,1)
             }
-            .toolbar(removing: .sidebarToggle)
         }
+        .padding(.top, 40)
         .navigationBarBackButtonHidden(true)
         .onDisappear() {
             Task {
@@ -114,6 +115,7 @@ struct AddEventView: View {
         .onAppear() {
             eventViewModel.event = EventModel()
         }
+        .toolbar(.hidden, for: .navigationBar)
 
     }
     

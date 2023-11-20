@@ -102,7 +102,7 @@ struct LoginView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.authenticated) {
-                RootView()
+//                RootView()
             }
         }
         .navigationBarBackButtonHidden(true)
