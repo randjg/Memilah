@@ -69,6 +69,7 @@
 		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
 		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
 		F64A5FF02B050DD800CDE71C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A5FEF2B050DD800CDE71C /* NotificationView.swift */; };
+		F6A8C7E02B0BB3F200539E30 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A8C7E02B0BB3F200539E30 /* FirebaseMessaging in Frameworks */,
 				43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */,
 				43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */,
@@ -491,6 +493,7 @@
 			children = (
 				43CC81142B046B26004DAF74 /* Memilah */,
 				83BB3D5C2AE3E77F00300A56 /* Products */,
+				F6A8C7DE2B0BB3F200539E30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -515,6 +518,13 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6A8C7DE2B0BB3F200539E30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +552,7 @@
 				43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */,
 				43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */,
 				43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */,
+				F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */,
 			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Memilah.app */;
@@ -783,6 +794,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
@@ -807,6 +819,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trashtroopers.memilah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -821,6 +834,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
@@ -845,6 +859,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trashtroopers.memilah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -927,6 +942,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
