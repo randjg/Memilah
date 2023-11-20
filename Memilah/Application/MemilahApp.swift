@@ -34,16 +34,11 @@ struct MemilahApp: App {
             } else {
                 RootView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-//                    .preferredColorScheme(.dark)
                     .onChange(of: isDarkMode) { oldValue, newValue in
                         print(oldValue)
                         print(newValue)
                     }
             }
-//            AddEventView()
-//            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
-            
-//            RootView()
         }
     }
 }

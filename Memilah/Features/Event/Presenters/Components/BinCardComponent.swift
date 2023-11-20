@@ -16,7 +16,8 @@ struct BinCardComponent: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color.white)
+                .stroke(Colors.greyCardBorder, lineWidth: 1.5)
+                .fill(Colors.adaptiveFontColorCard)
             
             HStack{
                 if let trashBinImage, let image = UIImage(data: trashBinImage) {

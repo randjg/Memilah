@@ -44,7 +44,7 @@ struct EventDetailView: View {
                             }
                             .padding(.bottom, 3)
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(Colors.adaptiveFontColor)
                     }
                     
                     Text(event.dateStart.formatDateLong() + " - " + event.dateEnd.formatDateLong())
@@ -82,7 +82,6 @@ struct EventDetailView: View {
                             ZStack{
                                 Rectangle()
                                     .foregroundColor(Colors.greyLight)
-                                    .padding(.trailing, 21)
                                     .cornerRadius(5)
                                     .opacity(!isListViewShown ? 100 : 0)
                                 
@@ -92,8 +91,8 @@ struct EventDetailView: View {
                                     print("map icon clicked")
                                 }){
                                     Images.mapIcon
-                                        .padding(.trailing, 21)
                                 }
+                                .foregroundStyle(Colors.adaptiveFontColor)
                                 
                             }
                             .frame(width: 30, height: 30)
@@ -112,6 +111,7 @@ struct EventDetailView: View {
                                 }){
                                     Images.listIcon
                                 }
+                                .foregroundStyle(Colors.adaptiveFontColor)
                             }
                             .frame(width: 30, height: 30)
                         }
@@ -123,7 +123,7 @@ struct EventDetailView: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                        .background(Colors.blueLight)
                         .cornerRadius(20.0)
                     
                     if trashBins.isEmpty {
@@ -140,6 +140,7 @@ struct EventDetailView: View {
                                 }
                             }
                             .padding(.top, 45)
+                            .padding(.horizontal, 1)
                         }
                     } else {
 //                        MapView()
@@ -149,7 +150,12 @@ struct EventDetailView: View {
                                     
                             }
                         }
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Colors.greyDarker, lineWidth: 2)
+//                                .inset(by: 1)
+                        )
                         .padding(.vertical, 45)
                         .padding(.horizontal, 104)
                     }

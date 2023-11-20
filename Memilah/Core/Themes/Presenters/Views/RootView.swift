@@ -13,7 +13,7 @@ struct RootView: View {
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
     @State private var defaultView = true
-//    @Binding var isDarkMode: Bool
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -74,12 +74,12 @@ struct RootView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-//        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .tint(Color.accentColor)
+        
     }
     
 }
 
 #Preview {
     RootView()
-//    RootView(isDarkMode: .constant(true))
 }

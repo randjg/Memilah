@@ -41,6 +41,7 @@ struct SettingsView: View {
                                     .weight(.medium)
                             )
                     })
+                    .tint(.blueNormal)
                 }
                 .padding(.bottom, 60)
                 
