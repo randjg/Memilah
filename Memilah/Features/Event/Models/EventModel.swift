@@ -28,11 +28,13 @@ struct EventModel: Codable {
     }
     
     init() {
+        self.documentID = ""
         self.name = ""
         self.description = ""
         self.location = ""
         self.dateEnd = Date()
         self.dateStart = Date()
+        self.trashBins = []
     }
 }
 

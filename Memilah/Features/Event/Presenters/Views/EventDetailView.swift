@@ -164,7 +164,7 @@ struct EventDetailView: View {
             .padding(.top, 55)
             .ignoresSafeArea()
             .sheet(isPresented: $showAddTrashBinModal, content: {
-                AddTrashBinView(event: event)
+                AddTrashBinView(event: event, showAddTrashBinModal: $showAddTrashBinModal)
             })
             .task {
                 do {
@@ -175,6 +175,15 @@ struct EventDetailView: View {
             }
             .navigationBarBackButtonHidden(true)
             .toolbar(.hidden, for: .navigationBar)
+            .onChange(of: showAddTrashBinModal) { oldValue, newValue in
+                Task {
+                    do {
+                        trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
             
 //        }
     }

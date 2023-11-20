@@ -36,13 +36,23 @@ final class EventManager {
         }
     }
     
+    private func eventAlreadyEnded(dateEnd: Date ) -> Bool{
+        let sameDay = Calendar.current.isDate(Date(), equalTo: dateEnd, toGranularity: .day)
+        if dateEnd < Date() && sameDay == false{
+            return true
+        }
+        return false
+    }
     func getEvents() async throws -> [EventModel] {
         var events: [EventModel] = []
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             let event = try document.data(as: EventModel.self)
-//            event.documentID = document.documentID
-            events.append(event)
+            if eventAlreadyEnded(dateEnd: event.dateEnd) {
+                deleteEvent(event: event)
+            } else {
+                events.append(event)
+            }
         }
         
         return events

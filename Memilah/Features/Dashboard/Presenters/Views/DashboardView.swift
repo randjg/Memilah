@@ -89,15 +89,6 @@ struct DashboardView: View {
                         }
                     }
                     
-                    //On Edit mode
-                    if toEditEvent{
-                        Button(action:{
-                            toEditEvent = false
-                        }){
-                            Text("Save Changes")
-                        }
-                    }
-                    
                     
                 }
             }

@@ -14,19 +14,21 @@ class TrashBinViewModel: ObservableObject {
     @Published var trashBin = TrashBinModel() // trash bin intext field
     var imagePath = ""
     
-    func addTrashBin(event: EventModel, imageData: Data?, trashBinID: String?) {
+    func addTrashBin(event: EventModel, imageData: Data?, trashBinID: String?) async throws {
         // update the event's trahsbins
         guard let eventID = event.documentID else { return }
         guard let trashBinID = trashBinID else { return }
         var updatedEvent = event
-        updatedEvent.trashBins?.append(trashBinID)
+        if (updatedEvent.trashBins != nil) {
+            updatedEvent.trashBins?.append(trashBinID)
+        }
         
         
         // Update the event in Firestore
         EventManager.shared.updateEvent(documentId: eventID, newEvent: updatedEvent)
         
-        Task {
-            do {
+//        Task {
+//            do {
                 if let imageData = imageData {
                     try await uploadImage(data: imageData)
                     DispatchQueue.main.async {
@@ -39,11 +41,11 @@ class TrashBinViewModel: ObservableObject {
                     // Update the trash bin in Firestore
                     TrashBinManager.shared.updateTrashBin(documentID: trashBinID, newTrashBin: self.trashBin)
                 }
-            } catch {
-                // Handle the error appropriately
-                print("Error adding trash bin: \(error.localizedDescription)")
-            }
-        }
+//            } catch {
+//                // Handle the error appropriately
+//                print("Error adding trash bin: \(error.localizedDescription)")
+//            }
+//        }
     }
     
     func uploadImage(data: Data) async throws {

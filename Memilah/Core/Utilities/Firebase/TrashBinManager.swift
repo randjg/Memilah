@@ -38,6 +38,7 @@ final class TrashBinManager {
         var newTrashBin = TrashBinModel()
         newTrashBin.documentID = documentID
         do {
+            deleteTrashBin(documentID: documentID)
             try dbRef.document(documentID).setData(from: newTrashBin)
         } catch {
             print(error)
