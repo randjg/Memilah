@@ -10,6 +10,21 @@ import Firebase
 import FirebaseCore
 import FirebaseMessaging
 
+@main
+struct MemilahApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var viewModel = AuthenticationViewModel()
+    
+
+    var body: some Scene {
+        WindowGroup {
+            LoginView()
+                .environmentObject(viewModel)
+//            AddEventView()
+//            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
+        }
+    }
+}
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -53,31 +68,36 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-//Cloud Messaging
+//MARK: Cloud Messaging
 extension AppDelegate: MessagingDelegate{
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-
-      let dataDict: [String: String] = ["token": fcmToken ?? ""]
+    print("Firebase registration token: \(String(describing: fcmToken))")
         
+      let dataDict: [String: String] = ["token": fcmToken ?? ""]
+        NotificationCenter.default.post(
+          name: Notification.Name("FCMToken"),
+          object: nil,
+          userInfo: dataDict
+        )
         //Store token in Firestore for sending notifications from server in future
-        print(dataDict)
+//        print(dataDict)
     }
 }
 
-//User Notifications
+//MARK: User Notifications
 extension AppDelegate: UNUserNotificationCenterDelegate {
-  // Receive displayed notifications for iOS 10 devices.
+ 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               willPresent notification: UNNotification) async
     -> UNNotificationPresentationOptions {
     let userInfo = notification.request.content.userInfo
 
-    // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
-
-    // ...
-
-    // Print full message.
+    //Do something with msg data
+            
+        if let messageID = userInfo[gcmMessageIDKey]{
+            print("Message ID: \(messageID)")
+        }
+        
     print(userInfo)
 
     // Change this to your preferred presentation option
@@ -88,7 +108,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                               didReceive response: UNNotificationResponse) async {
     let userInfo = response.notification.request.content.userInfo
 
-    // ...
+      if let messageID = userInfo[gcmMessageIDKey]{
+          print("Message ID: \(messageID)")
+      }
 
     // With swizzling disabled you must let Messaging know about the message, for Analytics
     // Messaging.messaging().appDidReceiveMessage(userInfo)
@@ -96,20 +118,4 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     // Print full message.
     print(userInfo)
   }
-}
-
-@main
-struct MemilahApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var viewModel = AuthenticationViewModel()
-    
-
-    var body: some Scene {
-        WindowGroup {
-            LoginView()
-                .environmentObject(viewModel)
-//            AddEventView()
-//            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
-        }
-    }
 }
