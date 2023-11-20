@@ -23,14 +23,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MemilahApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthenticationViewModel()
+    @AppStorage("isDarkMode") var isDarkMode = false
+//    @Environment(\.colorScheme) var colorScheme
+//    @State var isDarkMode = false
     var body: some Scene {
         WindowGroup {
-//            LoginView()
-//                .environmentObject(viewModel)
-//            AddEventView()
-//            AddTrashBinView(event: .constant(EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date())))
-            
-            RootView()
+            if Auth.auth().currentUser == nil {
+                LoginView()
+                    .environmentObject(viewModel)
+            } else {
+                RootView()
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
+                    .onChange(of: isDarkMode) { oldValue, newValue in
+                        print(oldValue)
+                        print(newValue)
+                    }
+            }
         }
     }
 }
