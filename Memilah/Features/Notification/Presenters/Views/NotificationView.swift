@@ -27,7 +27,7 @@ struct NotificationView: View {
             ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
-                    .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                    .background(Colors.blueLight)
                     .cornerRadius(20.0)
                     .padding(.top, 50)
                 

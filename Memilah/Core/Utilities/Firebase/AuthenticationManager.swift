@@ -23,6 +23,7 @@ final class AuthenticationManager {
     func createUser(email: String, password: String) async throws -> UserModel {
         let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
         let result = UserModel(user: authDataResult.user)
+        try signOut()
         return result
     }
     

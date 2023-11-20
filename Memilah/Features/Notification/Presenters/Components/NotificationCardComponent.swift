@@ -19,8 +19,7 @@ struct NotificationCardComponent: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 8)
-                .frame(width: 960, height: 110)
-                .foregroundColor(.white)
+                .foregroundColor(.adaptiveFontColorCard)
                 .shadow(radius: 5)
             
             if (fillLevelCategory1 >= 80.0 && fillLevelCategory1 < 100) || (fillLevelCategory2 >= 80.0 && fillLevelCategory2 < 100) || (fillLevelCategory3 >= 80.0 && fillLevelCategory3 < 100){
@@ -30,7 +29,7 @@ struct NotificationCardComponent: View {
                             .padding(.leading, 13)
                         //emoji
                         Text("Fill Level Alert") //header alert
-                            .font(.custom("PlusJakartaSans-Regular", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                             .fontWeight(.bold)
                         
                         Spacer()
@@ -39,11 +38,11 @@ struct NotificationCardComponent: View {
                     }
                     
                     Text("The bins at \(binLocation) have reached ≥80% fill level. Please pick up the trash.")
-                        .font(.custom("PlusJakartaSans-Regular", size: 21))
+                        .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                         .padding(.top, -5)
                         .padding(.leading, 45)
                         .frame(width: 816, alignment: .topLeading)
-                }.frame(width: 960, height: 110)
+                }
                 
             }
             
@@ -55,7 +54,7 @@ struct NotificationCardComponent: View {
                             .padding(.leading, 13)
                         //emoji
                         Text("Trash Bin Alert") //header alert
-                            .font(.custom("PlusJakartaSans-Regular", size: 21))
+                            .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                             .fontWeight(.bold)
                         
                         Spacer()
@@ -64,15 +63,16 @@ struct NotificationCardComponent: View {
                     }
                     
                     Text("The bins at \(binLocation) has not received an update for more than 30 minutes. Please check up the trash. ")
-                        .font(.custom("PlusJakartaSans-Regular", size: 21))
+                        .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                         .padding(.top, -5)
                         .padding(.leading, 45)
                         .frame(width: 816, alignment: .topLeading)
-                }.frame(width: 960, height: 110)
+                }
                 
             }
             
         }
+        .frame(width: 960, height: 110)
     }
 }
 

@@ -10,8 +10,6 @@ import FirebaseAuth
 
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthenticationViewModel
-    @State private var isLoggedOut = false
-    
     var body: some View {
 
         VStack(alignment: .leading){
@@ -24,16 +22,16 @@ struct ProfileView: View {
                     )
                 Spacer()
             }
-            .padding(.leading, 63)
-            .padding(.vertical, 58)
+            .padding(.bottom, 58)
+            .padding(.horizontal, 79)
             
             Spacer()
             
-            ZStack{
+            ZStack(alignment: .topLeading) {
                 //MARK: Background
                 Rectangle()
                     .foregroundColor(.clear)
-                    .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                    .background(Colors.blueLight)
                     .cornerRadius(20.0)
                     .ignoresSafeArea()
                 
@@ -50,14 +48,16 @@ struct ProfileView: View {
                             .font(
                                 Font.custom(Fonts.plusJakartaSansRegular, size: 21)
                             )
-                    }.padding(.bottom, 35)
+                    }
+                    .padding(.bottom, 35)
 
                     Button(action:{
                         do {
                             try viewModel.logout()
-                            isLoggedOut = true
+                            viewModel.authenticated = false
+//                            dismiss()
                         } catch {
-                            
+                            print(error)
                         }
                     }){
                         Text("Logout")
@@ -69,12 +69,10 @@ struct ProfileView: View {
                             .underline()
                     }
                 }
-                
+                .padding(.top, 80)
+                .padding(.horizontal, 79)
             }
-            
         }
-        
-        
     }
 }
 

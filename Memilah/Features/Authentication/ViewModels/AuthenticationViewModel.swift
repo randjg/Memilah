@@ -34,6 +34,7 @@ final class AuthenticationViewModel: ObservableObject {
     
     func logout() throws{
         try AuthenticationManager.shared.signOut()
+        user = nil
     }
     
     func validatePassword(_ confirmPassword: String) -> Bool {

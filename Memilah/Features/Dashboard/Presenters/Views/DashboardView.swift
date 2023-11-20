@@ -101,7 +101,7 @@ struct DashboardView: View {
                     
                 }
             }
-            .padding(.top, 55)
+            .padding(.top, 77)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
                     .environmentObject(viewModel)
