@@ -104,10 +104,11 @@ struct AddTrashBinView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8.0)
                                 .frame(width: 176, height: 31)
-                                .foregroundColor(Colors.greyLightActive)
+                                .foregroundColor(Colors.orangeNormal)
                             Text("Upload an image")
                                 .font(.custom(Fonts.plusJakartaSansSemiBold, size: 16))
                                 .frame(width: 130, height: 20)
+                                .foregroundStyle(Colors.adaptiveFontColorCard)
                         }
                     }
                     .padding(.leading, 57)
@@ -123,17 +124,12 @@ struct AddTrashBinView: View {
                 //MARK: Add Trash Bin Button
                 HStack {
                     Spacer()
-                    Button("Add Trash Bin"){
+                    SecondaryButtonComponent(disable: viewModel.validateEmptyFields(), textPlaceholder: "Add Trash Bin") {
                         Task {
                             try await viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
                             showAddTrashBinModal = false
                         }
-                    }.buttonStyle(SecondaryButtonStyle(textPlaceholder: "Add Trash Bin", action: {
-                        Task {
-                            try await viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
-                            showAddTrashBinModal = false
-                        }
-                    }))
+                    }
                     .disabled(viewModel.validateEmptyFields())
                 }
                 .frame(width: 630)
