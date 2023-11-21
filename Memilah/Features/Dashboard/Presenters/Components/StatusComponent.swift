@@ -57,9 +57,9 @@ struct StatusComponent: View {
     private func statusColor() -> Color {
         switch eventStatus {
         case .onGoing:
-            return Color(Colors.greenOngoing)
+            return Colors.greenOngoing
         case .upcoming:
-            return Color(Colors.greyNormal)
+            return Colors.greyNormal
         }
     }
  
