@@ -8,31 +8,81 @@
 import SwiftUI
 
 struct EventCardComponent: View {
-    
+    @EnvironmentObject var viewModel: EventViewModel
+    @Binding var toEditEvent: Bool
     var event: EventModel
     
     var body: some View {
         ZStack{
+            //Background
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Colors.greyCardBorder, lineWidth: 1.5)
+                        .fill(Colors.adaptiveFontColorCard)
                 )
-            NavigationLink {
-                EventDetailView(event: event)
-            } label: {
-                eventBody()
-                    .foregroundStyle(.black)
+            
+            //Card
+            if toEditEvent == true{
+                //if card is in edit view
+                NavigationLink(destination: EditEventView(eventToEdit: event)){
+                    eventBody()
+                        .foregroundColor(Colors.adaptiveFontColor)
+                }
+            }else{
+                //if card is in default view
+                NavigationLink {
+                    EventDetailView(event: event)
+                } label: {
+                    eventBody()
+                        .foregroundColor(Colors.adaptiveFontColor)
+                }
+
             }
+            
+            if toEditEvent == true{
+                //MARK: Edit and Delete Buttons
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        
+                        //Edit
+                        NavigationLink(destination: EditEventView(eventToEdit: event)){
+                            Image(systemName: "pencil.line")
+                            .frame(width: 22, height: 18)
+                            .padding(5)
+                            .foregroundColor(Colors.greyDark)
+                        }
+                        
+                        //Delete
+                        Button(action:{
+                            print("suc")
+                            viewModel.deleteEvent(event: event)
+                        }){
+                            Image(systemName: "trash.fill")
+                            .frame(width: 22, height: 27)
+                            .padding(5)
+                            .foregroundColor(Colors.redNormal)
+                        }
+                        
+                    }
+                    .padding(.trailing, 3)
+                }
+            }
+            //MARK: Card as a button
+//            NavigationLink(destination: EventDetailView( event: event)){
+                
+//            }
+            
         }
         .frame(width: 345, height: 226)
     }
     
     private func eventBody() -> some View {
         VStack(alignment: .leading){
-            
             HStack{
                 //MARK: Event name
                 Text(event.name)
@@ -40,7 +90,7 @@ struct EventCardComponent: View {
                 Spacer()
                 
                 //MARK: Status
-                StatusComponent(eventDate: event.dateStart)
+                StatusComponent(dateStart: event.dateStart, dateEnd: event.dateEnd)
                     .padding(.trailing, 13)
             }
             .padding(.top, 16)
@@ -65,8 +115,11 @@ struct EventCardComponent: View {
             //MARK: Bins
             HStack(alignment: .center, spacing: 5){
                 Text("🗑️")
-                
-                Text("10 bins")
+                if let trashBins = event.trashBins {
+                    Text(trashBins.count.description + " bins")
+                } else {
+                    Text("0 bins")
+                }
             }.padding(.bottom, 1)
             
             //MARK: Date range
@@ -81,20 +134,20 @@ struct EventCardComponent: View {
                 
             } .padding(.bottom, 27)
             
-            
         }.padding(.horizontal, 13)
     }
 }
 
 #Preview {
     EventCardComponent(
-        event: EventModel(
+        toEditEvent: .constant(false),
+         event: EventModel(
             documentID: "ythi0zFLYayMh9d3fwGL",
             name: "t",
             description: "t",
             location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
+            dateEnd: Date(timeIntervalSinceNow: 98400),
+            dateStart: Date(timeIntervalSinceNow: 18400)
         )
     )
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		432BD4782B050D1D0036FAF0 /* NotificationCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432BD4772B050D1D0036FAF0 /* NotificationCardComponent.swift */; };
+		4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFE82B0772FC002B1643 /* SettingsView.swift */; };
+		4371EFEB2B09DBD3002B1643 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFEA2B09DBD3002B1643 /* ProfileView.swift */; };
+		4371EFED2B0A3541002B1643 /* LanguageButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFEC2B0A3541002B1643 /* LanguageButtonComponent.swift */; };
 		43CC816C2B046B26004DAF74 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81172B046B26004DAF74 /* DateExtension.swift */; };
 		43CC816D2B046B26004DAF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81192B046B26004DAF74 /* Assets.xcassets */; };
 		43CC816E2B046B26004DAF74 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC811C2B046B26004DAF74 /* ImagePicker.swift */; };
@@ -75,6 +78,9 @@
 /* Begin PBXFileReference section */
 		432BD4772B050D1D0036FAF0 /* NotificationCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCardComponent.swift; sourceTree = "<group>"; };
 		4371F0512B0B9B67002B1643 /* Memilah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memilah.entitlements; sourceTree = "<group>"; };
+		4371EFE82B0772FC002B1643 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4371EFEA2B09DBD3002B1643 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4371EFEC2B0A3541002B1643 /* LanguageButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonComponent.swift; sourceTree = "<group>"; };
 		43CC81172B046B26004DAF74 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		43CC81192B046B26004DAF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CC811C2B046B26004DAF74 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 				43CC813B2B046B26004DAF74 /* StatusComponent.swift */,
 				43CC813C2B046B26004DAF74 /* SecondaryButtonComponent.swift */,
 				43CC813D2B046B26004DAF74 /* EventCardComponent.swift */,
+				4371EFEC2B0A3541002B1643 /* LanguageButtonComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,7 +356,9 @@
 		43CC813E2B046B26004DAF74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4371EFEA2B09DBD3002B1643 /* ProfileView.swift */,
 				43CC813F2B046B26004DAF74 /* DashboardView.swift */,
+				4371EFE82B0772FC002B1643 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 				432BD4782B050D1D0036FAF0 /* NotificationCardComponent.swift in Sources */,
 				43CC819C2B046B26004DAF74 /* EditEventView.swift in Sources */,
 				43CC81932B046B26004DAF74 /* BinStatusComponent.swift in Sources */,
+				4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */,
 				43CC81902B046B26004DAF74 /* TrashBinModel.swift in Sources */,
 				43CC81812B046B26004DAF74 /* DashboardViewModel.swift in Sources */,
 				43CC81912B046B26004DAF74 /* Place.swift in Sources */,
@@ -641,6 +651,8 @@
 				43CC81722B046B26004DAF74 /* TrashBinManager.swift in Sources */,
 				43CC818B2B046B26004DAF74 /* RegisterView.swift in Sources */,
 				43CC81712B046B26004DAF74 /* StorageManager.swift in Sources */,
+				4371EFEB2B09DBD3002B1643 /* ProfileView.swift in Sources */,
+				4371EFED2B0A3541002B1643 /* LanguageButtonComponent.swift in Sources */,
 				43CC818E2B046B26004DAF74 /* MapViewModel.swift in Sources */,
 				43CC818D2B046B26004DAF74 /* TrashBinViewModel.swift in Sources */,
 				43CC81832B046B26004DAF74 /* SecondaryButtonComponent.swift in Sources */,

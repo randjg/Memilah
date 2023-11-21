@@ -15,7 +15,8 @@ enum eventStatus{
 struct StatusComponent: View {
     
     @State var eventStatus: eventStatus = .onGoing
-    var eventDate: Date
+    var dateStart: Date
+    var dateEnd: Date
     
     
     var body: some View {
@@ -45,9 +46,13 @@ struct StatusComponent: View {
         
     }
     
+    func isDateInRange() -> Bool {
+        return Date() >= dateStart && Date() <= dateEnd
+    }
+    
     private func compareDate() {
-        let sameDay = Calendar.current.isDate(Date(), equalTo: eventDate, toGranularity: .day)
-        if sameDay {
+        let sameDay = Calendar.current.isDate(Date(), equalTo: dateStart, toGranularity: .day)
+        if sameDay || isDateInRange() {
             eventStatus = .onGoing
         } else {
             eventStatus = .upcoming
@@ -66,5 +71,5 @@ struct StatusComponent: View {
 }
 
 #Preview {
-    StatusComponent(eventDate: Date())
+    StatusComponent(dateStart: Date(), dateEnd: Date())
 }

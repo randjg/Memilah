@@ -57,3 +57,24 @@ struct SecondaryButtonStyle: ButtonStyle{
 }
 
 
+struct SecondaryButtonComponent: View{
+    var disable: Bool
+    var textPlaceholder: String
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            Text(textPlaceholder)
+                .font(
+                    Font.custom(Fonts.plusJakartaSansBold, size: 20)
+                        .weight(.bold)
+                )
+                .padding(.horizontal, 49)
+                .padding(.vertical, 10)
+                .foregroundColor(disable ? Colors.greyLightActive : Colors.greyDarker)
+                .background(disable ? Colors.primaryInActive : Colors.blueLightActive)
+                .cornerRadius(8.0)
+        })
+        .disabled(disable)
+    }
+}

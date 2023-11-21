@@ -11,6 +11,23 @@ import Foundation
 class EventViewModel: ObservableObject {
     @Published var event: EventModel = EventModel()
     @Published var nameIsExist = false
+    @Published var events = [EventModel]()
+    
+    @discardableResult
+    func getEvents() async throws -> [EventModel]{
+        events = try await EventManager.shared.getEvents()
+        return events
+    }
+    
+    
+    func deleteEvent(event: EventModel){
+        // delete event in local events
+        if let index = events.firstIndex(where: { $0.documentID == event.documentID }) {
+            events.remove(at: index)
+        }
+        // delete in firestore
+        EventManager.shared.deleteEvent(event: event)
+    }
     
     func validateEventName() async -> Bool {
         do {
@@ -29,6 +46,7 @@ class EventViewModel: ObservableObject {
             if isValid {
                 nameIsExist = false
                 event.location = location
+                
                 EventManager.shared.addEvent(event: event)
             } else {
                 nameIsExist = true
@@ -55,6 +73,7 @@ class EventViewModel: ObservableObject {
             }
         }
     }
+    
     
     func validateEmptyFields() -> Bool {
         return event.name.isEmpty || event.description.isEmpty

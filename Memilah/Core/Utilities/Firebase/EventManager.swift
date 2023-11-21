@@ -21,8 +21,13 @@ final class EventManager {
         }
     }
     
-    func deleteEvent(documentID: String) {
-        dbRef.document(documentID).delete { err in
+    func deleteEvent(event: EventModel) {
+        if let trashBins = event.trashBins {
+            for trashBin in trashBins {
+                TrashBinManager.shared.refreshTrashBin(documentID: trashBin)
+            }
+        }
+        dbRef.document(event.documentID!).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
@@ -31,13 +36,23 @@ final class EventManager {
         }
     }
     
+    private func eventAlreadyEnded(dateEnd: Date ) -> Bool{
+        let sameDay = Calendar.current.isDate(Date(), equalTo: dateEnd, toGranularity: .day)
+        if dateEnd < Date() && sameDay == false{
+            return true
+        }
+        return false
+    }
     func getEvents() async throws -> [EventModel] {
         var events: [EventModel] = []
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
-            var event = try document.data(as: EventModel.self)
-            event.documentID = document.documentID
-            events.append(event)
+            let event = try document.data(as: EventModel.self)
+            if eventAlreadyEnded(dateEnd: event.dateEnd) {
+                deleteEvent(event: event)
+            } else {
+                events.append(event)
+            }
         }
         
         return events
@@ -53,11 +68,11 @@ final class EventManager {
         }
     }
     
-    func updateEventTrashBins(documentID: String, trashBins: [String]) {
+    func updateEventTrashBins(documentID: String, trashBins: [String]?) {
         let event = dbRef.document(documentID)
         
         event.updateData([
-            "trashBins": trashBins
+            "trashBins": trashBins ?? []
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
@@ -74,11 +89,10 @@ final class EventManager {
         guard let document = document else {
             return nil
         }
-        var event = try document.data(as: EventModel.self)
+        let event = try document.data(as: EventModel.self)
         
-        event.documentID = document.documentID
+//        event.documentID = document.documentID
         
         return event
-//        return nil
     }
 }

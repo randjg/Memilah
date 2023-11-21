@@ -17,12 +17,12 @@ struct PillShapeFillLevel: View {
         VStack{
             Text(category) //category trash
                 .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
-                .foregroundStyle(Colors.adaptiveFontColorCard)
+                .foregroundStyle(Colors.adaptiveFontColor)
                 .fontWeight(.medium)
             
             Text("\(Int(fillPercentage * 100))%")
                 .font(.custom(Fonts.plusJakartaSansRegular, size: 31))
-                .foregroundStyle(Colors.adaptiveFontColorCard)
+                .foregroundStyle(Colors.adaptiveFontColor)
                 .fontWeight(.bold)
                 .padding(.bottom, 1)
             

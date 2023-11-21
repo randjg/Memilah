@@ -14,8 +14,7 @@ struct AddTrashBinView: View {
     var event: EventModel
     @State var showingImagePicker = false
     @State var inputImage: UIImage?
-    
-//    let context = CIContext()
+    @Binding var showAddTrashBinModal: Bool
     
     var body: some View {
         HStack {
@@ -105,10 +104,11 @@ struct AddTrashBinView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8.0)
                                 .frame(width: 176, height: 31)
-                                .foregroundColor(Colors.greyLightActive)
+                                .foregroundColor(Colors.orangeNormal)
                             Text("Upload an image")
                                 .font(.custom(Fonts.plusJakartaSansSemiBold, size: 16))
                                 .frame(width: 130, height: 20)
+                                .foregroundStyle(Colors.adaptiveFontColorCard)
                         }
                     }
                     .padding(.leading, 57)
@@ -124,11 +124,13 @@ struct AddTrashBinView: View {
                 //MARK: Add Trash Bin Button
                 HStack {
                     Spacer()
-                    Button("Add Trash Bin"){
-                        viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
-                    }.buttonStyle(SecondaryButtonStyle(textPlaceholder: "Add Trash Bin", action: {
-                        viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
-                    }))
+                    SecondaryButtonComponent(disable: viewModel.validateEmptyFields(), textPlaceholder: "Add Trash Bin") {
+                        Task {
+                            try await viewModel.addTrashBin(event: event, imageData: inputImage?.jpegData(compressionQuality: 0.8), trashBinID: selectedTrashBin.documentID)
+                            showAddTrashBinModal = false
+                        }
+                    }
+                    .disabled(viewModel.validateEmptyFields())
                 }
                 .frame(width: 630)
                 .padding(.top, 87)
@@ -151,5 +153,5 @@ struct AddTrashBinView: View {
 }
 
 #Preview {
-    AddTrashBinView(event: EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date()))
+    AddTrashBinView(event: EventModel(documentID: "ythi0zFLYayMh9d3fwGL", name: "", description: "", location: "", dateEnd: Date(), dateStart: Date()), showAddTrashBinModal: .constant(true))
 }

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct AddEventView: View {
-    
-    @StateObject var eventViewModel = EventViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    
     
     var body: some View {
 
@@ -21,12 +20,13 @@ struct AddEventView: View {
                 //Header Add Event
                 HStack{
                     Button(action:{
-                        
+                        self.presentationMode.wrappedValue.dismiss()
                     }){
                         HStack{
                             Image(systemName: "chevron.left")
                                 .bold()
-                                .padding()
+                                .padding(.trailing, 5)
+
                             
                             Text("Add Event")
                                 .font(
@@ -36,9 +36,11 @@ struct AddEventView: View {
                         }
                         .padding(.bottom, 32)
                     }
+                    .foregroundColor(Colors.adaptiveFontColor)
                     
                     Spacer()
-                }.padding(.leading, 63)
+                }
+                .padding(.leading, 63)
             }
                 
             
@@ -89,17 +91,32 @@ struct AddEventView: View {
                     }
                     
                     GridRow {
-                        
                         SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
+                            self.presentationMode.wrappedValue.dismiss()
                         }
-                        
                     }
                 }
-                
+                .padding(.top,1)
             }
-            .toolbar(removing: .sidebarToggle)
-        }.navigationBarBackButtonHidden(true)
+        }
+        .padding(.top, 40)
+        .navigationBarBackButtonHidden(true)
+        .onDisappear() {
+            Task {
+                try! await eventViewModel.getEvents()
+            }
+//            if checkFields() == false {
+//                eventViewModel.event.documentID = UUID().uuidString
+//                eventViewModel.events.append(eventViewModel.event)
+//            }
+            
+        }
+        .onAppear() {
+            eventViewModel.event = EventModel()
+        }
+        .toolbar(.hidden, for: .navigationBar)
+
     }
     
     func checkFields() -> Bool {
@@ -109,4 +126,5 @@ struct AddEventView: View {
 
 #Preview {
     AddEventView()
+        .environmentObject(EventViewModel())
 }

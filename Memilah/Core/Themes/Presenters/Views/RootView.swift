@@ -9,19 +9,22 @@ import SwiftUI
 
 struct RootView: View {
     @State private var isExpanded = false
-    @StateObject var dashboardViewModel = DashboardViewModel()
+    @StateObject var viewModel = EventViewModel()
     @State private var columnVisibility = NavigationSplitViewVisibility.all
     @State var isLoading = true
-    @State var events = [EventModel]()
-    
+    @State private var defaultView = true
+    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var authViewModel : AuthenticationViewModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
+        
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List{
                 DisclosureGroup(isExpanded: $isExpanded){
                     
                     //MARK: Upload events from firebase here
                     
-                    ForEach(events, id: \.documentID) { event in
+                    ForEach(viewModel.events, id: \.documentID) { event in
                         NavigationLink {
                             EventDetailView(event: event)
                         } label: {
@@ -30,27 +33,28 @@ struct RootView: View {
                     }
                 }label: {
                     NavigationLink {
-                        DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
-                                .environmentObject(dashboardViewModel)
+                        DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                                .environmentObject(viewModel)
                     } label: {
                         Label("Event", systemImage: "ticket")
                     }
                 }
                 
                 NavigationLink {
-                    
+                    ProfileView()
+                        .environmentObject(authViewModel)
                 } label: {
                     Label("Profile", systemImage: "person.fill")
                 }
                 
                 NavigationLink {
-                    
+                    NotificationView() // has not fully functional
                 } label: {
                     Label("Notification", systemImage: "bell.fill")
                 }
                 
                 NavigationLink {
-                    
+                    SettingsView()
                 } label: {
                     Label("Settings", systemImage: "gearshape.fill")
                 }
@@ -59,20 +63,26 @@ struct RootView: View {
             .onAppear{
                 isExpanded = false
             }
-
             .navigationTitle("Memilah")
             .listStyle(SidebarListStyle())
         } detail: {
-            DashboardView(events: $events, isLoading: $isLoading, columnVisibility: $columnVisibility)
-                    .environmentObject(dashboardViewModel)
+            DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
+                    .environmentObject(viewModel)
         }
         .ignoresSafeArea()
-        .task {
-            events = try! await dashboardViewModel.getEvents()
-            isLoading = false
+        .onAppear {
+            Task {
+                try! await viewModel.getEvents()
+                isLoading = false
+            }
         }
         .navigationBarBackButtonHidden(true)
-
+        .tint(Color.accentColor)
+        .onChange(of: authViewModel.authenticated) { oldValue, newValue in
+            if newValue == false {
+                dismiss()
+            }
+        }
         
     }
     
@@ -80,4 +90,5 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environmentObject(AuthenticationViewModel())
 }
