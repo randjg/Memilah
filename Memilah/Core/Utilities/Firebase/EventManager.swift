@@ -68,11 +68,11 @@ final class EventManager {
         }
     }
     
-    func updateEventTrashBins(documentID: String, trashBins: [String]) {
+    func updateEventTrashBins(documentID: String, trashBins: [String]?) {
         let event = dbRef.document(documentID)
         
         event.updateData([
-            "trashBins": trashBins
+            "trashBins": trashBins ?? []
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")

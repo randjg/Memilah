@@ -82,13 +82,13 @@ extension TrashBinModel {
         name: "Pintu Utara",
         detail: "Samping kanan gerbang",
         imageUrl: "trash-bins/trash-bin-1.jpeg",
-        latitude: 106.802117,
-        longitude: -6.217588,
+        latitude: -6.217588,
+        longitude: 106.802117,
         levelOthers: 0.1,
         levelPlastic: 0.1,
         levelPaper: 0.1,
         objectDetected: false,
-        event: "GEALvPSnGFMcKOAgKpbc",
+        event: "pOmqF4Q3880B7eXHtR06",
         timeUpdated: Date().formatDateFirestore()
     )
 }

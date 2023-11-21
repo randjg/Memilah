@@ -15,6 +15,8 @@ struct EventDetailView: View {
     @State var isListViewShown: Bool = false
     @State var showAddTrashBinModal = false
     @State var trashBins = [TrashBinModel]()
+    @State var selectedTrashBin: TrashBinModel?
+    @State var showTrashBinDetail = false
     var event: EventModel
     
 //    @Binding var binStatus: binStatus
@@ -143,10 +145,11 @@ struct EventDetailView: View {
                             .padding(.horizontal, 1)
                         }
                     } else {
-//                        MapView()
-                        Map(){
+                        Map(selection: $selectedTrashBin){
                             ForEach(trashBins, id: \.documentID) { bin in
                                 Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? -6.217588, longitude: bin.longitude ?? 106.802117))
+                                    .tint(.red)
+                                    .tag(bin)
                                     
                             }
                         }
@@ -154,7 +157,6 @@ struct EventDetailView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Colors.greyDarker, lineWidth: 2)
-//                                .inset(by: 1)
                         )
                         .padding(.vertical, 45)
                         .padding(.horizontal, 104)
@@ -184,8 +186,16 @@ struct EventDetailView: View {
                     }
                 }
             }
-            
-//        }
+            .onChange(of: selectedTrashBin) { oldVale, newValue in
+                if newValue == nil {
+                    showTrashBinDetail = false
+                } else {
+                    showTrashBinDetail = true
+                }
+            }
+            .sheet(isPresented: $showTrashBinDetail) {
+                TrashbinDetailsView(trashBin: $selectedTrashBin)
+            }
     }
 }
 
