@@ -71,6 +71,7 @@
 		43D8CD352AEF7A2D003938F0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */; };
 		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
 		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
+		830F8BE52B0B0DD6008D9EFE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 830F8BE42B0B0DD6008D9EFE /* Localizable.xcstrings */; };
 		F64A5FF02B050DD800CDE71C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A5FEF2B050DD800CDE71C /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		43CC816A2B046B26004DAF74 /* MemilahApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemilahApp.swift; sourceTree = "<group>"; };
 		43CC816B2B046B26004DAF74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43CC81A72B047074004DAF74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		830F8BE42B0B0DD6008D9EFE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Memilah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memilah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64A5FEF2B050DD800CDE71C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +255,7 @@
 		43CC81242B046B26004DAF74 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				830F8BDE2B0B0AAE008D9EFE /* Localization */,
 				43CC81252B046B26004DAF74 /* Presenters */,
 				43CC812C2B046B26004DAF74 /* Alerts.swift */,
 				43CC812D2B046B26004DAF74 /* Images.swift */,
@@ -493,6 +496,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		830F8BDE2B0B0AAE008D9EFE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				830F8BE42B0B0DD6008D9EFE /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		83BB3D522AE3E77F00300A56 = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +587,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = 83BB3D522AE3E77F00300A56;
 			packageReferences = (
@@ -602,6 +614,7 @@
 				43CC817D2B046B26004DAF74 /* PlusJakartaSans-Regular.ttf in Resources */,
 				43CC817C2B046B26004DAF74 /* PlusJakartaSans-SemiBold.ttf in Resources */,
 				43CC81A82B047074004DAF74 /* GoogleService-Info.plist in Resources */,
+				830F8BE52B0B0DD6008D9EFE /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +808,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
-				DEVELOPMENT_TEAM = 3SC4Z3N76K;
+				DEVELOPMENT_TEAM = 68FYPQ879D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memilah/Info.plist;
@@ -832,7 +845,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memilah/Preview Content\"";
-				DEVELOPMENT_TEAM = 3SC4Z3N76K;
+				DEVELOPMENT_TEAM = 68FYPQ879D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memilah/Info.plist;
