@@ -10,39 +10,32 @@ import UIKit
 
 
 class TrashBinViewModel: ObservableObject {
-//    @Published var trashBins: [TrashBinModel] = []
+    //    @Published var trashBins: [TrashBinModel] = []
     @Published var trashBin = TrashBinModel() // trash bin intext field
     var imagePath = ""
     
-    func addTrashBin(event: EventModel, imageData: Data?, trashBinID: String?) {
+    func addTrashBin(event: EventModel, imageData: Data?, trashBinID: String?) async throws {
         // update the event's trahsbins
         guard let eventID = event.documentID else { return }
         guard let trashBinID = trashBinID else { return }
         var updatedEvent = event
-        updatedEvent.trashBins?.append(trashBinID)
+        if (updatedEvent.trashBins != nil) {
+            updatedEvent.trashBins?.append(trashBinID)
+            // Update the event in Firestore
+            EventManager.shared.updateEventTrashBins(documentID: eventID, trashBins: updatedEvent.trashBins)
+        }
         
-        
-        // Update the event in Firestore
-        EventManager.shared.updateEvent(documentId: eventID, newEvent: updatedEvent)
-        
-        Task {
-            do {
-                if let imageData = imageData {
-                    try await uploadImage(data: imageData)
-                    DispatchQueue.main.async {
-                        self.trashBin.imageUrl = self.imagePath
-                    }
-                }
-
-                DispatchQueue.main.async {
-                    self.trashBin.event = eventID
-                    // Update the trash bin in Firestore
-                    TrashBinManager.shared.updateTrashBin(documentID: trashBinID, newTrashBin: self.trashBin)
-                }
-            } catch {
-                // Handle the error appropriately
-                print("Error adding trash bin: \(error.localizedDescription)")
+        if let imageData = imageData {
+            try await uploadImage(data: imageData)
+            DispatchQueue.main.async {
+                self.trashBin.imageUrl = self.imagePath
             }
+        }
+        
+        DispatchQueue.main.async {
+            self.trashBin.event = eventID
+            // Update the trash bin in Firestore
+            TrashBinManager.shared.updateTrashBin(documentID: trashBinID, newTrashBin: self.trashBin)
         }
     }
     
@@ -57,15 +50,15 @@ class TrashBinViewModel: ObservableObject {
         }
     }
     
-//    func getImage(imagePath: String) async throws -> Data {
-//        let data = try await StorageManager.shared.getImage(imagePath: imagePath)
-//        
-//        return data
-//    }
+    //    func getImage(imagePath: String) async throws -> Data {
+    //        let data = try await StorageManager.shared.getImage(imagePath: imagePath)
+    //
+    //        return data
+    //    }
     
     func validateEmptyFields() -> Bool {
-//        guard let name = trashBin.name else {return false}
-//        guard let detail = trashBin.detail else {return false}
+        //        guard let name = trashBin.name else {return false}
+        //        guard let detail = trashBin.detail else {return false}
         return trashBin.name.isEmpty || trashBin.detail.isEmpty
     }
     

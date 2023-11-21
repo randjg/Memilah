@@ -90,7 +90,7 @@ struct EventCardComponent: View {
                 Spacer()
                 
                 //MARK: Status
-                StatusComponent(eventDate: event.dateStart)
+                StatusComponent(dateStart: event.dateStart, dateEnd: event.dateEnd)
                     .padding(.trailing, 13)
             }
             .padding(.top, 16)
@@ -146,8 +146,8 @@ struct EventCardComponent: View {
             name: "t",
             description: "t",
             location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
+            dateEnd: Date(timeIntervalSinceNow: 98400),
+            dateStart: Date(timeIntervalSinceNow: 18400)
         )
     )
 }

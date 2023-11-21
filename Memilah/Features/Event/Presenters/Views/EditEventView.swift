@@ -98,6 +98,7 @@ struct EditEventView: View {
                             
                             SaveChangesButtonComponent(title: "Edit Event", disable: checkFields()){
                                 eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
+                                self.presentationMode.wrappedValue.dismiss()
                             }
                             
                         }
@@ -107,6 +108,16 @@ struct EditEventView: View {
             .onAppear {
                 eventViewModel.event = eventToEdit
                 mapViewModel.searchTxt = eventToEdit.location
+            }
+            .onDisappear() {
+                Task {
+                    try! await eventViewModel.getEvents()
+                }
+    //            if checkFields() == false {
+    //                eventViewModel.event.documentID = UUID().uuidString
+    //                eventViewModel.events.append(eventViewModel.event)
+    //            }
+                
             }
 
         }.navigationBarBackButtonHidden(true)
