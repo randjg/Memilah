@@ -72,6 +72,7 @@
 		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
 		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
 		F64A5FF02B050DD800CDE71C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A5FEF2B050DD800CDE71C /* NotificationView.swift */; };
+		F6A8C7E82B0DF66300539E30 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = F6A8C7E72B0DF66300539E30 /* SimpleToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 				43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */,
 				43D8CD352AEF7A2D003938F0 /* FirebaseFirestore in Frameworks */,
+				F6A8C7E82B0DF66300539E30 /* SimpleToast in Frameworks */,
 				43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */,
 				43D8CD292AEF7A2D003938F0 /* FirebaseAuth in Frameworks */,
@@ -549,6 +551,7 @@
 				43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */,
 				43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */,
 				43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */,
+				F6A8C7E72B0DF66300539E30 /* SimpleToast */,
 			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Memilah.app */;
@@ -580,6 +583,7 @@
 			mainGroup = 83BB3D522AE3E77F00300A56;
 			packageReferences = (
 				43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F6A8C7E62B0DF66300539E30 /* XCRemoteSwiftPackageReference "SimpleToast" */,
 			);
 			productRefGroup = 83BB3D5C2AE3E77F00300A56 /* Products */;
 			projectDirPath = "";
@@ -897,6 +901,14 @@
 				minimumVersion = 10.16.0;
 			};
 		};
+		F6A8C7E62B0DF66300539E30 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -939,6 +951,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F6A8C7E72B0DF66300539E30 /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6A8C7E62B0DF66300539E30 /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

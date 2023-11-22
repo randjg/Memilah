@@ -26,6 +26,11 @@ struct DashboardView: View {
         print("Edit Event tappedd")
     }
     
+    private func toggleEditEvent(){
+        toEditEvent.toggle()
+        columnVisibility = toEditEvent ? .detailOnly : .automatic
+    }
+    
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 300))
     ]
@@ -52,9 +57,10 @@ struct DashboardView: View {
                         
                         //MARK: Edit events
                         Button("Edit Event"){
-                            editEventAction()
+//                            editEventAction()
+                            toggleEditEvent()
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: toggleEditEvent))
 
                     }
                     .padding(.bottom, 26)
@@ -88,7 +94,6 @@ struct DashboardView: View {
                             .padding(.vertical, 30)
                         }
                     }
-                    
                     
                 }
             }
