@@ -92,6 +92,7 @@ struct LoginView: View {
                                     print(error)
                                     showingAlert = true
                                     viewModel.authenticated = false
+                                    isLoading = false
                                 }
                             }
                         }

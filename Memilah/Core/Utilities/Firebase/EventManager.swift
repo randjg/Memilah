@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 final class EventManager {
     static let shared = EventManager()
-    private let dbRef = Firestore.firestore().collection("events")
+    let dbRef = Firestore.firestore().collection("events")
     
     func addEvent(event: EventModel) {
         do {

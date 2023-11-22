@@ -73,6 +73,8 @@ struct ProfileView: View {
                 .padding(.horizontal, 79)
             }
         }
+        .padding(.top, 77)
+        .ignoresSafeArea()
     }
 }
 
