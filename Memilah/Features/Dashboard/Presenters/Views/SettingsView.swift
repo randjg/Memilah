@@ -12,6 +12,7 @@ struct SettingsView: View {
 //    @Binding var isDarkMode: Bool
     @State var isEnglish = true
     @State var isBahasaIndonesia = false
+    @EnvironmentObject var languageManager: LanguageManager
     var body: some View {
         NavigationStack {
             VStack() {
@@ -58,11 +59,14 @@ struct SettingsView: View {
                     LanguageButtonComponent(action: {
                         isEnglish = true
                         isBahasaIndonesia = false
-                    }, language: "English", region: "United Kingdom", isOn: $isEnglish)
+                        languageManager.selectedLanguage = Locale(identifier: "en_US")
+                    }, language: "English", region: "United States", isOn: $isEnglish)
+                    
                     
                     LanguageButtonComponent(action: {
                         isEnglish = false
                         isBahasaIndonesia = true
+                        languageManager.selectedLanguage = Locale(identifier: "id_ID")
                     }, language: "Bahasa Indonesia", region: "Indonesia", isOn: $isBahasaIndonesia)
                     
                     Spacer()
@@ -77,5 +81,6 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(LanguageManager())
 //    SettingsView(isDarkMode: .constant(false))
 }

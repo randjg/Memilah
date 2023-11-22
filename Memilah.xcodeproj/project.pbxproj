@@ -72,6 +72,7 @@
 		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
 		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
 		830F8BE52B0B0DD6008D9EFE /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 830F8BE42B0B0DD6008D9EFE /* Localizable.xcstrings */; };
+		8357E5072B0DF5AF007F9AC9 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357E5062B0DF5AF007F9AC9 /* LanguageManager.swift */; };
 		F64A5FF02B050DD800CDE71C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A5FEF2B050DD800CDE71C /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		43CC816B2B046B26004DAF74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43CC81A72B047074004DAF74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		830F8BE42B0B0DD6008D9EFE /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		8357E5062B0DF5AF007F9AC9 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		83BB3D5B2AE3E77F00300A56 /* Memilah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memilah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64A5FEF2B050DD800CDE71C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 		43CC811A2B046B26004DAF74 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8357E5052B0DF599007F9AC9 /* LanguageManager */,
 				43CC811B2B046B26004DAF74 /* ImageUploader */,
 				43CC811E2B046B26004DAF74 /* Firebase */,
 			);
@@ -504,6 +507,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		8357E5052B0DF599007F9AC9 /* LanguageManager */ = {
+			isa = PBXGroup;
+			children = (
+				8357E5062B0DF5AF007F9AC9 /* LanguageManager.swift */,
+			);
+			path = LanguageManager;
+			sourceTree = "<group>";
+		};
 		83BB3D522AE3E77F00300A56 = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +651,7 @@
 				43CC819C2B046B26004DAF74 /* EditEventView.swift in Sources */,
 				43CC81932B046B26004DAF74 /* BinStatusComponent.swift in Sources */,
 				4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */,
+				8357E5072B0DF5AF007F9AC9 /* LanguageManager.swift in Sources */,
 				43CC81902B046B26004DAF74 /* TrashBinModel.swift in Sources */,
 				43CC81812B046B26004DAF74 /* DashboardViewModel.swift in Sources */,
 				43CC81912B046B26004DAF74 /* Place.swift in Sources */,

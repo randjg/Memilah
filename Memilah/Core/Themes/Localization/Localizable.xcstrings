@@ -390,9 +390,6 @@
         }
       }
     },
-    "Key" : {
-      "extractionState" : "manual"
-    },
     "Login now" : {
       "localizations" : {
         "id" : {
@@ -493,6 +490,17 @@
         }
       }
     },
+    "Others" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lain-lain"
+          }
+        }
+      }
+    },
     "Paper" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -530,6 +538,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Izin Ditolak"
+          }
+        }
+      }
+    },
+    "Plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plastik"
           }
         }
       }

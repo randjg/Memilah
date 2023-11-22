@@ -24,21 +24,26 @@ struct MemilahApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthenticationViewModel()
     @AppStorage("isDarkMode") var isDarkMode = false
+    @StateObject var languageManager = LanguageManager()
 //    @Environment(\.colorScheme) var colorScheme
 //    @State var isDarkMode = false
     var body: some Scene {
         WindowGroup {
-            if Auth.auth().currentUser == nil {
-                LoginView()
-                    .environmentObject(viewModel)
-            } else {
-                RootView()
-                    .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .onChange(of: isDarkMode) { oldValue, newValue in
-                        print(oldValue)
-                        print(newValue)
-                    }
+            VStack {
+                if Auth.auth().currentUser == nil {
+                    LoginView()
+                        .environmentObject(viewModel)
+                } else {
+                    RootView()
+                        .preferredColorScheme(isDarkMode ? .dark : .light)
+                        .onChange(of: isDarkMode) { oldValue, newValue in
+                            print(oldValue)
+                            print(newValue)
+                        }
+                }
             }
+            .environmentObject(languageManager)
+            .environment(\.locale, languageManager.selectedLanguage)
         }
     }
 }
