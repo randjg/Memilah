@@ -50,7 +50,6 @@ final class TrashBinManager {
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             var trashBin = try document.data(as: TrashBinModel.self)
-            trashBin.documentID = document.documentID
             trashBins.append(trashBin)
         }
         return trashBins
@@ -61,8 +60,6 @@ final class TrashBinManager {
         let snapshot = try await dbRef.whereField("event", isEqualTo: eventID).getDocuments()
         for document in snapshot.documents {
             let trashBin = try document.data(as: TrashBinModel.self)
-//            trashBin.documentID = document.documentID
-//            trashBin.documentID = document.documentID
             trashBins.append(trashBin)
         }
         
@@ -75,7 +72,6 @@ final class TrashBinManager {
         for document in snapshot.documents {
             var trashBin = try document.data(as: TrashBinModel.self)
             if trashBin.event == nil || trashBin.event?.isEmpty == true {
-                trashBin.documentID = document.documentID
                 trashBins.append(trashBin)
             }
         }

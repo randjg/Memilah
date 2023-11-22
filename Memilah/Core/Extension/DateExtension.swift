@@ -20,6 +20,12 @@ extension Date {
         return outputFormatter.string(from: self)
     }
     
+    func formatDateForNotif() -> String {
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "d MMMM yyyy HH:mm"
+        return outputFormatter.string(from: self)
+    }
+    
     func formatDateHourMinute() -> String {
         let outputFormatter = DateFormatter()
         outputFormatter.dateFormat = "hh.mm"

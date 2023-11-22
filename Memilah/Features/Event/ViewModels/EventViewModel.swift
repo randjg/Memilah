@@ -19,7 +19,6 @@ class EventViewModel: ObservableObject {
         return events
     }
     
-    
     func deleteEvent(event: EventModel){
         // delete event in local events
         if let index = events.firstIndex(where: { $0.documentID == event.documentID }) {
@@ -38,11 +37,11 @@ class EventViewModel: ObservableObject {
             return false
         }
     }
-
+    
     func addEvent(location: String) {
         Task {
             let isValid = await validateEventName()
-
+            
             if isValid {
                 nameIsExist = false
                 event.location = location
@@ -53,24 +52,24 @@ class EventViewModel: ObservableObject {
             }
         }
     }
-
-    func updateEvent(eventToEditName: String, location: String) {
+    
+    func updateEvent(eventToEditName: String, location: String) async {
         guard let documentID = event.documentID else {return}
         event.location = location
         if eventToEditName == event.name {
             nameIsExist = false
             EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
         } else {
-            Task {
-                let isValid = await validateEventName()
-                
-                if isValid {
-                    nameIsExist = false
-                    EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
-                } else {
-                    nameIsExist = true
-                }
+            //            Task {
+            let isValid = await validateEventName()
+            
+            if isValid {
+                nameIsExist = false
+                EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
+            } else {
+                nameIsExist = true
             }
+            //            }
         }
     }
     

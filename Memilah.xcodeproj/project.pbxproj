@@ -11,6 +11,9 @@
 		4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFE82B0772FC002B1643 /* SettingsView.swift */; };
 		4371EFEB2B09DBD3002B1643 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFEA2B09DBD3002B1643 /* ProfileView.swift */; };
 		4371EFED2B0A3541002B1643 /* LanguageButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371EFEC2B0A3541002B1643 /* LanguageButtonComponent.swift */; };
+		4371F0912B0DB131002B1643 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0902B0DB131002B1643 /* NotificationViewModel.swift */; };
+		4371F0942B0DB142002B1643 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0932B0DB142002B1643 /* NotificationModel.swift */; };
+		4371F0962B0DB219002B1643 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0952B0DB219002B1643 /* NotificationManager.swift */; };
 		43CC816C2B046B26004DAF74 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81172B046B26004DAF74 /* DateExtension.swift */; };
 		43CC816D2B046B26004DAF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81192B046B26004DAF74 /* Assets.xcassets */; };
 		43CC816E2B046B26004DAF74 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC811C2B046B26004DAF74 /* ImagePicker.swift */; };
@@ -30,7 +33,6 @@
 		43CC817E2B046B26004DAF74 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81322B046B26004DAF74 /* Fonts.swift */; };
 		43CC817F2B046B26004DAF74 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81332B046B26004DAF74 /* PlusJakartaSans-Bold.ttf */; };
 		43CC81802B046B26004DAF74 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81342B046B26004DAF74 /* PlusJakartaSans-Italic.ttf */; };
-		43CC81812B046B26004DAF74 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81382B046B26004DAF74 /* DashboardViewModel.swift */; };
 		43CC81822B046B26004DAF74 /* StatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC813B2B046B26004DAF74 /* StatusComponent.swift */; };
 		43CC81832B046B26004DAF74 /* SecondaryButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC813C2B046B26004DAF74 /* SecondaryButtonComponent.swift */; };
 		43CC81842B046B26004DAF74 /* EventCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC813D2B046B26004DAF74 /* EventCardComponent.swift */; };
@@ -72,6 +74,7 @@
 		43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */; };
 		43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */; };
 		F64A5FF02B050DD800CDE71C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64A5FEF2B050DD800CDE71C /* NotificationView.swift */; };
+		F6A8C7E02B0BB3F200539E30 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,10 @@
 		4371EFE82B0772FC002B1643 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4371EFEA2B09DBD3002B1643 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4371EFEC2B0A3541002B1643 /* LanguageButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonComponent.swift; sourceTree = "<group>"; };
+		4371F0512B0B9B67002B1643 /* Memilah.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memilah.entitlements; sourceTree = "<group>"; };
+		4371F0902B0DB131002B1643 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		4371F0932B0DB142002B1643 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		4371F0952B0DB219002B1643 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		43CC81172B046B26004DAF74 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		43CC81192B046B26004DAF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CC811C2B046B26004DAF74 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -98,7 +105,6 @@
 		43CC81322B046B26004DAF74 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		43CC81332B046B26004DAF74 /* PlusJakartaSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Bold.ttf"; sourceTree = "<group>"; };
 		43CC81342B046B26004DAF74 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
-		43CC81382B046B26004DAF74 /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		43CC813B2B046B26004DAF74 /* StatusComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusComponent.swift; sourceTree = "<group>"; };
 		43CC813C2B046B26004DAF74 /* SecondaryButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryButtonComponent.swift; sourceTree = "<group>"; };
 		43CC813D2B046B26004DAF74 /* EventCardComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCardComponent.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A8C7E02B0BB3F200539E30 /* FirebaseMessaging in Frameworks */,
 				43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */,
 				43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */,
@@ -158,7 +165,8 @@
 		432BD4742B050D1D0036FAF0 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				F64A5FF12B050FCF00CDE71C /* ViewModels */,
+				4371F0922B0DB137002B1643 /* Models */,
+				4371F08F2B0DB126002B1643 /* ViewModels */,
 				432BD4752B050D1D0036FAF0 /* Presenters */,
 			);
 			path = Notification;
@@ -181,9 +189,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		4371F08F2B0DB126002B1643 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4371F0902B0DB131002B1643 /* NotificationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4371F0922B0DB137002B1643 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4371F0932B0DB142002B1643 /* NotificationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		43CC81142B046B26004DAF74 /* Memilah */ = {
 			isa = PBXGroup;
 			children = (
+				4371F0512B0B9B67002B1643 /* Memilah.entitlements */,
 				43CC81152B046B26004DAF74 /* Core */,
 				43CC81352B046B26004DAF74 /* Features */,
 				43CC81672B046B26004DAF74 /* Preview Content */,
@@ -246,6 +271,7 @@
 				43CC81202B046B26004DAF74 /* StorageManager.swift */,
 				43CC81212B046B26004DAF74 /* TrashBinManager.swift */,
 				43CC81222B046B26004DAF74 /* AuthenticationManager.swift */,
+				4371F0952B0DB219002B1643 /* NotificationManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -324,7 +350,6 @@
 		43CC81372B046B26004DAF74 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				43CC81382B046B26004DAF74 /* DashboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -498,6 +523,7 @@
 			children = (
 				43CC81142B046B26004DAF74 /* Memilah */,
 				83BB3D5C2AE3E77F00300A56 /* Products */,
+				F6A8C7DE2B0BB3F200539E30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -517,11 +543,11 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		F64A5FF12B050FCF00CDE71C /* ViewModels */ = {
+		F6A8C7DE2B0BB3F200539E30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModels;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +575,7 @@
 				43D8CD342AEF7A2D003938F0 /* FirebaseFirestore */,
 				43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */,
 				43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */,
+				F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */,
 			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Memilah.app */;
@@ -618,6 +645,7 @@
 				43CC81732B046B26004DAF74 /* AuthenticationManager.swift in Sources */,
 				43CC817B2B046B26004DAF74 /* Colors.swift in Sources */,
 				43CC81762B046B26004DAF74 /* CenterHorizontalView.swift in Sources */,
+				4371F0962B0DB219002B1643 /* NotificationManager.swift in Sources */,
 				43CC81822B046B26004DAF74 /* StatusComponent.swift in Sources */,
 				43CC819B2B046B26004DAF74 /* MapView.swift in Sources */,
 				43CC81892B046B26004DAF74 /* TextFieldComponent.swift in Sources */,
@@ -627,13 +655,14 @@
 				43CC819C2B046B26004DAF74 /* EditEventView.swift in Sources */,
 				43CC81932B046B26004DAF74 /* BinStatusComponent.swift in Sources */,
 				4371EFE92B0772FC002B1643 /* SettingsView.swift in Sources */,
+				4371F0942B0DB142002B1643 /* NotificationModel.swift in Sources */,
 				43CC81902B046B26004DAF74 /* TrashBinModel.swift in Sources */,
-				43CC81812B046B26004DAF74 /* DashboardViewModel.swift in Sources */,
 				43CC81912B046B26004DAF74 /* Place.swift in Sources */,
 				43CC81862B046B26004DAF74 /* AuthenticationViewModel.swift in Sources */,
 				43CC81982B046B26004DAF74 /* FillLevelComponent.swift in Sources */,
 				43CC81872B046B26004DAF74 /* UserModel.swift in Sources */,
 				43CC81772B046B26004DAF74 /* TestNavigationView.swift in Sources */,
+				4371F0912B0DB131002B1643 /* NotificationViewModel.swift in Sources */,
 				43CC818A2B046B26004DAF74 /* LoginView.swift in Sources */,
 				43CC81722B046B26004DAF74 /* TrashBinManager.swift in Sources */,
 				43CC818B2B046B26004DAF74 /* RegisterView.swift in Sources */,
@@ -792,6 +821,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -831,6 +861,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memilah/Memilah.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -939,6 +970,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

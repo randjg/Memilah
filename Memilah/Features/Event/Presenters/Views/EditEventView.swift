@@ -9,9 +9,9 @@ import SwiftUI
 
 struct EditEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var eventViewModel = EventViewModel()
+    @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    var eventToEdit: EventModel
+    @Binding var eventToEdit: EventModel
     
     var body: some View {
        
@@ -97,8 +97,11 @@ struct EditEventView: View {
                         GridRow {
                             
                             SaveChangesButtonComponent(title: "Edit Event", disable: checkFields()){
-                                eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
-                                self.presentationMode.wrappedValue.dismiss()
+                                Task {
+                                    await eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
+                                    eventToEdit = eventViewModel.event
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
                             }
                             
                         }
@@ -110,14 +113,10 @@ struct EditEventView: View {
                 mapViewModel.searchTxt = eventToEdit.location
             }
             .onDisappear() {
-                Task {
-                    try! await eventViewModel.getEvents()
-                }
-    //            if checkFields() == false {
-    //                eventViewModel.event.documentID = UUID().uuidString
-    //                eventViewModel.events.append(eventViewModel.event)
-    //            }
-                
+//                Task {
+//                    try! await eventViewModel.getEvents()
+//                    eventToEdit = eventViewModel.event
+//                }
             }
 
         }.navigationBarBackButtonHidden(true)
@@ -129,5 +128,6 @@ struct EditEventView: View {
 }
 
 #Preview {
-    EditEventView(eventToEdit: EventModel(documentID: "GEALvPSnGFMcKOAgKpbc" , name: "Coldplay", description: "Chris Martin Nyanyi", location: "Gelora Bung Karno Stadium", dateEnd: Date(), dateStart: Date()))
+    EditEventView(eventToEdit: .constant(.dummy))
+        .environmentObject(EventViewModel())
 }

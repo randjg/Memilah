@@ -117,6 +117,7 @@ struct RegisterView: View {
                                         showingAlert = true
                                         alert = Alerts.errorRegister
                                         viewModel.registered = false
+                                        isLoading = false
                                     }
                                 }
                             } else {
