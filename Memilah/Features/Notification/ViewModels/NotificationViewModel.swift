@@ -13,6 +13,7 @@ class NotificationViewModel: ObservableObject {
 //    @discardableResult
     func getNotifications() async throws {
         notifications = try await NotificationManager.shared.getNotifications()
+        notifications.sort { $0.dateCreated > $1.dateCreated }
 //        return notifications
     }
     
@@ -26,7 +27,7 @@ class NotificationViewModel: ObservableObject {
                   if (documentChange.type == .added) {
                       do {
                           let notification = try documentChange.document.data(as: NotificationModel.self)
-                          self.notifications.append(notification)
+                          self.notifications.insert(notification, at: 0)
                       } catch {
                             print(error)
                       }
@@ -36,7 +37,7 @@ class NotificationViewModel: ObservableObject {
     }
     
     init() {
-//        realtimeUpdateNotif()
+        realtimeUpdateNotif()
     }
     
 }

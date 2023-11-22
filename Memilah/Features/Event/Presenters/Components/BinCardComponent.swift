@@ -44,7 +44,7 @@ struct BinCardComponent: View {
                                     .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                                     .foregroundStyle(Colors.adaptiveFontColor)
                                 
-                                BinStatusComponent()
+                                BinStatusComponent(timeUpdated: trashBin.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                                     .frame(maxWidth: 140)
                             }
                             .padding(.top, 20)

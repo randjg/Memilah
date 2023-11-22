@@ -15,8 +15,6 @@ struct MemilahApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthenticationViewModel()
     @AppStorage("isDarkMode") var isDarkMode = false
-//    @Environment(\.colorScheme) var colorScheme
-//    @State var isDarkMode = false
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser == nil {
@@ -26,10 +24,6 @@ struct MemilahApp: App {
             } else {
                 RootView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .onChange(of: isDarkMode) { oldValue, newValue in
-                        print(oldValue)
-                        print(newValue)
-                    }
                     .environmentObject(viewModel)
             }
         }
