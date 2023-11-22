@@ -9,10 +9,11 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("language") private var language = "en_US"
 //    @Binding var isDarkMode: Bool
     @State var isEnglish = true
     @State var isBahasaIndonesia = false
-    @EnvironmentObject var languageManager: LanguageManager
+//    @EnvironmentObject var languageManager: LanguageManager
     var body: some View {
         NavigationStack {
             VStack() {
@@ -59,14 +60,16 @@ struct SettingsView: View {
                     LanguageButtonComponent(action: {
                         isEnglish = true
                         isBahasaIndonesia = false
-                        languageManager.selectedLanguage = Locale(identifier: "en_US")
+//                        languageManager.selectedLanguage = Locale(identifier: "en_US")
+                        language = "en_US"
                     }, language: "English", region: "United States", isOn: $isEnglish)
                     
                     
                     LanguageButtonComponent(action: {
                         isEnglish = false
                         isBahasaIndonesia = true
-                        languageManager.selectedLanguage = Locale(identifier: "id_ID")
+//                        languageManager.selectedLanguage = Locale(identifier: "id_ID")
+                        language = "id_ID"
                     }, language: "Bahasa Indonesia", region: "Indonesia", isOn: $isBahasaIndonesia)
                     
                     Spacer()
@@ -76,11 +79,20 @@ struct SettingsView: View {
             }
             .padding(.horizontal, 79)
         }
+        .onAppear {
+            if language == "en_US" {
+                isEnglish = true
+                isBahasaIndonesia = false
+            } else {
+                isEnglish = false
+                isBahasaIndonesia = true
+            }
+        }
     }
 }
 
 #Preview {
     SettingsView()
-        .environmentObject(LanguageManager())
+//        .environmentObject(LanguageManager())
 //    SettingsView(isDarkMode: .constant(false))
 }
