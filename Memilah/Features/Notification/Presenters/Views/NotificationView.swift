@@ -8,39 +8,41 @@
 import SwiftUI
 
 struct NotificationView: View {
+    @StateObject var viewModel = NotificationViewModel()
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                //MARK:Title
-                Image(systemName: "chevron.left")
-                    .bold()
-                    .padding()
-                
                 Text("Notifications")
                     .font(
                         Font.custom(Fonts.plusJakartaSansBold, size: 31)
                             .weight(.bold)
                     )
             }
-            .padding(.horizontal, 63)
+            .padding(.horizontal, 79)
             
             ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
-                    .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                    .background(Colors.blueLight)
                     .cornerRadius(20.0)
-                    .padding(.top, 50)
                 
                 //Notification Card Component
-                VStack{
-                    NotificationCardComponent()
+                ScrollView {
+                    ForEach(viewModel.notifications, id: \.documentID) { notification in
+                        NotificationCardComponent(notification: notification)
+                            .padding(.bottom, 30)
+                    }
+                    .padding(.top, 8)
                 }
-                
+                .padding(.top, 70)
             }
-        
+            .padding(.top, 50)
         }
-        .padding(.top, 55)
+        .padding(.top, 77)
         .ignoresSafeArea()
+        .task {
+            try? await viewModel.getNotifications()
+        }
     }
 }
 

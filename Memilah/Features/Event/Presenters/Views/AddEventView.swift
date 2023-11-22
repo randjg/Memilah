@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 struct AddEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    
+    @State private var showAlert = false
+
     var body: some View {
 
         NavigationStack{
@@ -93,8 +95,19 @@ struct AddEventView: View {
                     GridRow {
                         SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
-                            self.presentationMode.wrappedValue.dismiss()
+                            
+                            showAlert = true
                         }
+                        .alert(isPresented: $showAlert){
+                            Alert(
+                                title: Text("Success"),
+                                message: Text("Event added successfully"),
+                                dismissButton: .default(Text("OK")){
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                            )
+                        }
+                        
                     }
                 }
                 .padding(.top,1)
@@ -106,11 +119,6 @@ struct AddEventView: View {
             Task {
                 try! await eventViewModel.getEvents()
             }
-//            if checkFields() == false {
-//                eventViewModel.event.documentID = UUID().uuidString
-//                eventViewModel.events.append(eventViewModel.event)
-//            }
-            
         }
         .onAppear() {
             eventViewModel.event = EventModel()

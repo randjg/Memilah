@@ -10,7 +10,7 @@ import SwiftUI
 struct EventCardComponent: View {
     @EnvironmentObject var viewModel: EventViewModel
     @Binding var toEditEvent: Bool
-    var event: EventModel
+    @Binding var event: EventModel
     
     var body: some View {
         ZStack{
@@ -27,7 +27,10 @@ struct EventCardComponent: View {
             //Card
             if toEditEvent == true{
                 //if card is in edit view
-                NavigationLink(destination: EditEventView(eventToEdit: event)){
+                NavigationLink(destination: 
+                                EditEventView(eventToEdit: $event)
+                                    .environmentObject(viewModel)
+                ){
                     eventBody()
                         .foregroundColor(Colors.adaptiveFontColor)
                 }
@@ -50,7 +53,10 @@ struct EventCardComponent: View {
                         Spacer()
                         
                         //Edit
-                        NavigationLink(destination: EditEventView(eventToEdit: event)){
+                        NavigationLink(destination:
+                                        EditEventView(eventToEdit: $event)
+                                    .environmentObject(viewModel)
+                        ){
                             Image(systemName: "pencil.line")
                             .frame(width: 22, height: 18)
                             .padding(5)
@@ -59,7 +65,6 @@ struct EventCardComponent: View {
                         
                         //Delete
                         Button(action:{
-                            print("suc")
                             viewModel.deleteEvent(event: event)
                         }){
                             Image(systemName: "trash.fill")
@@ -72,10 +77,6 @@ struct EventCardComponent: View {
                     .padding(.trailing, 3)
                 }
             }
-            //MARK: Card as a button
-//            NavigationLink(destination: EventDetailView( event: event)){
-                
-//            }
             
         }
         .frame(width: 345, height: 226)
@@ -90,7 +91,7 @@ struct EventCardComponent: View {
                 Spacer()
                 
                 //MARK: Status
-                StatusComponent(eventDate: event.dateStart)
+                StatusComponent(dateStart: event.dateStart, dateEnd: event.dateEnd)
                     .padding(.trailing, 13)
             }
             .padding(.top, 16)
@@ -141,13 +142,14 @@ struct EventCardComponent: View {
 #Preview {
     EventCardComponent(
         toEditEvent: .constant(false),
-         event: EventModel(
-            documentID: "ythi0zFLYayMh9d3fwGL",
-            name: "t",
-            description: "t",
-            location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
+        event: .constant(
+            EventModel(
+               documentID: "ythi0zFLYayMh9d3fwGL",
+               name: "t",
+               description: "t",
+               location: "t",
+               dateEnd: Date(timeIntervalSinceNow: 98400),
+               dateStart: Date(timeIntervalSinceNow: 18400))
         )
     )
 }

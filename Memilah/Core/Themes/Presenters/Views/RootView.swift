@@ -14,6 +14,8 @@ struct RootView: View {
     @State var isLoading = true
     @State private var defaultView = true
     @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var authViewModel : AuthenticationViewModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -40,6 +42,7 @@ struct RootView: View {
                 
                 NavigationLink {
                     ProfileView()
+                        .environmentObject(authViewModel)
                 } label: {
                     Label("Profile", systemImage: "person.fill")
                 }
@@ -75,6 +78,11 @@ struct RootView: View {
         }
         .navigationBarBackButtonHidden(true)
         .tint(Color.accentColor)
+        .onChange(of: authViewModel.authenticated) { oldValue, newValue in
+            if newValue == false {
+                dismiss()
+            }
+        }
         
     }
     
@@ -82,4 +90,5 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environmentObject(AuthenticationViewModel())
 }

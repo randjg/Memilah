@@ -15,7 +15,7 @@ struct SettingsView: View {
     @State var isBahasaIndonesia = false
 //    @EnvironmentObject var languageManager: LanguageManager
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             VStack() {
                 HStack{
                     Text("Settings")
@@ -78,6 +78,9 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding(.horizontal, 79)
+            .padding(.top, 77)
+            .ignoresSafeArea()
+//        }
         }
         .onAppear {
             if language == "en_US" {

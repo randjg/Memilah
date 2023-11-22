@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 final class EventManager {
     static let shared = EventManager()
-    private let dbRef = Firestore.firestore().collection("events")
+    let dbRef = Firestore.firestore().collection("events")
     
     func addEvent(event: EventModel) {
         do {
@@ -36,13 +36,23 @@ final class EventManager {
         }
     }
     
+    private func eventAlreadyEnded(dateEnd: Date ) -> Bool{
+        let sameDay = Calendar.current.isDate(Date(), equalTo: dateEnd, toGranularity: .day)
+        if dateEnd < Date() && sameDay == false{
+            return true
+        }
+        return false
+    }
     func getEvents() async throws -> [EventModel] {
         var events: [EventModel] = []
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             let event = try document.data(as: EventModel.self)
-//            event.documentID = document.documentID
-            events.append(event)
+            if eventAlreadyEnded(dateEnd: event.dateEnd) {
+                deleteEvent(event: event)
+            } else {
+                events.append(event)
+            }
         }
         
         return events
@@ -58,11 +68,11 @@ final class EventManager {
         }
     }
     
-    func updateEventTrashBins(documentID: String, trashBins: [String]) {
+    func updateEventTrashBins(documentID: String, trashBins: [String]?) {
         let event = dbRef.document(documentID)
         
         event.updateData([
-            "trashBins": trashBins
+            "trashBins": trashBins ?? []
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")

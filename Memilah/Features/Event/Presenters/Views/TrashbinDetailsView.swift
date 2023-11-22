@@ -11,7 +11,7 @@ struct TrashbinDetailsView: View {
     
     //ambil true and false nya di sensor
     @State private var isConnected = true
-    @Binding var trashBin: TrashBinModel
+    @Binding var trashBin: TrashBinModel?
     @StateObject var viewModel = TrashBinViewModel()
     @State var trashBinImage: Data?
     
@@ -19,27 +19,27 @@ struct TrashbinDetailsView: View {
 //        NavigationView {
             VStack{
                 
-                Text(trashBin.name) // nama Lokasi
+                Text(trashBin!.name) // nama Lokasi
                     .font(.custom(Fonts.plusJakartaSansBold, size: 21))
 //                    .foregroundStyle(Colors.adaptiveFontColor)
                     .padding(.bottom, 10)
                 
-                Text(trashBin.documentID!) //UUID
+                Text(trashBin!.documentID!) //UUID
                     .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                     .padding(.bottom, 5)
                 
                 if isConnected {
-                    BinStatusComponent()
+                    BinStatusComponent(timeUpdated: trashBin!.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                         .padding(.bottom, 5)
                 }
                 else {
-                    BinStatusComponent()
+                    BinStatusComponent(timeUpdated: trashBin!.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                         .padding(.bottom, 5)
 
                 }
                 
                 
-                Text(trashBin.getTimeUpdatedDate()?.formatDateLong() ?? "") //last updated dari firebase
+                Text(trashBin!.getTimeUpdatedDate()?.formatDateLong() ?? "") //last updated dari firebase
                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                     .padding(.bottom, 20)
                 
@@ -56,7 +56,7 @@ struct TrashbinDetailsView: View {
                     .controlSize(.large)
                 }
                 
-                Text(trashBin.detail) // diganti deskripsi
+                Text(trashBin!.detail) // diganti deskripsi
                     .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
                     .padding(.top, 20)
                     .padding(.bottom, 22)
@@ -72,7 +72,7 @@ struct TrashbinDetailsView: View {
 //                    let imageData = try? await viewModel.getImage(imagePath: trashBin.imageUrl)
 //                    trashBinImage = imageData
 //                }
-                viewModel.getImage(imagePath: trashBin.imageUrl) { data in
+                viewModel.getImage(imagePath: trashBin!.imageUrl) { data in
                     trashBinImage=data
                 }
             }

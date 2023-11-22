@@ -26,6 +26,11 @@ struct DashboardView: View {
         print("Edit Event tappedd")
     }
     
+    private func toggleEditEvent(){
+        toEditEvent.toggle()
+        columnVisibility = toEditEvent ? .detailOnly : .automatic
+    }
+    
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 300))
     ]
@@ -52,16 +57,17 @@ struct DashboardView: View {
                         
                         //MARK: Edit events
                         Button("Edit Event"){
-                            editEventAction()
+//                            editEventAction()
+                            toggleEditEvent()
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: toggleEditEvent))
 
                     }
                     .padding(.bottom, 26)
                 }
                 .padding(.leading, 79)
                 
-                ZStack() {
+                ZStack{
                     //MARK: Background
                     Rectangle()
                         .foregroundColor(.clear)
@@ -77,7 +83,7 @@ struct DashboardView: View {
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(viewModel.events, id: \.documentID) { event in
+                                    ForEach($viewModel.events, id: \.documentID) { event in
                                         EventCardComponent(toEditEvent: $toEditEvent, event: event)
                                             .environmentObject(viewModel)
                                         
@@ -89,19 +95,9 @@ struct DashboardView: View {
                         }
                     }
                     
-                    //On Edit mode
-                    if toEditEvent{
-                        Button(action:{
-                            toEditEvent = false
-                        }){
-                            Text("Save Changes")
-                        }
-                    }
-                    
-                    
                 }
             }
-            .padding(.top, 55)
+            .padding(.top, 77)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
                     .environmentObject(viewModel)

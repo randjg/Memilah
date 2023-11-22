@@ -16,45 +16,31 @@ enum binStatus{
 struct BinStatusComponent: View {
     
     @State var binStatus: binStatus = .connected
-    
+    var timeUpdated: Date
     var body: some View {
         
-        ZStack{
-            Rectangle()
-                .frame(width: 96, height: 27)
-                .foregroundColor(binStatusColor())
-                .cornerRadius(50)
-            
-            switch binStatus {
-            case .needsChecking:
-                Text("Needs Checking")
-                    .font(.custom("PlusJakartaSans-SemiBold", size: 13))
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 16)
-                    .foregroundColor(.white)
-                   
-            case .connected:
-                Text("Connected")
-                    .font(.custom("PlusJakartaSans-SemiBold", size: 13))
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 16)
-                    .foregroundColor(.white)
-                
-            }
-            
-        }
+        
+        Text(isIntervalNotMoreThan5Minutes() ? "Connected" : "Needs Checking")
+            .font(.custom("PlusJakartaSans-SemiBold", size: 13))
+            .padding(.vertical, 6)
+            .padding(.horizontal, 16)
+            .foregroundColor(.white)
+            .background(
+                Rectangle()
+                    .foregroundColor(isIntervalNotMoreThan5Minutes() ? Colors.greenOngoing : Colors.orangeNormal)
+                    .cornerRadius(50)
+            )
+        
     }
     
-    private func binStatusColor() -> Color{
-        switch binStatus {
-        case .needsChecking:
-            return Color(Colors.orangeNormal)
-        case .connected:
-            return Color(Colors.greenOngoing)
-        }
+    private func isIntervalNotMoreThan5Minutes() -> Bool {
+        let interval = Date().timeIntervalSince(timeUpdated)
+        let minutesInInterval = interval / 60
+        
+        return abs(minutesInInterval) <= 30
     }
 }
 
 #Preview {
-    BinStatusComponent()
+    BinStatusComponent(timeUpdated: Date().addingTimeInterval(-1700))
 }

@@ -12,97 +12,118 @@ struct LoginView: View {
     @State private var isPasswordVisible = false
     @State private var showingAlert = false
     @State private var alert = Alerts.invalidCredentials
+    @State private var isLoading = false
     
     var body: some View {
         NavigationStack{
-            CenterHorizontalView {
-                VStack{
-                    Images.logoTextImageVertical
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 280)
-                    
+            
+            ZStack {
+                CenterHorizontalView {
                     VStack{
-                        HStack{
-                            Text("E-mail")
-                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            Spacer()
+                        Images.logoTextImageVertical
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 280)
+                        
+                        VStack{
+                            HStack{
+                                Text("E-mail")
+                                    .font(.custom(Fonts.plusJakartaSansBold, size: 21))
+                                Spacer()
+                            }
+                            .frame(maxWidth: 625)
+                            TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
                         }
-                        .frame(maxWidth: 625)
-                        TextFieldComponent(text: $viewModel.email, placeholder: "Enter your email address", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
-                    }
-                    .padding(.vertical, 29)
-                    
-                    VStack{
-                        HStack{
-                            Text("Password")
-                                .font(.custom(Fonts.plusJakartaSansBold, size: 21))
-                            Spacer()
-                        }
-                        .frame(maxWidth: 615)
-                        if isPasswordVisible {
-                            TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
-                        }
-                        else {
-                            SecureField("Enter your password", text: $viewModel.password)
-                                .frame(width: 615, height: 50)
-                                .padding(.leading, 10)
-                                .font(.custom(Fonts.plusJakartaSansRegular, size: 18))
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
-                                .textContentType(.none)
-                                .autocapitalization(.none)
-                                .disableAutocorrection(true)
+                        .padding(.vertical, 29)
+                        
+                        VStack{
+                            HStack{
+                                Text("Password")
+                                    .font(.custom(Fonts.plusJakartaSansBold, size: 21))
+                                Spacer()
+                            }
+                            .frame(maxWidth: 615)
+                            if isPasswordVisible {
+                                TextFieldComponent(text: $viewModel.password, placeholder: "Enter your password", keyboardType: .default, returnKeyType: .next, width: 615, height: 50, axis: .vertical)
+                            }
+                            else {
+                                SecureField("Enter your password", text: $viewModel.password)
+                                    .frame(width: 615, height: 50)
+                                    .padding(.leading, 10)
+                                    .font(.custom(Fonts.plusJakartaSansRegular, size: 18))
+                                    .background(RoundedRectangle(cornerRadius: 10).stroke(Color(red: 0.78, green: 0.88, blue: 0.82), lineWidth: 2))
+                                    .textContentType(.none)
+                                    .autocapitalization(.none)
+                                    .disableAutocorrection(true)
+                            }
+                            
+                            ZStack {
+                                Button(action: {
+                                    isPasswordVisible.toggle()
+                                }) {
+                                    Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                        .foregroundColor(isPasswordVisible ? .secondary : .primary)
+                                }
+                                .padding(.leading, 550)
+                                .padding(.top, -42)
+                            }
                         }
                         
-                        ZStack {
-                            Button(action: {
-                                isPasswordVisible.toggle()
-                            }) {
-                                Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                                    .foregroundColor(isPasswordVisible ? .secondary : .primary)
-                            }
-                            .padding(.leading, 550)
-                            .padding(.top, -42)
+                        VStack{
+    //                        HStack{
+    //                            Text("Forgot Password?")
+    //                                .font(.custom("PlusJakartaSans-Regular", size: 16))
+    //                            Spacer()
+    //                        }
+    //                        .frame(maxWidth: 625)
                         }
-                    }
-                    
-                    VStack{
-//                        HStack{
-//                            Text("Forgot Password?")
-//                                .font(.custom("PlusJakartaSans-Regular", size: 16))
-//                            Spacer()
-//                        }
-//                        .frame(maxWidth: 625)
-                    }
-                    .padding(.top, 6)
-                    .padding(.bottom, 38)
-                    
-                    MainButtonComponent(title: "Login", disable: viewModel.validateFieldsAreEmpty()){
-                        // do login
-                        Task {
-                            do {
-                                try await viewModel.login()
-                                viewModel.authenticated = true
-                            } catch {
-                                print(error)
-                                showingAlert = true
-                                viewModel.authenticated = false
+                        .padding(.top, 6)
+                        .padding(.bottom, 38)
+                        
+                        MainButtonComponent(title: "Login", disable: viewModel.validateFieldsAreEmpty()){
+                            // do login
+                            Task {
+                                do {
+                                    isLoading = true
+                                    try await viewModel.login()
+                                    viewModel.authenticated = true
+                                    isLoading = false
+                                } catch {
+                                    print(error)
+                                    showingAlert = true
+                                    viewModel.authenticated = false
+                                    isLoading = false
+                                }
                             }
                         }
-                    }
-                    .padding(.bottom, 15)
-                    
-                    HStack {
-                        Text("Don't have an account yet?")
-                            .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
-                        NavigationLink("Register now", destination: RegisterView().environmentObject(viewModel))
-                            .foregroundColor(Colors.adaptiveFontColor)
-                            .font(.custom(Fonts.plusJakartaSansBold, size: 16))
+                        .padding(.bottom, 15)
+                        
+                        HStack {
+                            Text("Don't have an account yet?")
+                                .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
+                            NavigationLink("Register now", destination: RegisterView().environmentObject(viewModel))
+                                .foregroundColor(Colors.adaptiveFontColor)
+                                .font(.custom(Fonts.plusJakartaSansBold, size: 16))
+                        }
                     }
                 }
-            }
-            .navigationDestination(isPresented: $viewModel.authenticated) {
-//                RootView()
+//                .navigationDestination(isPresented: $viewModel.authenticated) {
+//                    RootView()
+//                        .environmentObject(viewModel)
+//                }
+                if isLoading {
+                    Rectangle()
+                        .fill(Colors.adaptiveFontColorCard.opacity(0.5))
+                    ProgressView {
+                        Text("Logging in")
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Colors.adaptiveFontColorCard)
+                            .stroke(Colors.greyDarker, lineWidth: 1)
+                    )
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

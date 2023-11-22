@@ -9,9 +9,10 @@ import SwiftUI
 
 struct EditEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var eventViewModel = EventViewModel()
+    @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    var eventToEdit: EventModel
+    @State private var showAlert = false
+    @Binding var eventToEdit: EventModel
     
     var body: some View {
        
@@ -95,9 +96,22 @@ struct EditEventView: View {
                         }
                         
                         GridRow {
-                            
-                            SaveChangesButtonComponent(title: "Edit Event", disable: checkFields()){
-                                eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
+
+                            SaveChangesButtonComponent(title: "Save Changes", disable: checkFields()){
+                              Task {
+                                    await eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
+                                    eventToEdit = eventViewModel.event
+                                    showAlert = true
+                                }   
+                            }
+                            .alert(isPresented: $showAlert){
+                                Alert(
+                                    title: Text("Success"),
+                                    message: Text("Successfully edited event"),
+                                    dismissButton: .default(Text("OK")){
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
+                                )
                             }
                             
                         }
@@ -107,6 +121,12 @@ struct EditEventView: View {
             .onAppear {
                 eventViewModel.event = eventToEdit
                 mapViewModel.searchTxt = eventToEdit.location
+            }
+            .onDisappear() {
+//                Task {
+//                    try! await eventViewModel.getEvents()
+//                    eventToEdit = eventViewModel.event
+//                }
             }
 
         }.navigationBarBackButtonHidden(true)
@@ -118,5 +138,6 @@ struct EditEventView: View {
 }
 
 #Preview {
-    EditEventView(eventToEdit: EventModel(documentID: "GEALvPSnGFMcKOAgKpbc" , name: "Coldplay", description: "Chris Martin Nyanyi", location: "Gelora Bung Karno Stadium", dateEnd: Date(), dateStart: Date()))
+    EditEventView(eventToEdit: .constant(.dummy))
+        .environmentObject(EventViewModel())
 }
