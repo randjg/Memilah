@@ -117,7 +117,7 @@ struct EventCardComponent: View {
             HStack(alignment: .center, spacing: 5){
                 Text("🗑️")
                 if let trashBins = event.trashBins {
-                    Text(trashBins.count.description + " bins")
+                    Text(trashBins.count.description) + Text(LocalizedStringKey(" bins"))
                 } else {
                     Text("0 bins")
                 }

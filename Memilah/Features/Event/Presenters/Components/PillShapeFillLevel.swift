@@ -15,7 +15,7 @@ struct PillShapeFillLevel: View {
     var body: some View {
         
         VStack{
-            Text(category) //category trash
+            Text(LocalizedStringKey(category)) //category trash
                 .font(.custom(Fonts.plusJakartaSansRegular, size: 16))
                 .foregroundStyle(Colors.adaptiveFontColor)
                 .fontWeight(.medium)

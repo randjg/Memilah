@@ -15,6 +15,10 @@ struct MemilahApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthenticationViewModel()
     @AppStorage("isDarkMode") var isDarkMode = false
+    @AppStorage("language") var language = "en_US"
+//    @StateObject var languageManager = LanguageManager()
+//    @Environment(\.colorScheme) var colorScheme
+//    @State var isDarkMode = false
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser == nil {
@@ -26,6 +30,8 @@ struct MemilahApp: App {
                     .preferredColorScheme(isDarkMode ? .dark : .light)
                     .environmentObject(viewModel)
             }
+//            .environmentObject(languageManager)
+            .environment(\.locale, Locale(identifier: language))
         }
     }
 }
