@@ -11,6 +11,7 @@ struct EditEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
+    @State private var showAlert = false
     @Binding var eventToEdit: EventModel
     
     var body: some View {
@@ -95,13 +96,22 @@ struct EditEventView: View {
                         }
                         
                         GridRow {
-                            
-                            SaveChangesButtonComponent(title: "Edit Event", disable: checkFields()){
-                                Task {
+
+                            SaveChangesButtonComponent(title: "Save Changes", disable: checkFields()){
+                              Task {
                                     await eventViewModel.updateEvent(eventToEditName: eventToEdit.name, location: mapViewModel.searchTxt)
                                     eventToEdit = eventViewModel.event
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
+                                    showAlert = true
+                                }   
+                            }
+                            .alert(isPresented: $showAlert){
+                                Alert(
+                                    title: Text("Success"),
+                                    message: Text("Successfully edited event"),
+                                    dismissButton: .default(Text("OK")){
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
+                                )
                             }
                             
                         }

@@ -65,7 +65,6 @@ struct EventCardComponent: View {
                         
                         //Delete
                         Button(action:{
-                            print("suc")
                             viewModel.deleteEvent(event: event)
                         }){
                             Image(systemName: "trash.fill")
@@ -78,10 +77,6 @@ struct EventCardComponent: View {
                     .padding(.trailing, 3)
                 }
             }
-            //MARK: Card as a button
-//            NavigationLink(destination: EventDetailView( event: event)){
-                
-//            }
             
         }
         .frame(width: 345, height: 226)
