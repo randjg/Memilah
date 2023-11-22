@@ -10,7 +10,7 @@ import SwiftUI
 struct EventCardComponent: View {
     @EnvironmentObject var viewModel: EventViewModel
     @Binding var toEditEvent: Bool
-    var event: EventModel
+    @Binding var event: EventModel
     
     var body: some View {
         ZStack{
@@ -27,7 +27,10 @@ struct EventCardComponent: View {
             //Card
             if toEditEvent == true{
                 //if card is in edit view
-                NavigationLink(destination: EditEventView(eventToEdit: event)){
+                NavigationLink(destination: 
+                                EditEventView(eventToEdit: $event)
+                                    .environmentObject(viewModel)
+                ){
                     eventBody()
                         .foregroundColor(Colors.adaptiveFontColor)
                 }
@@ -50,7 +53,10 @@ struct EventCardComponent: View {
                         Spacer()
                         
                         //Edit
-                        NavigationLink(destination: EditEventView(eventToEdit: event)){
+                        NavigationLink(destination:
+                                        EditEventView(eventToEdit: $event)
+                                    .environmentObject(viewModel)
+                        ){
                             Image(systemName: "pencil.line")
                             .frame(width: 22, height: 18)
                             .padding(5)
@@ -136,13 +142,14 @@ struct EventCardComponent: View {
 #Preview {
     EventCardComponent(
         toEditEvent: .constant(false),
-         event: EventModel(
-            documentID: "ythi0zFLYayMh9d3fwGL",
-            name: "t",
-            description: "t",
-            location: "t",
-            dateEnd: Date(timeIntervalSinceNow: 98400),
-            dateStart: Date(timeIntervalSinceNow: 18400)
-         )
+        event: .constant(
+            EventModel(
+               documentID: "ythi0zFLYayMh9d3fwGL",
+               name: "t",
+               description: "t",
+               location: "t",
+               dateEnd: Date(timeIntervalSinceNow: 98400),
+               dateStart: Date(timeIntervalSinceNow: 18400))
+        )
     )
 }

@@ -83,7 +83,7 @@ struct DashboardView: View {
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(viewModel.events, id: \.documentID) { event in
+                                    ForEach($viewModel.events, id: \.documentID) { event in
                                         EventCardComponent(toEditEvent: $toEditEvent, event: event)
                                             .environmentObject(viewModel)
                                         

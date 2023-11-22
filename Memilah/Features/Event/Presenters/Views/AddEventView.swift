@@ -13,7 +13,7 @@ struct AddEventView: View {
     @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
     @State private var showAlert = false
-    
+
     var body: some View {
 
         NavigationStack{
@@ -119,11 +119,6 @@ struct AddEventView: View {
             Task {
                 try! await eventViewModel.getEvents()
             }
-//            if checkFields() == false {
-//                eventViewModel.event.documentID = UUID().uuidString
-//                eventViewModel.events.append(eventViewModel.event)
-//            }
-            
         }
         .onAppear() {
             eventViewModel.event = EventModel()

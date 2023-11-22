@@ -71,6 +71,8 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding(.horizontal, 79)
+            .padding(.top, 77)
+            .ignoresSafeArea()
 //        }
     }
 }
