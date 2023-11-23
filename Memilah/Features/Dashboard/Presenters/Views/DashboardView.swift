@@ -56,11 +56,9 @@ struct DashboardView: View {
                         .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
                         
                         //MARK: Edit events
-                        Button("Edit Event"){
-//                            editEventAction()
+                        EditEventButtonComponent(onEdit: toEditEvent, textPlaceholder: toEditEvent ? "Exit Editing" : "Edit Event") {
                             toggleEditEvent()
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: toggleEditEvent))
 
                     }
                     .padding(.bottom, 26)

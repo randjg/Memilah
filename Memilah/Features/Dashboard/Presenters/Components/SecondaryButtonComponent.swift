@@ -78,3 +78,25 @@ struct SecondaryButtonComponent: View{
         .disabled(disable)
     }
 }
+
+
+struct EditEventButtonComponent: View{
+    var onEdit: Bool
+    var textPlaceholder: String
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action, label: {
+            Text(textPlaceholder)
+                .font(
+                    Font.custom(Fonts.plusJakartaSansBold, size: 20)
+                        .weight(.bold)
+                )
+                .padding(.horizontal, 49)
+                .padding(.vertical, 10)
+                .foregroundColor(onEdit ? Colors.adaptiveFontColorCard : Colors.greyDarker)
+                .background(onEdit ? Colors.redNormal : Colors.blueLightActive)
+                .cornerRadius(8.0)
+        })
+    }
+}
