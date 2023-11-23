@@ -10,6 +10,7 @@ import SwiftUI
 struct BinCardComponent: View {
     @EnvironmentObject var viewModel: TrashBinViewModel
     var trashBin: TrashBinModel
+    var lastUpdate: LocalizedStringKey = "Last updated "
     @State var trashBinImage: Data?
     //    @Binding var binStatus: binStatus
     
@@ -44,7 +45,7 @@ struct BinCardComponent: View {
                                     .font(.custom(Fonts.plusJakartaSansBold, size: 21))
                                     .foregroundStyle(Colors.adaptiveFontColor)
                                 
-                                BinStatusComponent()
+                                BinStatusComponent(timeUpdated: trashBin.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                                     .frame(maxWidth: 140)
                             }
                             .padding(.top, 20)
@@ -81,7 +82,8 @@ struct BinCardComponent: View {
                                 .foregroundStyle(Colors.adaptiveFontColor)
                             
                             Spacer()
-                            Text("Last updated " + (trashBin.getTimeUpdatedDate()?.formatDateHourMinute() ?? ""))
+                            (Text(LocalizedStringKey("Last updated")) +
+                            Text(" " + (trashBin.getTimeUpdatedDate()?.formatDateHourMinute() ?? "")))
                                 .font(.custom("PlusJakartaSans-Italic", size: 13))
                                 .foregroundStyle(Colors.adaptiveFontColor)
                         }

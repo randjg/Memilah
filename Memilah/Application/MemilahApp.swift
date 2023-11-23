@@ -15,6 +15,8 @@ struct MemilahApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = AuthenticationViewModel()
     @AppStorage("isDarkMode") var isDarkMode = false
+    @AppStorage("language") var language = "en_US"
+//    @StateObject var languageManager = LanguageManager()
 //    @Environment(\.colorScheme) var colorScheme
 //    @State var isDarkMode = false
     var body: some Scene {
@@ -26,12 +28,10 @@ struct MemilahApp: App {
             } else {
                 RootView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .onChange(of: isDarkMode) { oldValue, newValue in
-                        print(oldValue)
-                        print(newValue)
-                    }
                     .environmentObject(viewModel)
             }
+//            .environmentObject(languageManager)
+            .environment(\.locale, Locale(identifier: language))
         }
     }
 }

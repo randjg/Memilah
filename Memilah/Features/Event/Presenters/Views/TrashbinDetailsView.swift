@@ -29,11 +29,11 @@ struct TrashbinDetailsView: View {
                     .padding(.bottom, 5)
                 
                 if isConnected {
-                    BinStatusComponent()
+                    BinStatusComponent(timeUpdated: trashBin!.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                         .padding(.bottom, 5)
                 }
                 else {
-                    BinStatusComponent()
+                    BinStatusComponent(timeUpdated: trashBin!.timeUpdated?.convertFromFirestoreToDate() ?? Date())
                         .padding(.bottom, 5)
 
                 }
