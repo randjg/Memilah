@@ -31,8 +31,8 @@ struct MemilahApp: App {
                     .environmentObject(viewModel)
             }
 //            .environmentObject(languageManager)
-            .environment(\.locale, Locale(identifier: language))
         }
+        .environment(\.locale, Locale(identifier: language))
     }
 }
 
