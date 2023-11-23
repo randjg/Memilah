@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SimpleToast
+//import SimpleToast
 
 struct AddEventView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>

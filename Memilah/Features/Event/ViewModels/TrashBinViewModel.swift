@@ -18,6 +18,7 @@ class TrashBinViewModel: ObservableObject {
         // update the event's trahsbins
         guard let eventID = event.documentID else { return }
         guard let trashBinID = trashBinID else { return }
+        if trashBinID.isEmpty { return }
         var updatedEvent = event
         if (updatedEvent.trashBins != nil) {
             updatedEvent.trashBins?.append(trashBinID)
@@ -59,7 +60,7 @@ class TrashBinViewModel: ObservableObject {
     func validateEmptyFields() -> Bool {
         //        guard let name = trashBin.name else {return false}
         //        guard let detail = trashBin.detail else {return false}
-        return trashBin.name.isEmpty || trashBin.detail.isEmpty
+        return trashBin.name.isEmpty || trashBin.detail.isEmpty 
     }
     
     func getTrashBins() async throws -> [TrashBinModel] {
