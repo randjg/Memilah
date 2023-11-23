@@ -504,6 +504,9 @@
         }
       }
     },
+    "No Trashbin Available" : {
+
+    },
     "No trashbins" : {
       "localizations" : {
         "id" : {
