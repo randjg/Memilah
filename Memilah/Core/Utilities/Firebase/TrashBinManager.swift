@@ -34,12 +34,32 @@ final class TrashBinManager {
         }
     }
     
+    func refreshTrashBin(documentID: String) {
+        var newTrashBin = TrashBinModel()
+        newTrashBin.documentID = documentID
+        do {
+            deleteTrashBin(documentID: documentID)
+            try dbRef.document(documentID).setData(from: newTrashBin)
+        } catch {
+            print(error)
+        }
+    }
+    
     func getAllTrashBins() async throws -> [TrashBinModel] {
         var trashBins: [TrashBinModel] = []
         let snapshot = try await dbRef.getDocuments()
         for document in snapshot.documents {
             var trashBin = try document.data(as: TrashBinModel.self)
-            trashBin.documentID = document.documentID
+            trashBins.append(trashBin)
+        }
+        return trashBins
+    }
+    
+    func getEventTrashBins(eventID: String) async throws -> [TrashBinModel] {
+        var trashBins: [TrashBinModel] = []
+        let snapshot = try await dbRef.whereField("event", isEqualTo: eventID).getDocuments()
+        for document in snapshot.documents {
+            let trashBin = try document.data(as: TrashBinModel.self)
             trashBins.append(trashBin)
         }
         
@@ -52,7 +72,6 @@ final class TrashBinManager {
         for document in snapshot.documents {
             var trashBin = try document.data(as: TrashBinModel.self)
             if trashBin.event == nil || trashBin.event?.isEmpty == true {
-                trashBin.documentID = document.documentID
                 trashBins.append(trashBin)
             }
         }

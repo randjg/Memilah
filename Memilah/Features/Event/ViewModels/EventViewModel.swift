@@ -11,6 +11,22 @@ import Foundation
 class EventViewModel: ObservableObject {
     @Published var event: EventModel = EventModel()
     @Published var nameIsExist = false
+    @Published var events = [EventModel]()
+    
+    @discardableResult
+    func getEvents() async throws -> [EventModel]{
+        events = try await EventManager.shared.getEvents()
+        return events
+    }
+    
+    func deleteEvent(event: EventModel){
+        // delete event in local events
+        if let index = events.firstIndex(where: { $0.documentID == event.documentID }) {
+            events.remove(at: index)
+        }
+        // delete in firestore
+        EventManager.shared.deleteEvent(event: event)
+    }
     
     func validateEventName() async -> Bool {
         do {
@@ -21,40 +37,42 @@ class EventViewModel: ObservableObject {
             return false
         }
     }
-
+    
     func addEvent(location: String) {
         Task {
             let isValid = await validateEventName()
-
+            
             if isValid {
                 nameIsExist = false
                 event.location = location
+                
                 EventManager.shared.addEvent(event: event)
             } else {
                 nameIsExist = true
             }
         }
     }
-
-    func updateEvent(eventToEditName: String, location: String) {
+    
+    func updateEvent(eventToEditName: String, location: String) async {
         guard let documentID = event.documentID else {return}
         event.location = location
         if eventToEditName == event.name {
             nameIsExist = false
             EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
         } else {
-            Task {
-                let isValid = await validateEventName()
-                
-                if isValid {
-                    nameIsExist = false
-                    EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
-                } else {
-                    nameIsExist = true
-                }
+            //            Task {
+            let isValid = await validateEventName()
+            
+            if isValid {
+                nameIsExist = false
+                EventManager.shared.updateEvent(documentId: documentID, newEvent: event)
+            } else {
+                nameIsExist = true
             }
+            //            }
         }
     }
+    
     
     func validateEmptyFields() -> Bool {
         return event.name.isEmpty || event.description.isEmpty

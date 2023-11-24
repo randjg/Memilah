@@ -5,36 +5,50 @@
 //  Created by Clarabella Lius on 12/11/23.
 //
 
+import MapKit
 import SwiftUI
 
 struct EventDetailView: View {
-    @StateObject var viewModel = TrashBinViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var viewModel: TrashBinViewModel
     @State var isButtonPressed: Bool = true
-    @State var isMapViewShown: Bool = false
-    @State var isListViewShown: Bool = true
+    @State var isListViewShown: Bool = false
     @State var showAddTrashBinModal = false
+    @State var trashBins = [TrashBinModel]()
+    @State var selectedTrashBin: TrashBinModel?
+    @State var showTrashBinDetail = false
     var event: EventModel
     
+//    @State private var viewId = UUID()
 //    @Binding var binStatus: binStatus
     
     var body: some View {
         
-        NavigationStack{
+//        NavigationStack{
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading){
                     //MARK: Title
                     HStack{
-                        Image(systemName: "chevron.left")
-                            .bold()
                         
-                        Text(event.name)
-                            .font(
-                                Font.custom(Fonts.plusJakartaSansBold, size: 31)
-                                    .weight(.bold)
-                            )
+                        Button(action:{
+                            self.presentationMode.wrappedValue.dismiss()
+                        }){
+                            HStack{
+                                Image(systemName: "chevron.left")
+                                    .bold()
+                                    .padding(.trailing, 5)
+                                
+                                Text(event.name)
+                                    .font(
+                                        Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                            .weight(.bold)
+                                    )
+                            }
+                            .padding(.bottom, 3)
+                        }
+                        .foregroundColor(Colors.adaptiveFontColor)
                     }
-                    .padding(.bottom, 3)
                     
                     Text(event.dateStart.formatDateLong() + " - " + event.dateEnd.formatDateLong())
                         .font(
@@ -71,18 +85,17 @@ struct EventDetailView: View {
                             ZStack{
                                 Rectangle()
                                     .foregroundColor(Colors.greyLight)
-                                    .padding(.trailing, 21)
                                     .cornerRadius(5)
-                                    .opacity(isMapViewShown ? 100 : 0)
+                                    .opacity(!isListViewShown ? 100 : 0)
                                 
                                 Button(action: {
-                                    isMapViewShown = true
+//                                    isMapViewShown = true
                                     isListViewShown = false
                                     print("map icon clicked")
                                 }){
                                     Images.mapIcon
-                                        .padding(.trailing, 21)
                                 }
+                                .foregroundStyle(Colors.adaptiveFontColor)
                                 
                             }
                             .frame(width: 30, height: 30)
@@ -96,11 +109,12 @@ struct EventDetailView: View {
                                 
                                 Button(action: {
                                     isListViewShown = true
-                                    isMapViewShown = false
+//                                    isMapViewShown = false
                                     print("list icon clicked")
                                 }){
                                     Images.listIcon
                                 }
+                                .foregroundStyle(Colors.adaptiveFontColor)
                             }
                             .frame(width: 30, height: 30)
                         }
@@ -112,39 +126,88 @@ struct EventDetailView: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(Color(red: 0.93, green: 0.95, blue: 0.96))
+                        .background(Colors.blueLight)
                         .cornerRadius(20.0)
+                    
+                    if trashBins.isEmpty {
+                        Text("No trashbins")
+                    }
                     
                     if isListViewShown {
                         ScrollView {
                             VStack(spacing: 50){
-                                ForEach(viewModel.trashBins, id: \.documentID) { bin in
+                                ForEach(trashBins, id: \.documentID) { bin in
                                     //ISI TRASH BIN DISINI
-                                    BinCardComponent(trashbin: bin)
+                                    BinCardComponent(trashBin: bin)
+                                        .environmentObject(viewModel)
                                 }
                             }
+                            .padding(.top, 45)
+                            .padding(.horizontal, 1)
                         }
+                    } else {
+                        Map(selection: $selectedTrashBin){
+                            ForEach(trashBins, id: \.documentID) { bin in
+                                Marker(bin.name, systemImage: "trash.fill", coordinate: CLLocationCoordinate2D(latitude: bin.latitude ?? -6.217588, longitude: bin.longitude ?? 106.802117))
+                                    .tint(.red)
+                                    .tag(bin)
+                                    
+                            }
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Colors.greyDarker, lineWidth: 2)
+                        )
+                        .padding(.vertical, 45)
+                        .padding(.horizontal, 104)
                     }
                 }
             }
+            .padding(.top, 55)
+            .ignoresSafeArea()
             .sheet(isPresented: $showAddTrashBinModal, content: {
-                AddTrashBinView(event: event)
+                AddTrashBinView(event: event, showAddTrashBinModal: $showAddTrashBinModal)
             })
-        }
+            .onAppear {
+                Task {
+                    do {
+                        trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
+            .onChange(of: showAddTrashBinModal) { oldValue, newValue in
+                Task {
+                    do {
+                        trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
+                    } catch {
+                        print(error)
+                    }
+                }
+//                viewId = UUID()
+            }
+//            .id(viewId)
+            .onChange(of: selectedTrashBin) { oldVale, newValue in
+                if newValue == nil {
+                    showTrashBinDetail = false
+                } else {
+                    showTrashBinDetail = true
+                }
+            }
+            .sheet(isPresented: $showTrashBinDetail) {
+                TrashbinDetailsView(trashBin: $selectedTrashBin)
+            }
     }
 }
 
 
 #Preview {
     EventDetailView(
-        event: EventModel(
-            documentID: "ythi0zFLYayMh9d3fwGL",
-            name: "t",
-            description: "t",
-            location: "t",
-            dateEnd: Date(),
-            dateStart: Date()
-        )
-//        binStatus: .constant(.connected)
+        event: .dummy
     )
+    .environmentObject(TrashBinViewModel())
 }

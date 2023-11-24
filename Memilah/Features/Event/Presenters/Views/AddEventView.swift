@@ -8,13 +8,45 @@
 import SwiftUI
 
 struct AddEventView: View {
-    
-    @StateObject var eventViewModel = EventViewModel()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var eventViewModel: EventViewModel
     @StateObject var mapViewModel = MapViewModel()
-    
-    
+    @State private var showAlert = false
+
     var body: some View {
-        ScrollView {
+
+        NavigationStack{
+            
+            VStack(alignment: .leading){
+                //Header Add Event
+                HStack{
+                    Button(action:{
+                        self.presentationMode.wrappedValue.dismiss()
+                    }){
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .bold()
+                                .padding(.trailing, 5)
+
+                            
+                            Text("Add Event")
+                                .font(
+                                    Font.custom(Fonts.plusJakartaSansBold, size: 31)
+                                        .weight(.bold)
+                                )
+                        }
+                        .padding(.bottom, 32)
+                    }
+                    .foregroundColor(Colors.adaptiveFontColor)
+                    
+                    Spacer()
+                }
+                .padding(.leading, 63)
+            }
+                
+            
+            
+            ScrollView {
                 Grid(alignment: .topLeading, horizontalSpacing: 30, verticalSpacing: 41) {
                     GridRow {
                         Text("Event Name")
@@ -60,16 +92,38 @@ struct AddEventView: View {
                     }
                     
                     GridRow {
-                        
                         SaveChangesButtonComponent(title: "Add Event", disable: checkFields()){
                             eventViewModel.addEvent(location: mapViewModel.searchTxt)
+                            
+                            showAlert = true
+                        }
+                        .alert(isPresented: $showAlert){
+                            Alert(
+                                title: Text("Success"),
+                                message: Text("Event added successfully"),
+                                dismissButton: .default(Text("OK")){
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                            )
                         }
                         
                     }
                 }
-//            }
+                .padding(.top,1)
+            }
         }
-        .toolbar(removing: .sidebarToggle)
+        .padding(.top, 40)
+        .navigationBarBackButtonHidden(true)
+        .onDisappear() {
+            Task {
+                try! await eventViewModel.getEvents()
+            }
+        }
+        .onAppear() {
+            eventViewModel.event = EventModel()
+        }
+        .toolbar(.hidden, for: .navigationBar)
+
     }
     
     func checkFields() -> Bool {
@@ -79,4 +133,5 @@ struct AddEventView: View {
 
 #Preview {
     AddEventView()
+        .environmentObject(EventViewModel())
 }

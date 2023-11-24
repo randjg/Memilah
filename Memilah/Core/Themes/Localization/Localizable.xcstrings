@@ -1,0 +1,859 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " - " : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
+    " bins" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " tempat sampah"
+          }
+        }
+      }
+    },
+    "%lld%%" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        }
+      }
+    },
+    "⚠️" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️"
+          }
+        }
+      }
+    },
+    "⚠️ Event with the same name already exists. Please enter a new event" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️ Event dengan nama yang sama sudah ada. Silahkan masukkan nama event yang lain"
+          }
+        }
+      }
+    },
+    "❗" : {
+
+    },
+    "❗️" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "❗️"
+          }
+        }
+      }
+    },
+    "📆" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📆"
+          }
+        }
+      }
+    },
+    "📍" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📍"
+          }
+        }
+      }
+    },
+    "🗑️" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🗑️"
+          }
+        }
+      }
+    },
+    "0 bins" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 tempat sampah"
+          }
+        }
+      }
+    },
+    "20 september 2023 19:08" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 September 2023 19:08"
+          }
+        }
+      }
+    },
+    "Add an event description" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah deskripsi event"
+          }
+        }
+      }
+    },
+    "Add an event name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah nama event"
+          }
+        }
+      }
+    },
+    "Add Event" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah Event"
+          }
+        }
+      }
+    },
+    "Add Trash Bin" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah Tempat Sampah"
+          }
+        }
+      }
+    },
+    "Add trash bin details" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah detail tempat sampah"
+          }
+        }
+      }
+    },
+    "Add trash bin name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah nama tempat sampah"
+          }
+        }
+      }
+    },
+    "Already have an account?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudah memiliki akun?"
+          }
+        }
+      }
+    },
+    "Choose a language and region" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih bahasa dan wilayah"
+          }
+        }
+      }
+    },
+    "Connected" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terhubung"
+          }
+        }
+      }
+    },
+    "Dark Mode" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode Gelap"
+          }
+        }
+      }
+    },
+    "Dashboard" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard"
+          }
+        }
+      }
+    },
+    "Display" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilan"
+          }
+        }
+      }
+    },
+    "Don't have an account yet?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum memiliki akun?"
+          }
+        }
+      }
+    },
+    "E-mail" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Edit Event" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubah Event"
+          }
+        }
+      }
+    },
+    "End Date" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Berakhir"
+          }
+        }
+      }
+    },
+    "Enter your email address" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan alamat email"
+          }
+        }
+      }
+    },
+    "Enter your password" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan kata sandi"
+          }
+        }
+      }
+    },
+    "Enter your password confirmation" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukkan konfirmasi kata sandi"
+          }
+        }
+      }
+    },
+    "Event" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event"
+          }
+        }
+      }
+    },
+    "Event added successfully" : {
+
+    },
+    "Event Date" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Event"
+          }
+        }
+      }
+    },
+    "Event Description" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deskripsi Event"
+          }
+        }
+      }
+    },
+    "Event Location" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lokasi Event"
+          }
+        }
+      }
+    },
+    "Event Name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama Event"
+          }
+        }
+      }
+    },
+    "Fill Level" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tingkat Kepenuhan"
+          }
+        }
+      }
+    },
+    "Fill Level Alert" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peringatan Tingkat Kepenuhan"
+          }
+        }
+      }
+    },
+    "Go to settings" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Image Unavailable" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambar tidak tersedia"
+          }
+        }
+      }
+    },
+    "Incorrect Password" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password Salah"
+          }
+        }
+      }
+    },
+    "Invalid Credentials" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kredensial Tidak Sah"
+          }
+        }
+      }
+    },
+    "Last updated" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaruan terakhir pada"
+          }
+        }
+      }
+    },
+    "Last updated " : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaruan terakhir pada"
+          }
+        }
+      }
+    },
+    "Logging in" : {
+
+    },
+    "Login now" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masuk sekarang"
+          }
+        }
+      }
+    },
+    "Logout" : {
+
+    },
+    "max. 150 characters" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "maks. 150 karakter"
+          }
+        }
+      }
+    },
+    "Memilah" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memilah"
+          }
+        }
+      }
+    },
+    "Needs Checking" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Butuh Pengecekan"
+          }
+        }
+      }
+    },
+    "No events available" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada event"
+          }
+        }
+      }
+    },
+    "No Trashbin Available" : {
+
+    },
+    "No trashbins" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada tempat sampah"
+          }
+        }
+      }
+    },
+    "Notification" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi"
+          }
+        }
+      }
+    },
+    "Notifications" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifikasi"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
+    },
+    "Ongoing" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang berjalan"
+          }
+        }
+      }
+    },
+    "Others" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lain-lain"
+          }
+        }
+      }
+    },
+    "Paper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kertas"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kata Sandi"
+          }
+        }
+      }
+    },
+    "Password Confirmation" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfirmasi Kata Sandi"
+          }
+        }
+      }
+    },
+    "Permission Denied" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izin Ditolak"
+          }
+        }
+      }
+    },
+    "Plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plastik"
+          }
+        }
+      }
+    },
+    "Please enable the permission in settings" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silahkan aktifkan perizinan di pengaturan"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        }
+      }
+    },
+    "Register Error" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pendaftaran Gagal"
+          }
+        }
+      }
+    },
+    "Register now" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daftar sekarang"
+          }
+        }
+      }
+    },
+    "Registering" : {
+
+    },
+    "Save Changes" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simpan Perubahan"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cari"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Start Date" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Mulai"
+          }
+        }
+      }
+    },
+    "Success" : {
+
+    },
+    "Successfully edited event" : {
+
+    },
+    "testt" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "testt"
+          }
+        }
+      }
+    },
+    "The bins at %@ has not received an update for more than 30 minutes. Please check up the trash. " : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempat sampah di %@ tidak menerima pembaruan selama lebih dari 30 menit. Silahkan cek tempat sampah."
+          }
+        }
+      }
+    },
+    "The bins at %@ have reached ≥80%% fill level. Please pick up the trash." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempat sampah di %@ telah mencapai tingkat kepenuhan ≥80%. Silahkan angkat sampah."
+          }
+        }
+      }
+    },
+    "The email is not valid. Please try again." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email ini tidak valid. Silahkan coba lagi."
+          }
+        }
+      }
+    },
+    "The email or password is not valid. Please try again." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email atau Kata Sandi ini tidak valid. Silahkan coba lagi."
+          }
+        }
+      }
+    },
+    "The password you entered is not same with password confirmation. Please try again." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kata Sandi yang ada masukkan tidak sesuai dengan Konfirmasi Kata Sandi. Silahkan coba lagi."
+          }
+        }
+      }
+    },
+    "This feature has not been developed yet." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fitur ini belum dikembangkan."
+          }
+        }
+      }
+    },
+    "Trash Bin Alert" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peringatan Tempat Sampah"
+          }
+        }
+      }
+    },
+    "Trash Bin Details" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detail Tempat Sampah"
+          }
+        }
+      }
+    },
+    "Trash Bin Image" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambar Tempat Sampah"
+          }
+        }
+      }
+    },
+    "Trash Bin Name" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama Tempat Sampah"
+          }
+        }
+      }
+    },
+    "Upcoming" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akan datang"
+          }
+        }
+      }
+    },
+    "Upload an image" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unggah gambar"
+          }
+        }
+      }
+    },
+    "UUID" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

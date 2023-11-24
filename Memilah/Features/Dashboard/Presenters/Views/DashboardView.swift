@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @EnvironmentObject var viewModel: DashboardViewModel
+    @EnvironmentObject var viewModel: EventViewModel
+    @EnvironmentObject var trashViewModel: TrashBinViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
-    @Binding var events: [EventModel]
     @Binding var isLoading: Bool
     @Binding var columnVisibility: NavigationSplitViewVisibility
     
@@ -24,7 +24,12 @@ struct DashboardView: View {
     private func editEventAction(){
         toEditEvent = true
         columnVisibility = NavigationSplitViewVisibility.detailOnly
-        print("Edit Event tapped")
+        print("Edit Event tappedd")
+    }
+    
+    private func toggleEditEvent(){
+        toEditEvent.toggle()
+        columnVisibility = toEditEvent ? .detailOnly : .automatic
     }
     
     private let adaptiveColumns = [
@@ -43,6 +48,7 @@ struct DashboardView: View {
                                 .weight(.bold)
                         )
                         .padding(.bottom, 23)
+                    
                     HStack(spacing: 25){
                         //MARK: Add Event button
                         Button("Add Event"){
@@ -51,44 +57,50 @@ struct DashboardView: View {
                         .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
                         
                         //MARK: Edit events
-                        Button("Edit Event"){
-                            editEventAction()
+                        EditEventButtonComponent(onEdit: toEditEvent, textPlaceholder: toEditEvent ? "Exit Editing" : "Edit Event") {
+                            toggleEditEvent()
                         }
-                        .buttonStyle(SecondaryButtonStyle(textPlaceholder: "Edit Event", action: editEventAction))
+
                     }
                     .padding(.bottom, 26)
                 }
                 .padding(.leading, 79)
                 
-                ZStack() {
+                ZStack{
                     //MARK: Background
                     Rectangle()
                         .foregroundColor(.clear)
-                        .background(Colors.blueLightActive)
+                        .background(Colors.blueLight)
                         .cornerRadius(20.0)
                     
                     //MARK: Event Card Component
                     if isLoading {
                         ProgressView()
                     } else {
-                        if events.isEmpty {
+                        if viewModel.events.isEmpty {
                             Text("No events available")
                         } else {
                             ScrollView {
                                 LazyVGrid(columns: adaptiveColumns, spacing: 30) {
-                                    ForEach(events, id: \.documentID) { event in
-                                        EventCardComponent(event: event)
+                                    ForEach($viewModel.events, id: \.documentID) { event in
+                                        EventCardComponent(toEditEvent: $toEditEvent, event: event)
+                                            .environmentObject(viewModel)
+                                            .environmentObject(trashViewModel)
+                                        
                                     }
                                 }
+                                .padding(.vertical, 1)
                             }
                             .padding(.vertical, 30)
                         }
                     }
+                    
                 }
             }
-            .padding(.top, 55)
+            .padding(.top, 77)
             .navigationDestination(isPresented: $toAddEvent) {
                 AddEventView()
+                    .environmentObject(viewModel)
             }
             .ignoresSafeArea()
         }
@@ -96,6 +108,6 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView(events: .constant([EventModel]()), isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
-        .environmentObject(DashboardViewModel())
+    DashboardView(isLoading: .constant(false), columnVisibility: .constant(NavigationSplitViewVisibility.detailOnly))
+        .environmentObject(EventViewModel())
 }

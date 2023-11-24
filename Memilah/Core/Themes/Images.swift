@@ -14,7 +14,7 @@ struct Images {
     static let logoTextImageHorizontal = Image("Logo Text Image Horizontal")
     static let logoTextImageVertical = Image("Logo Text Image Vertical")
     
-    static let mapIcon = Image("Map")
-    static let listIcon = Image("List")
+    static let mapIcon = Image(systemName: "map")
+    static let listIcon = Image(systemName: "text.justify")
 }
 

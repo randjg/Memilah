@@ -18,6 +18,8 @@ struct Colors {
     static let blueNormal = Color("BlueNormal")
     static let blueLightActive = Color("BlueLightActive")
     static let blueLight = Color("BlueLight")
+    static let blue1 = Color("Blue1")
+    static let blue4 = Color("Blue4")
     
     //MARK: Grey
     static let greyNormal = Color("GreyNormal")
@@ -25,6 +27,7 @@ struct Colors {
     static let greyDarker = Color("GreyDarker")
     static let greyCardBorder = Color("GreyCardBorder")
     static let greyLightActive = Color("GreyLightActive")
+    static let greyDark = Color("GreyDark")
     
     //MARK: Green
     static let greenOngoing = Color("GreenOnGoing")
@@ -34,4 +37,7 @@ struct Colors {
     //MARK: Orange
     static let orangeLight = Color("OrangeLight")
     static let orangeNormal = Color("OrangeNormal")
+    
+    //MARK: Red
+    static let redNormal = Color("RedNormal")
 }

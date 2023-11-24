@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TextFieldComponent: View {
     @Binding var text: String
-    var placeholder: String
+    var placeholder: LocalizedStringKey
     var keyboardType: UIKeyboardType
     var returnKeyType: UIReturnKeyType
     var width: CGFloat
