@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @EnvironmentObject var viewModel: EventViewModel
+    @EnvironmentObject var trashViewModel: TrashBinViewModel
     @State private var toAddEvent = false
     @State private var toEditEvent = false
     @Binding var isLoading: Bool
@@ -84,6 +85,7 @@ struct DashboardView: View {
                                     ForEach($viewModel.events, id: \.documentID) { event in
                                         EventCardComponent(toEditEvent: $toEditEvent, event: event)
                                             .environmentObject(viewModel)
+                                            .environmentObject(trashViewModel)
                                         
                                     }
                                 }

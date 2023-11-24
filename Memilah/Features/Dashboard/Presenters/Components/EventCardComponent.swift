@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EventCardComponent: View {
     @EnvironmentObject var viewModel: EventViewModel
+    @EnvironmentObject var trashViewModel: TrashBinViewModel
     @Binding var toEditEvent: Bool
     @Binding var event: EventModel
     
@@ -38,6 +39,7 @@ struct EventCardComponent: View {
                 //if card is in default view
                 NavigationLink {
                     EventDetailView(event: event)
+                        .environmentObject(trashViewModel)
                 } label: {
                     eventBody()
                         .foregroundColor(Colors.adaptiveFontColor)

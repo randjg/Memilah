@@ -16,6 +16,7 @@ struct RootView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var authViewModel : AuthenticationViewModel
     @Environment(\.dismiss) var dismiss
+    @StateObject var trashViewModel = TrashBinViewModel()
     var body: some View {
         
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -27,6 +28,7 @@ struct RootView: View {
                     ForEach(viewModel.events, id: \.documentID) { event in
                         NavigationLink {
                             EventDetailView(event: event)
+                                .environmentObject(trashViewModel)
                         } label: {
                             Label(event.name, systemImage: "calendar")
                         }
@@ -35,6 +37,7 @@ struct RootView: View {
                     NavigationLink {
                         DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
                                 .environmentObject(viewModel)
+                                .environmentObject(trashViewModel)
                     } label: {
                         Label("Event", systemImage: "ticket")
                     }
@@ -68,6 +71,7 @@ struct RootView: View {
         } detail: {
             DashboardView(isLoading: $isLoading, columnVisibility: $columnVisibility)
                     .environmentObject(viewModel)
+                    .environmentObject(trashViewModel)
         }
         .ignoresSafeArea()
         .onAppear {

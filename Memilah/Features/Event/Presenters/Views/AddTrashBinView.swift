@@ -27,7 +27,6 @@ struct AddTrashBinView: View {
                         .padding(.bottom, 39)
                     Spacer()
                 }
-                .frame(width: 600)
                 
                 //MARK: Select UUID
                 HStack{
@@ -137,11 +136,12 @@ struct AddTrashBinView: View {
                     }
                     .disabled(viewModel.validateEmptyFields() || trashBins.isEmpty)
                 }
-                .frame(width: 630)
                 .padding(.top, 87)
                 
             }
         }
+        .frame(width: 630)
+        .padding(.horizontal, 40)
         .onAppear {
             Task {
                 do {

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EventDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @StateObject var viewModel = TrashBinViewModel()
+    @EnvironmentObject var viewModel: TrashBinViewModel
     @State var isButtonPressed: Bool = true
     @State var isListViewShown: Bool = false
     @State var showAddTrashBinModal = false
@@ -19,6 +19,7 @@ struct EventDetailView: View {
     @State var showTrashBinDetail = false
     var event: EventModel
     
+//    @State private var viewId = UUID()
 //    @Binding var binStatus: binStatus
     
     var body: some View {
@@ -168,11 +169,13 @@ struct EventDetailView: View {
             .sheet(isPresented: $showAddTrashBinModal, content: {
                 AddTrashBinView(event: event, showAddTrashBinModal: $showAddTrashBinModal)
             })
-            .task {
-                do {
-                    trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
-                } catch {
-                    print(error)
+            .onAppear {
+                Task {
+                    do {
+                        trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
+                    } catch {
+                        print(error)
+                    }
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -185,7 +188,9 @@ struct EventDetailView: View {
                         print(error)
                     }
                 }
+//                viewId = UUID()
             }
+//            .id(viewId)
             .onChange(of: selectedTrashBin) { oldVale, newValue in
                 if newValue == nil {
                     showTrashBinDetail = false
@@ -204,4 +209,5 @@ struct EventDetailView: View {
     EventDetailView(
         event: .dummy
     )
+    .environmentObject(TrashBinViewModel())
 }

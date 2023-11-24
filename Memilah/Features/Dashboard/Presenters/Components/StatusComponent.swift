@@ -22,7 +22,6 @@ struct StatusComponent: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .frame(width: 96, height: 27)
                 .foregroundColor(statusColor())
                 .cornerRadius(50)
             
@@ -40,6 +39,7 @@ struct StatusComponent: View {
                     .fontWeight(.semibold)
             }
         }
+        .frame(width: 116, height: 27)
         .onAppear(perform: {
             compareDate()
         })
