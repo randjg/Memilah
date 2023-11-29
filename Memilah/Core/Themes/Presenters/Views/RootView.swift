@@ -25,10 +25,11 @@ struct RootView: View {
                     
                     //MARK: Upload events from firebase here
                     
-                    ForEach(viewModel.events, id: \.documentID) { event in
+                    ForEach(viewModel.events, id: \.self) { event in
                         NavigationLink {
                             EventDetailView(event: event)
                                 .environmentObject(trashViewModel)
+                                .id(UUID())
                         } label: {
                             Label(event.name, systemImage: "calendar")
                         }

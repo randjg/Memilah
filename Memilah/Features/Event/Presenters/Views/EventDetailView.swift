@@ -170,6 +170,7 @@ struct EventDetailView: View {
                 AddTrashBinView(event: event, showAddTrashBinModal: $showAddTrashBinModal)
             })
             .onAppear {
+                print("\(event.name) appear")
                 Task {
                     do {
                         trashBins = try await viewModel.getEvenTrashBins(eventID: event.documentID!)
@@ -190,7 +191,7 @@ struct EventDetailView: View {
                 }
 //                viewId = UUID()
             }
-//            .id(viewId)
+//            .id(UUID())
             .onChange(of: selectedTrashBin) { oldVale, newValue in
                 if newValue == nil {
                     showTrashBinDetail = false

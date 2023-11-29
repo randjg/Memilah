@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct EventModel: Codable {
+struct EventModel: Codable, Hashable {
     @DocumentID var documentID: String?
     var name: String
     var description: String
