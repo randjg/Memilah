@@ -41,15 +41,21 @@ class TrashBinViewModel: ObservableObject {
     }
     
     func uploadImage(data: Data) async throws {
-        let (path, _) = try await StorageManager.shared.saveTrashBinImage(data: data)
-        self.imagePath = path
+        let downloadUrl = try await StorageManager.shared.saveTrashBinImage(data: data)
+        self.imagePath = downloadUrl.absoluteString
     }
     
-    func getImage(imagePath: String, completion: @escaping (Data?) -> Void) {
-        StorageManager.shared.getImage(imagePath: imagePath) { imageData in
-            completion(imageData)
-        }
-    }
+//    func getImage(imagePath: String, completion: @escaping (Data?) -> Void) {
+//        StorageManager.shared.getImage(imagePath: imagePath) { imageData in
+//            completion(imageData)
+//        }
+//    }
+    
+//    func getImageDownloadURL(imagePath: String, completion: @escaping (URL?) -> Void) {
+//        StorageManager.shared.getImageDownloadURL(imagePath: imagePath) { url in
+//            completion(url)
+//        }
+//    }
     
     //    func getImage(imagePath: String) async throws -> Data {
     //        let data = try await StorageManager.shared.getImage(imagePath: imagePath)

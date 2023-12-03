@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TrashbinDetailsView: View {
     
@@ -13,8 +14,8 @@ struct TrashbinDetailsView: View {
     @State private var isConnected = true
     @Binding var trashBin: TrashBinModel?
     @StateObject var viewModel = TrashBinViewModel()
-    @State var trashBinImage: Data?
-    
+//    @State var trashBinImage: Data?
+    @State var trashBinImageURL: URL?
     var body: some View {
 //        NavigationView {
             VStack{
@@ -43,18 +44,30 @@ struct TrashbinDetailsView: View {
                     .font(.custom("PlusJakartaSans-Italic", size: 13))
                     .padding(.bottom, 20)
                 
-                if let trashBinImage, let image = UIImage(data: trashBinImage) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 235, height: 170)
-                        .cornerRadius(10)
-                } else {
-                    ProgressView {
-                        Text("Image Unavailable")
-                    }
-                    .controlSize(.large)
-                }
+//                if let trashBinImage, let image = UIImage(data: trashBinImage) {
+//                    Image(uiImage: image)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 235, height: 170)
+//                        .cornerRadius(10)
+//                } else {
+//                    ProgressView {
+//                        Text("Image Unavailable")
+//                    }
+//                    .controlSize(.large)
+//                }
+                
+                KFImage(URL(string: trashBin!.imageUrl))
+                    .placeholder({
+                        ProgressView {
+                            Text("Image Unavailable")
+                        }
+                        .controlSize(.large)
+                    })
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 235, height: 170)
+                    .cornerRadius(10)
                 
                 Text(trashBin!.detail) // diganti deskripsi
                     .font(.custom(Fonts.plusJakartaSansRegular, size: 13))
@@ -72,9 +85,11 @@ struct TrashbinDetailsView: View {
 //                    let imageData = try? await viewModel.getImage(imagePath: trashBin.imageUrl)
 //                    trashBinImage = imageData
 //                }
-                viewModel.getImage(imagePath: trashBin!.imageUrl) { data in
-                    trashBinImage=data
-                }
+//                viewModel.getImage(imagePath: trashBin!.imageUrl) { data in
+//                    trashBinImage=data
+//                viewModel.getImageDownloadURL(imagePath: trashBin!.imageUrl) { url in
+//                        trashBinImageURL = url
+//                }
             }
         }
 //        .navigationBarTitle("Trash Bin Details", displayMode: .inline)
