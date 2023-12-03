@@ -14,6 +14,7 @@
 		4371F0912B0DB131002B1643 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0902B0DB131002B1643 /* NotificationViewModel.swift */; };
 		4371F0942B0DB142002B1643 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0932B0DB142002B1643 /* NotificationModel.swift */; };
 		4371F0962B0DB219002B1643 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371F0952B0DB219002B1643 /* NotificationManager.swift */; };
+		43A623212B1CCE5300E48982 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 43A623202B1CCE5300E48982 /* Kingfisher */; };
 		43CC816C2B046B26004DAF74 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC81172B046B26004DAF74 /* DateExtension.swift */; };
 		43CC816D2B046B26004DAF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CC81192B046B26004DAF74 /* Assets.xcassets */; };
 		43CC816E2B046B26004DAF74 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CC811C2B046B26004DAF74 /* ImagePicker.swift */; };
@@ -153,6 +154,7 @@
 				43D8CCFF2AEF771C003938F0 /* FirebaseFirestore in Frameworks */,
 				43D8CD032AEF771C003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CCF32AEF771C003938F0 /* FirebaseAuth in Frameworks */,
+				43A623212B1CCE5300E48982 /* Kingfisher in Frameworks */,
 				43D8CD352AEF7A2D003938F0 /* FirebaseFirestore in Frameworks */,
 				43D8CD392AEF7A2D003938F0 /* FirebaseFirestoreSwift in Frameworks */,
 				43D8CD4F2AEF7A2D003938F0 /* FirebaseStorage in Frameworks */,
@@ -579,6 +581,7 @@
 				43D8CD382AEF7A2D003938F0 /* FirebaseFirestoreSwift */,
 				43D8CD4E2AEF7A2D003938F0 /* FirebaseStorage */,
 				F6A8C7DF2B0BB3F200539E30 /* FirebaseMessaging */,
+				43A623202B1CCE5300E48982 /* Kingfisher */,
 			);
 			productName = Segrebox;
 			productReference = 83BB3D5B2AE3E77F00300A56 /* Memilah.app */;
@@ -612,6 +615,7 @@
 			packageReferences = (
 				43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F6A8C7E62B0DF66300539E30 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+				43A6231F2B1CCE5300E48982 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 83BB3D5C2AE3E77F00300A56 /* Products */;
 			projectDirPath = "";
@@ -926,6 +930,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		43A6231F2B1CCE5300E48982 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 		43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -945,6 +957,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		43A623202B1CCE5300E48982 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43A6231F2B1CCE5300E48982 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		43D8CCF22AEF771C003938F0 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43D8CCE52AEF771C003938F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

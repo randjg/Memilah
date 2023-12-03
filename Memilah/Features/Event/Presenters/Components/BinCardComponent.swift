@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct BinCardComponent: View {
     @EnvironmentObject var viewModel: TrashBinViewModel
     var trashBin: TrashBinModel
     var lastUpdate: LocalizedStringKey = "Last updated "
-    @State var trashBinImage: Data?
+//    @State var trashBinImage: Data?
+    @State var trashBinImageURL: URL?
     //    @Binding var binStatus: binStatus
     
     var body: some View {
@@ -21,21 +23,35 @@ struct BinCardComponent: View {
                 .fill(Colors.adaptiveFontColorCard)
             
             HStack{
-                if let trashBinImage, let image = UIImage(data: trashBinImage) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
+                KFImage(URL(string: trashBin.imageUrl))
+                    .placeholder({ progress in
+                        ProgressView {
+                            Text("Image Unavailable")
+                        }
+                        .controlSize(.large)
                         .frame(width: 224, height: 241)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding(.horizontal, 30)
-                } else {
-                    ProgressView {
-                        Text("Image Unavailable")
-                    }
-                    .controlSize(.large)
+                    })
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: 224, height: 241)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding(.horizontal, 30)
-                }
+//                if let trashBinImage, let image = UIImage(data: trashBinImage) {
+//                    Image(uiImage: image)
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 224, height: 241)
+//                        .clipShape(RoundedRectangle(cornerRadius: 10))
+//                        .padding(.horizontal, 30)
+//                } else {
+//                    ProgressView {
+//                        Text("Image Unavailable")
+//                    }
+//                    .controlSize(.large)
+//                    .frame(width: 224, height: 241)
+//                    .padding(.horizontal, 30)
+//                }
                 
                 VStack {
                     HStack {
@@ -110,9 +126,12 @@ struct BinCardComponent: View {
 //                let imageData = try? await viewModel.getImage(imagePath: trashBin.imageUrl)
 //                trashBinImage = imageData
 //            }
-            viewModel.getImage(imagePath: trashBin.imageUrl) { data in
-                trashBinImage=data
-            }
+//            viewModel.getImage(imagePath: trashBin.imageUrl) { data in
+//                trashBinImage=data
+//            }
+//            viewModel.getImageDownloadURL(imagePath: trashBin.imageUrl) { url in
+//                trashBinImageURL = url
+//            }
         }
         
     }
