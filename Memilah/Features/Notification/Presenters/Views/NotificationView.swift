@@ -27,14 +27,19 @@ struct NotificationView: View {
                     .cornerRadius(20.0)
                 
                 //Notification Card Component
-                ScrollView {
-                    ForEach(viewModel.notifications, id: \.documentID) { notification in
-                        NotificationCardComponent(notification: notification)
-                            .padding(.bottom, 30)
+                if viewModel.notifications.isEmpty {
+                    Text("No notifications available")
+                } else {
+                    ScrollView {
+                        ForEach(viewModel.notifications, id: \.documentID) { notification in
+                            NotificationCardComponent(notification: notification)
+                                .padding(.bottom, 30)
+                        }
+                        .padding(.top, 8)
                     }
-                    .padding(.top, 8)
+                    .padding(.top, 70)
                 }
-                .padding(.top, 70)
+                
             }
             .padding(.top, 50)
         }

@@ -57,7 +57,7 @@ struct DashboardView: View {
                         .buttonStyle(PrimaryButtonStyle(textPlaceholder: "Click me", action: addEventAction))
                         
                         //MARK: Edit events
-                        EditEventButtonComponent(onEdit: toEditEvent, textPlaceholder: toEditEvent ? "Exit Editing" : "Edit Event") {
+                        EditEventButtonComponent(onEdit: toEditEvent, textPlaceholder: toEditEvent ? "Finish Editing" : "Edit Event") {
                             toggleEditEvent()
                         }
 

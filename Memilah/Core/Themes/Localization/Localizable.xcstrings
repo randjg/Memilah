@@ -325,7 +325,14 @@
       }
     },
     "Event added successfully" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event berhasil ditambahkan"
+          }
+        }
+      }
     },
     "Event Date" : {
       "localizations" : {
@@ -384,6 +391,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Peringatan Tingkat Kepenuhan"
+          }
+        }
+      }
+    },
+    "Finish Editing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai Mengubah"
           }
         }
       }
@@ -449,7 +467,14 @@
       }
     },
     "Logging in" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang mencoba masuk"
+          }
+        }
+      }
     },
     "Login now" : {
       "localizations" : {
@@ -462,7 +487,14 @@
       }
     },
     "Logout" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keluar"
+          }
+        }
+      }
     },
     "max. 150 characters" : {
       "localizations" : {
@@ -504,8 +536,25 @@
         }
       }
     },
+    "No notifications available" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada notifikasi"
+          }
+        }
+      }
+    },
     "No Trashbin Available" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada tempat sampah tersedia"
+          }
+        }
+      }
     },
     "No trashbins" : {
       "localizations" : {
@@ -661,7 +710,14 @@
       }
     },
     "Registering" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedang mendaftarkan"
+          }
+        }
+      }
     },
     "Save Changes" : {
       "extractionState" : "stale",
@@ -705,10 +761,24 @@
       }
     },
     "Success" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berhasil"
+          }
+        }
+      }
     },
     "Successfully edited event" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berhasil mengubah event"
+          }
+        }
+      }
     },
     "testt" : {
       "localizations" : {
@@ -720,24 +790,22 @@
         }
       }
     },
-    "The bins at %@ has not received an update for more than 30 minutes. Please check up the trash. " : {
-      "extractionState" : "stale",
+    "The bins at %@ have not received an update for more than 30 minutes. Please check up the trash." : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tempat sampah di %@ tidak menerima pembaruan selama lebih dari 30 menit. Silahkan cek tempat sampah."
+            "value" : "Tempat sampah di %@ belum menerima pembaharuan selama lebih dari 30 menit. Silakan cek tempat sampah."
           }
         }
       }
     },
-    "The bins at %@ have reached ≥80%% fill level. Please pick up the trash." : {
-      "extractionState" : "stale",
+    "The bins at %@ have reached ≥90%% fill level. Please pick up the trash." : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tempat sampah di %@ telah mencapai tingkat kepenuhan ≥80%. Silahkan angkat sampah."
+            "value" : "Tempat sampah di %@ telah mencapai tingkat kepenuhan ≥90%%. Silakan ambil tempat sampah."
           }
         }
       }

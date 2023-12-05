@@ -21,7 +21,7 @@ struct NotificationCardComponent: View {
                     Text(notification.title == "Fill Level Alert" ? "⚠️" : "❗")
                         .padding(.leading, 13)
                     //emoji
-                    Text(notification.title) //header alert
+                    Text(LocalizedStringKey(notification.title)) //header alert
                         .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                         .fontWeight(.bold)
                     
@@ -30,7 +30,7 @@ struct NotificationCardComponent: View {
                         .padding(.trailing, 18)
                 }
                 
-                Text(notification.description)
+                Text(notification.title == "Fill Level Alert" ? "The bins at \(notification.description) have not received an update for more than 30 minutes. Please check up the trash." : "The bins at \(notification.description) have reached ≥90% fill level. Please pick up the trash.")
                     .font(.custom(Fonts.plusJakartaSansRegular, size: 21))
                     .padding(.top, -5)
                     .padding(.leading, 45)

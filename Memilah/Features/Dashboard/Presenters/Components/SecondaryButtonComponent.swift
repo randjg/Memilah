@@ -82,7 +82,7 @@ struct SecondaryButtonComponent: View{
 
 struct EditEventButtonComponent: View{
     var onEdit: Bool
-    var textPlaceholder: String
+    var textPlaceholder: LocalizedStringKey
     var action: () -> Void
     
     var body: some View {
